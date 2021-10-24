@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		602063669C1D5972C5308E06 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */; };
+		653C537DCC2E895B0B61F05E /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DAB2BA04D79F9908283440 /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework */; };
+		A381D0382725D57100D15288 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0372725D57100D15288 /* LoginView.swift */; };
+		A381D03A2725D57D00D15288 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0392725D57D00D15288 /* SignUpView.swift */; };
+		A381D0422725D93200D15288 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A381D03D2725D93200D15288 /* Poppins-Regular.ttf */; };
+		A381D0432725D93200D15288 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A381D03E2725D93200D15288 /* Poppins-SemiBold.ttf */; };
+		A381D0442725D93200D15288 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A381D03F2725D93200D15288 /* Poppins-Light.ttf */; };
+		A381D0452725D93200D15288 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A381D0402725D93200D15288 /* Poppins-Medium.ttf */; };
+		A381D0462725D93200D15288 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A381D0412725D93200D15288 /* Poppins-Bold.ttf */; };
+		A381D0482725DA0000D15288 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0472725DA0000D15288 /* ForgetPasswordView.swift */; };
+		A381D04A2725DC4E00D15288 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0492725DC4E00D15288 /* ColorExtension.swift */; };
+		A381D04C2725DD4100D15288 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D04B2725DD4100D15288 /* TextFieldView.swift */; };
+		A381D04E2725DD7600D15288 /* TextViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D04D2725DD7600D15288 /* TextViewStyle.swift */; };
+		A381D0502725DDCF00D15288 /* ButtonViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D04F2725DDCF00D15288 /* ButtonViewStyle.swift */; };
+		A381D0522725DDE200D15288 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0512725DDE200D15288 /* ButtonView.swift */; };
+		A381D0542725E17000D15288 /* LoginViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0532725E17000D15288 /* LoginViewStrings.swift */; };
+		A381D0562725E24900D15288 /* SecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0552725E24900D15288 /* SecureFieldView.swift */; };
+		A381D0582725EA1200D15288 /* LabelledDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0572725EA1200D15288 /* LabelledDivider.swift */; };
+		A381D05A2725ECE200D15288 /* SignUpViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0592725ECE200D15288 /* SignUpViewStrings.swift */; };
+		A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */; };
 		A3C7788D2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7788C2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift */; };
 		A3C7788F2723DD37009D670A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7788E2723DD37009D670A /* ContentView.swift */; };
 		A3C778912723DD39009D670A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C778902723DD39009D670A /* Assets.xcassets */; };
@@ -18,6 +38,8 @@
 		A3C778BE2723DE32009D670A /* ContentViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C778BD2723DE32009D670A /* ContentViewStrings.swift */; };
 		A3C778C02723DE6B009D670A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C778BF2723DE6B009D670A /* User.swift */; };
 		A3C778C22723DF15009D670A /* TextTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C778C12723DF15009D670A /* TextTitle.swift */; };
+		A3C778C62723F6CD009D670A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C778C52723F6CD009D670A /* GoogleService-Info.plist */; };
+		F0219ADC62AAC1CE5D5BE40E /* Pods_ihtMadhushankha_Cobsccomp005.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BB2A73228D3A6965D58975 /* Pods_ihtMadhushankha_Cobsccomp005.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +60,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16B4C89255FB7F3B187E5848 /* Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig"; sourceTree = "<group>"; };
+		547E8593A9EF3DDC010DC3EC /* Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005/Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig"; sourceTree = "<group>"; };
+		8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A381D0372725D57100D15288 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A381D0392725D57D00D15288 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A381D03C2725D87700D15288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A381D03D2725D93200D15288 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		A381D03E2725D93200D15288 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		A381D03F2725D93200D15288 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		A381D0402725D93200D15288 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		A381D0412725D93200D15288 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		A381D0472725DA0000D15288 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
+		A381D0492725DC4E00D15288 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		A381D04B2725DD4100D15288 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		A381D04D2725DD7600D15288 /* TextViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewStyle.swift; sourceTree = "<group>"; };
+		A381D04F2725DDCF00D15288 /* ButtonViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewStyle.swift; sourceTree = "<group>"; };
+		A381D0512725DDE200D15288 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		A381D0532725E17000D15288 /* LoginViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewStrings.swift; sourceTree = "<group>"; };
+		A381D0552725E24900D15288 /* SecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFieldView.swift; sourceTree = "<group>"; };
+		A381D0572725EA1200D15288 /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
+		A381D0592725ECE200D15288 /* SignUpViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewStrings.swift; sourceTree = "<group>"; };
+		A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewStrings.swift; sourceTree = "<group>"; };
 		A3C778892723DD37009D670A /* ihtMadhushankha-Cobsccomp005.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ihtMadhushankha-Cobsccomp005.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C7788C2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ihtMadhushankha_Cobsccomp005App.swift; sourceTree = "<group>"; };
 		A3C7788E2723DD37009D670A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +96,13 @@
 		A3C778BD2723DE32009D670A /* ContentViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewStrings.swift; sourceTree = "<group>"; };
 		A3C778BF2723DE6B009D670A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A3C778C12723DF15009D670A /* TextTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTitle.swift; sourceTree = "<group>"; };
+		A3C778C52723F6CD009D670A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5BB2A73228D3A6965D58975 /* Pods_ihtMadhushankha_Cobsccomp005.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ihtMadhushankha_Cobsccomp005.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3DAB2BA04D79F9908283440 /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ihtMadhushankha_Cobsccomp005Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C710C70CBB41AAAFCED044EB /* Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.debug.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB0C609A448DCBFBF82E87F7 /* Pods-ihtMadhushankha-Cobsccomp005.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005.release.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005/Pods-ihtMadhushankha-Cobsccomp005.release.xcconfig"; sourceTree = "<group>"; };
+		E29549D037649B1E80AE7293 /* Pods-ihtMadhushankha-Cobsccomp005Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005Tests.release.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005Tests/Pods-ihtMadhushankha-Cobsccomp005Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F21D00D230A35E08F9BD108F /* Pods-ihtMadhushankha-Cobsccomp005Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005Tests.debug.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005Tests/Pods-ihtMadhushankha-Cobsccomp005Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0219ADC62AAC1CE5D5BE40E /* Pods_ihtMadhushankha_Cobsccomp005.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653C537DCC2E895B0B61F05E /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,12 +126,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				602063669C1D5972C5308E06 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5288BB20AAC5427148307730 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				547E8593A9EF3DDC010DC3EC /* Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig */,
+				DB0C609A448DCBFBF82E87F7 /* Pods-ihtMadhushankha-Cobsccomp005.release.xcconfig */,
+				C710C70CBB41AAAFCED044EB /* Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.debug.xcconfig */,
+				16B4C89255FB7F3B187E5848 /* Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig */,
+				F21D00D230A35E08F9BD108F /* Pods-ihtMadhushankha-Cobsccomp005Tests.debug.xcconfig */,
+				E29549D037649B1E80AE7293 /* Pods-ihtMadhushankha-Cobsccomp005Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A381D03B2725D77800D15288 /* Poppins */ = {
+			isa = PBXGroup;
+			children = (
+				A381D0412725D93200D15288 /* Poppins-Bold.ttf */,
+				A381D03F2725D93200D15288 /* Poppins-Light.ttf */,
+				A381D0402725D93200D15288 /* Poppins-Medium.ttf */,
+				A381D03D2725D93200D15288 /* Poppins-Regular.ttf */,
+				A381D03E2725D93200D15288 /* Poppins-SemiBold.ttf */,
+			);
+			path = Poppins;
+			sourceTree = "<group>";
+		};
 		A3C778802723DD37009D670A = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +165,8 @@
 				A3C7789C2723DD39009D670A /* ihtMadhushankha-Cobsccomp005Tests */,
 				A3C778A62723DD39009D670A /* ihtMadhushankha-Cobsccomp005UITests */,
 				A3C7788A2723DD37009D670A /* Products */,
+				5288BB20AAC5427148307730 /* Pods */,
+				E5B21EDB79D7550125DF2295 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,13 +183,16 @@
 		A3C7788B2723DD37009D670A /* ihtMadhushankha-Cobsccomp005 */ = {
 			isa = PBXGroup;
 			children = (
+				A381D03B2725D77800D15288 /* Poppins */,
 				A3C778BA2723DD9F009D670A /* Data */,
-				A3C778B92723DD92009D670A /* Component */,
 				A3C778B82723DD83009D670A /* ViewModel */,
-				A3C778B72723DD5F009D670A /* Model */,
+				A3C778B92723DD92009D670A /* Component */,
 				A3C778B62723DD54009D670A /* View */,
+				A3C778B72723DD5F009D670A /* Model */,
 				A3C7788C2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift */,
 				A3C778902723DD39009D670A /* Assets.xcassets */,
+				A381D03C2725D87700D15288 /* Info.plist */,
+				A3C778C52723F6CD009D670A /* GoogleService-Info.plist */,
 				A3C778922723DD39009D670A /* Preview Content */,
 			);
 			path = "ihtMadhushankha-Cobsccomp005";
@@ -143,6 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				A3C7788E2723DD37009D670A /* ContentView.swift */,
+				A381D0392725D57D00D15288 /* SignUpView.swift */,
+				A381D0372725D57100D15288 /* LoginView.swift */,
+				A381D0472725DA0000D15288 /* ForgetPasswordView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +254,13 @@
 			isa = PBXGroup;
 			children = (
 				A3C778C12723DF15009D670A /* TextTitle.swift */,
+				A381D0552725E24900D15288 /* SecureFieldView.swift */,
+				A381D04F2725DDCF00D15288 /* ButtonViewStyle.swift */,
+				A381D0512725DDE200D15288 /* ButtonView.swift */,
+				A381D0572725EA1200D15288 /* LabelledDivider.swift */,
+				A381D04B2725DD4100D15288 /* TextFieldView.swift */,
+				A381D04D2725DD7600D15288 /* TextViewStyle.swift */,
+				A381D0492725DC4E00D15288 /* ColorExtension.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -175,8 +269,21 @@
 			isa = PBXGroup;
 			children = (
 				A3C778BD2723DE32009D670A /* ContentViewStrings.swift */,
+				A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */,
+				A381D0532725E17000D15288 /* LoginViewStrings.swift */,
+				A381D0592725ECE200D15288 /* SignUpViewStrings.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		E5B21EDB79D7550125DF2295 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5BB2A73228D3A6965D58975 /* Pods_ihtMadhushankha_Cobsccomp005.framework */,
+				8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */,
+				B3DAB2BA04D79F9908283440 /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,9 +293,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3C778AD2723DD39009D670A /* Build configuration list for PBXNativeTarget "ihtMadhushankha-Cobsccomp005" */;
 			buildPhases = (
+				569CC233356592932807367D /* [CP] Check Pods Manifest.lock */,
 				A3C778852723DD37009D670A /* Sources */,
 				A3C778862723DD37009D670A /* Frameworks */,
 				A3C778872723DD37009D670A /* Resources */,
+				14E91632A930B81E9F127B92 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,6 +312,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3C778B02723DD39009D670A /* Build configuration list for PBXNativeTarget "ihtMadhushankha-Cobsccomp005Tests" */;
 			buildPhases = (
+				19B64C98A03EB3D261972DD3 /* [CP] Check Pods Manifest.lock */,
 				A3C778952723DD39009D670A /* Sources */,
 				A3C778962723DD39009D670A /* Frameworks */,
 				A3C778972723DD39009D670A /* Resources */,
@@ -221,9 +331,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3C778B32723DD39009D670A /* Build configuration list for PBXNativeTarget "ihtMadhushankha-Cobsccomp005UITests" */;
 			buildPhases = (
+				E30AFD68D026BF084C8167F7 /* [CP] Check Pods Manifest.lock */,
 				A3C7789F2723DD39009D670A /* Sources */,
 				A3C778A02723DD39009D670A /* Frameworks */,
 				A3C778A12723DD39009D670A /* Resources */,
+				AB37DEA54240836CA0473D37 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,8 +395,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A381D0432725D93200D15288 /* Poppins-SemiBold.ttf in Resources */,
+				A381D0452725D93200D15288 /* Poppins-Medium.ttf in Resources */,
+				A381D0442725D93200D15288 /* Poppins-Light.ttf in Resources */,
+				A381D0462725D93200D15288 /* Poppins-Bold.ttf in Resources */,
 				A3C778942723DD39009D670A /* Preview Assets.xcassets in Resources */,
 				A3C778912723DD39009D670A /* Assets.xcassets in Resources */,
+				A3C778C62723F6CD009D670A /* GoogleService-Info.plist in Resources */,
+				A381D0422725D93200D15288 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,17 +422,133 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14E91632A930B81E9F127B92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ihtMadhushankha-Cobsccomp005/Pods-ihtMadhushankha-Cobsccomp005-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ihtMadhushankha-Cobsccomp005/Pods-ihtMadhushankha-Cobsccomp005-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ihtMadhushankha-Cobsccomp005/Pods-ihtMadhushankha-Cobsccomp005-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19B64C98A03EB3D261972DD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ihtMadhushankha-Cobsccomp005Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		569CC233356592932807367D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ihtMadhushankha-Cobsccomp005-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB37DEA54240836CA0473D37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E30AFD68D026BF084C8167F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A3C778852723DD37009D670A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A3C7788F2723DD37009D670A /* ContentView.swift in Sources */,
+				A381D0382725D57100D15288 /* LoginView.swift in Sources */,
 				A3C7788D2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift in Sources */,
+				A381D04C2725DD4100D15288 /* TextFieldView.swift in Sources */,
 				A3C778BC2723DE02009D670A /* ContentViewModel.swift in Sources */,
+				A381D0582725EA1200D15288 /* LabelledDivider.swift in Sources */,
+				A381D0542725E17000D15288 /* LoginViewStrings.swift in Sources */,
+				A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */,
+				A381D0562725E24900D15288 /* SecureFieldView.swift in Sources */,
+				A381D0502725DDCF00D15288 /* ButtonViewStyle.swift in Sources */,
+				A381D0522725DDE200D15288 /* ButtonView.swift in Sources */,
+				A381D0482725DA0000D15288 /* ForgetPasswordView.swift in Sources */,
+				A381D03A2725D57D00D15288 /* SignUpView.swift in Sources */,
+				A381D04E2725DD7600D15288 /* TextViewStyle.swift in Sources */,
 				A3C778C02723DE6B009D670A /* User.swift in Sources */,
 				A3C778BE2723DE32009D670A /* ContentViewStrings.swift in Sources */,
+				A381D05A2725ECE200D15288 /* SignUpViewStrings.swift in Sources */,
 				A3C778C22723DF15009D670A /* TextTitle.swift in Sources */,
+				A381D04A2725DC4E00D15288 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +703,7 @@
 		};
 		A3C778AE2723DD39009D670A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 547E8593A9EF3DDC010DC3EC /* Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,6 +712,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ihtMadhushankha-Cobsccomp005/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ihtMadhushankha-Cobsccomp005/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -498,6 +734,7 @@
 		};
 		A3C778AF2723DD39009D670A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB0C609A448DCBFBF82E87F7 /* Pods-ihtMadhushankha-Cobsccomp005.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -506,6 +743,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ihtMadhushankha-Cobsccomp005/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ihtMadhushankha-Cobsccomp005/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -527,6 +765,7 @@
 		};
 		A3C778B12723DD39009D670A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F21D00D230A35E08F9BD108F /* Pods-ihtMadhushankha-Cobsccomp005Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -551,6 +790,7 @@
 		};
 		A3C778B22723DD39009D670A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E29549D037649B1E80AE7293 /* Pods-ihtMadhushankha-Cobsccomp005Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -575,6 +815,7 @@
 		};
 		A3C778B42723DD39009D670A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C710C70CBB41AAAFCED044EB /* Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -597,6 +838,7 @@
 		};
 		A3C778B52723DD39009D670A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16B4C89255FB7F3B187E5848 /* Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -6,4 +6,20 @@
 //
 
 import Foundation
+import Firebase
 
+class ContentViewModel: ObservableObject {
+    
+    func fetchData() {
+        Firestore
+            .firestore()
+            .collection("park")
+            .getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot, error == nil else {
+                    //handle error
+                    return
+                }
+                print(snapshot)
+            }
+    }
+}
