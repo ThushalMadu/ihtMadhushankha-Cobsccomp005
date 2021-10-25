@@ -12,7 +12,8 @@ struct LoginView: View {
     @State private var password:String = ""
     @State private var errorMessageLogin = ""
     @State private var isActiveLinkSignUp = false
-    
+    @StateObject var loginViewModel = LoginViewModel()
+
     var body: some View {
         ScrollView {
             VStack{
@@ -40,17 +41,20 @@ struct LoginView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 .padding([.top, .leading, .bottom], 30.0)
                 
-                ButtonView(title: LoginViewStrings.btn_signIn,
-                           function: {
-                    
-                },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                if(loginViewModel.loadHome){
+                    ProgressView(LoginViewStrings.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center)
+                } else{
+                    ButtonView(title: LoginViewStrings.btn_signIn,
+                               function: {
+                        loginViewModel.login(email: email, password: password)
+                    },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                }
                 LabelledDivider(label: "OR").padding(.top, 10.0)
                 NavigationLink(destination: SignUpView()
                                 .navigationBarHidden(true)
                                 .navigationBarBackButtonHidden(true), isActive:$isActiveLinkSignUp) {
                     Button(action: {
                         isActiveLinkSignUp.toggle()
-                        
                     }) {
                         TextTitle(title: LoginViewStrings.lbl_dontHaveacnt, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
                             .padding(.top, 5.0)

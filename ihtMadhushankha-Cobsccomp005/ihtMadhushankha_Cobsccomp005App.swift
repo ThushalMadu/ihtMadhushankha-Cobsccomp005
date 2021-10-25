@@ -15,7 +15,7 @@ struct ihtMadhushankha_Cobsccomp005App: App {
        }
     var body: some Scene {
         WindowGroup {
-            ForgetPasswordView()
+            HomeView()
         }
     }
 }

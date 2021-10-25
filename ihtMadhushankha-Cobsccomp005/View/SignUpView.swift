@@ -16,6 +16,7 @@ struct SignUpView: View {
     @State private var password = ""
     @State private var errorMessageSignUp = ""
     @State private var isActiveLinkSignIn = false
+    @StateObject var signUpViewModel = SignUpViewModel()
     
     var body: some View {
         ScrollView {
@@ -45,16 +46,20 @@ struct SignUpView: View {
                         .padding([.leading, .bottom, .trailing], 30.0)
                     Spacer()
                 }
-                ButtonView(title: SignUpViewStrings.btn_signUp,
-                           function: {
-                    
-                },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                NavigationLink(destination: SignUpView()
+                
+                if(signUpViewModel.loadHome){
+                    ProgressView(SignUpViewStrings.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center)
+                } else {
+                    ButtonView(title: SignUpViewStrings.btn_signUp,
+                               function: {
+                        signUpViewModel.addUser(name: name, email: email, nic: nic, vehicleNumber: vehicleNumber, password: password)
+                    },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                }
+                NavigationLink(destination: LoginView()
                                 .navigationBarHidden(true)
                                 .navigationBarBackButtonHidden(true), isActive:$isActiveLinkSignIn) {
                     Button(action: {
                         isActiveLinkSignIn.toggle()
-                        
                     }) {
                         TextTitle(title: SignUpViewStrings.lbl_Haveacnt, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
                             .padding(.top, 10.0)

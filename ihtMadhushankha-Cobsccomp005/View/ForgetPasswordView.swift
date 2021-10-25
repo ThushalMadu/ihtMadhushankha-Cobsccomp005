@@ -11,6 +11,7 @@ struct ForgetPasswordView: View {
     @State private var email:String = ""
     @State private var errorMessageForget = ""
     @State private var isActiveLinkForget = false
+    @StateObject var forgetPasswordViewModel = ForgetPasswordViewModel()
 
     var body: some View {
         ScrollView {
@@ -39,10 +40,14 @@ struct ForgetPasswordView: View {
                 .padding([.top, .leading], 30.0)
                 .padding(.bottom, 50.0)
 
-                ButtonView(title: ForgetPasswordViewStrings.btn_submit,
-                           function: {
-                    
-                },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                if(forgetPasswordViewModel.loadForget){
+                    ProgressView(LoginViewStrings.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center)
+                }else{
+                    ButtonView(title: ForgetPasswordViewStrings.btn_submit,
+                               function: {
+                        forgetPasswordViewModel.sendPasswordReset(withEmail: email)
+                    },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                }
             }
         }
         .navigationBarHidden(true)

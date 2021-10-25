@@ -12,5 +12,6 @@ struct LoginViewStrings{
     static let lbl_dontHaveacnt: String = "New to Nibm? Register"
     static let lbl_titleSignIn: String = "Login"
     static let lbl_forgetPassword: String = "Forget Password?"
+    static let pro_pleaseWait: String = "Please Wait"
 
 }
