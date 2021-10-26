@@ -6,9 +6,6 @@
 //
 
 import Foundation
-
-
-import Foundation
 import Firebase
 
 class HomeViewModel: ObservableObject {

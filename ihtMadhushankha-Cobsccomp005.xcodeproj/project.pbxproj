@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		602063669C1D5972C5308E06 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */; };
 		653C537DCC2E895B0B61F05E /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DAB2BA04D79F9908283440 /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework */; };
+		A35161F727289253005F031E /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F627289253005F031E /* SignUpValidation.swift */; };
 		A371AA292726B75A002EAC57 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA282726B75A002EAC57 /* SignUpViewModel.swift */; };
 		A371AA2B2726BB74002EAC57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA2A2726BB74002EAC57 /* HomeView.swift */; };
 		A381D0382725D57100D15288 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0372725D57100D15288 /* LoginView.swift */; };
@@ -70,6 +71,7 @@
 		16B4C89255FB7F3B187E5848 /* Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig"; sourceTree = "<group>"; };
 		547E8593A9EF3DDC010DC3EC /* Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005/Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig"; sourceTree = "<group>"; };
 		8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A35161F627289253005F031E /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
 		A371AA282726B75A002EAC57 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A371AA2A2726BB74002EAC57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A381D0372725D57100D15288 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A35161F527289227005F031E /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				A35161F627289253005F031E /* SignUpValidation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
 		A381D03B2725D77800D15288 /* Poppins */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +207,7 @@
 		A3C7788B2723DD37009D670A /* ihtMadhushankha-Cobsccomp005 */ = {
 			isa = PBXGroup;
 			children = (
+				A35161F527289227005F031E /* Validation */,
 				A3C778BA2723DD9F009D670A /* Data */,
 				A381D03B2725D77800D15288 /* Poppins */,
 				A3C778B72723DD5F009D670A /* Model */,
@@ -576,6 +587,7 @@
 				A381D05A2725ECE200D15288 /* SignUpViewStrings.swift in Sources */,
 				A3C778C22723DF15009D670A /* TextTitle.swift in Sources */,
 				A3C84087272730DD0011161C /* ParkingView.swift in Sources */,
+				A35161F727289253005F031E /* SignUpValidation.swift in Sources */,
 				A381D04A2725DC4E00D15288 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

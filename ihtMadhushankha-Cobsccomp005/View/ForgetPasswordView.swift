@@ -50,8 +50,6 @@ struct ForgetPasswordView: View {
                 }
             }
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
     }
 }
 
