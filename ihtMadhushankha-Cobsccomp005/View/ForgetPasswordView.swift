@@ -12,6 +12,8 @@ struct ForgetPasswordView: View {
     @State private var errorMessageForget = ""
     @State private var isActiveLinkForget = false
     @StateObject var forgetPasswordViewModel = ForgetPasswordViewModel()
+    @State private var errorOccured = false
+    @State var user = User()
 
     var body: some View {
         ScrollView {
@@ -34,19 +36,31 @@ struct ForgetPasswordView: View {
                             .padding([.trailing], 20.0)
                         Spacer()
                     }
-                    TextFieldView(title: "Email Address", text: $email)
+                    TextFieldView(title: "Email Address", text: $user.email)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 .padding([.top, .leading], 30.0)
                 .padding(.bottom, 50.0)
-
+                
                 if(forgetPasswordViewModel.loadForget){
                     ProgressView(LoginViewStrings.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center)
                 }else{
                     ButtonView(title: ForgetPasswordViewStrings.btn_submit,
                                function: {
-                        forgetPasswordViewModel.sendPasswordReset(withEmail: email)
+                        defer{
+                            print("finally try catch")
+                        }
+                        do {
+                            try user.forgetValidate()
+                            forgetPasswordViewModel.sendPasswordReset(withEmail: user.email)
+                        } catch {
+                            errorMessageForget = error.localizedDescription
+                            errorOccured = true
+                        }
                     },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                        .alert(isPresented: $errorOccured) { () -> Alert in
+                            Alert(title: Text(errorMessageForget))
+                        }
                 }
             }
         }

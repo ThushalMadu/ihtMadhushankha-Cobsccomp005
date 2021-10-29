@@ -14,7 +14,7 @@ struct ParkingView: View {
     @State var booked:Bool = false
     @State var reserved:Bool = false
     @StateObject var contentView = ContentViewModel()
-
+    
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             TextFieldView(title: "Park Name", text: $parkName)

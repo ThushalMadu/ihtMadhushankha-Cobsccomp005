@@ -14,4 +14,6 @@ struct ParkModel {
     var parkCategory:String
     var reserved: Bool
     var booked: Bool
+    var uservehicle:String
+
 }
