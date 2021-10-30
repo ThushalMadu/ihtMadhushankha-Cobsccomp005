@@ -31,6 +31,8 @@
 		A381D0582725EA1200D15288 /* LabelledDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0572725EA1200D15288 /* LabelledDivider.swift */; };
 		A381D05A2725ECE200D15288 /* SignUpViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0592725ECE200D15288 /* SignUpViewStrings.swift */; };
 		A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */; };
+		A3A843AC272DC2700090D7A2 /* SingleParkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A843AB272DC2700090D7A2 /* SingleParkViewModel.swift */; };
+		A3AE2F82272D1C5800330608 /* SingleDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AE2F81272D1C5800330608 /* SingleDetailRow.swift */; };
 		A3C7788D2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7788C2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift */; };
 		A3C7788F2723DD37009D670A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7788E2723DD37009D670A /* ContentView.swift */; };
 		A3C778912723DD39009D670A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C778902723DD39009D670A /* Assets.xcassets */; };
@@ -100,6 +102,8 @@
 		A381D0572725EA1200D15288 /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
 		A381D0592725ECE200D15288 /* SignUpViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewStrings.swift; sourceTree = "<group>"; };
 		A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewStrings.swift; sourceTree = "<group>"; };
+		A3A843AB272DC2700090D7A2 /* SingleParkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleParkViewModel.swift; sourceTree = "<group>"; };
+		A3AE2F81272D1C5800330608 /* SingleDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDetailRow.swift; sourceTree = "<group>"; };
 		A3C778892723DD37009D670A /* ihtMadhushankha-Cobsccomp005.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ihtMadhushankha-Cobsccomp005.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C7788C2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ihtMadhushankha_Cobsccomp005App.swift; sourceTree = "<group>"; };
 		A3C7788E2723DD37009D670A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 				A3C778BB2723DE02009D670A /* ContentViewModel.swift */,
 				A371AA282726B75A002EAC57 /* SignUpViewModel.swift */,
 				A3C840802726CEC00011161C /* LoginViewModel.swift */,
+				A3A843AB272DC2700090D7A2 /* SingleParkViewModel.swift */,
 				A3C8408427272D780011161C /* HomeViewModel.swift */,
 				A3C840822726D2EE0011161C /* ForgetPasswordViewModel.swift */,
 			);
@@ -304,6 +309,7 @@
 				A381D0552725E24900D15288 /* SecureFieldView.swift */,
 				A381D04F2725DDCF00D15288 /* ButtonViewStyle.swift */,
 				A381D0512725DDE200D15288 /* ButtonView.swift */,
+				A3AE2F81272D1C5800330608 /* SingleDetailRow.swift */,
 				A381D0572725EA1200D15288 /* LabelledDivider.swift */,
 				A381D04B2725DD4100D15288 /* TextFieldView.swift */,
 				A3FC8838272C814400E53914 /* Tabs.swift */,
@@ -594,9 +600,11 @@
 				A381D0542725E17000D15288 /* LoginViewStrings.swift in Sources */,
 				A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */,
 				A381D0562725E24900D15288 /* SecureFieldView.swift in Sources */,
+				A3A843AC272DC2700090D7A2 /* SingleParkViewModel.swift in Sources */,
 				A381D0502725DDCF00D15288 /* ButtonViewStyle.swift in Sources */,
 				A381D0522725DDE200D15288 /* ButtonView.swift in Sources */,
 				A381D0482725DA0000D15288 /* ForgetPasswordView.swift in Sources */,
+				A3AE2F82272D1C5800330608 /* SingleDetailRow.swift in Sources */,
 				A3FC8837272C813100E53914 /* Tab.swift in Sources */,
 				A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */,
 				A381D03A2725D57D00D15288 /* SignUpView.swift in Sources */,

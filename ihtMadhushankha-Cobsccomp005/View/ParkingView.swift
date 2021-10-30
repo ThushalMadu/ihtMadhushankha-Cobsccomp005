@@ -30,10 +30,11 @@ func addParker(parkName: String, userId: String, booked: Bool, reserved: Bool){
         "parkName": parkName,
         "userId": userId,
         "booked": booked,
+        "parkCategory": "Normal",
         "reserved": reserved,
     ]
     do{
-        Firestore.firestore().collection("parkSlots").document("6").setData(parkData) { err in
+        Firestore.firestore().collection("parkSlots").document("20").setData(parkData) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {

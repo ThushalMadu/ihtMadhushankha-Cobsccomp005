@@ -9,49 +9,55 @@ import SwiftUI
 
 struct SingleParkView: View {
     var singleItem: ParkModel
-
+    @StateObject var singleParkViewModel = SingleParkViewModel()
+    @State var backButton: Bool = false
+    
     var body: some View {
         VStack {
             Spacer()
             HStack{
                 TextTitle(title: SingleParkViewStrings.lbl_parkingDetails, fontSize: 30, fontTitleWeight: .semibold)
                 Spacer()
-            }              
-
+            }
             Image("singleViewImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height:UIScreen.main.bounds.height/4)
+                .padding(.top)
+                .frame(height:UIScreen.main.bounds.height/7)
             Spacer()
             HStack{
-                TextTitle(title: SingleParkViewStrings.lbl_parkingSlotname, fontSize: 18, fontTitleWeight: .regular)
                 Spacer()
-                TextTitle(title: singleItem.parkName, fontSize: 18, fontTitleWeight: .regular)
-            }
-            .padding(.top)
-            HStack{
-                TextTitle(title: SingleParkViewStrings.lbl_parkingSlotBookingStatus, fontSize: 18, fontTitleWeight: .regular)
+                if(singleItem.parkCategory == "VIP"){
+                    TextTitle(title: singleItem.parkCategory, fontSize: 22, fontTitleWeight: .semibold, fontColor: Color.red)
+                }else{
+                    TextTitle(title: singleItem.parkCategory, fontSize: 22, fontTitleWeight: .semibold, fontColor: Color.green)
+                }
                 Spacer()
-                TextTitle(title: String(singleItem.booked), fontSize: 18, fontTitleWeight: .regular)
             }
-            .padding(.top)
-            HStack{
-                TextTitle(title: SingleParkViewStrings.lbl_parkingSlotReserveStatus, fontSize: 18, fontTitleWeight: .regular)
-                Spacer()
-                TextTitle(title: String(singleItem.reserved), fontSize: 18, fontTitleWeight: .regular)
-            }
-            .padding(.top)
-//            HStack{
-//                TextTitle(title: SingleParkViewStrings.lbl_parkingSlotReserveStatus, fontSize: 18, fontTitleWeight: .regular)
-//                Spacer()
-//                TextTitle(title: SingleParkViewStrings.lbl_parkingSlotname, fontSize: 18, fontTitleWeight: .regular)
-//            }
-//            .padding(.top)
+            SingleDetailRow(leftTitle: SingleParkViewStrings.lbl_parkingSlotname, rightTitle: singleItem.parkName, leftFontSize: 18, leftFontTitleWeight: .semibold)
+                .padding(.top)
+            SingleDetailRow(leftTitle: SingleParkViewStrings.lbl_parkingSlotBookingStatus, rightTitle: singleItem.booked ? SingleParkViewStrings.lbl_alrdyBook : SingleParkViewStrings.lbl_avaliable, leftFontSize: 18, leftFontTitleWeight: .semibold, fontColor: singleItem.booked ? Color.orange : Color.blue)
+                .padding(.top)
+            SingleDetailRow(leftTitle: SingleParkViewStrings.lbl_parkingSlotReserveStatus, rightTitle: singleItem.reserved ? SingleParkViewStrings.lbl_alrdyRseeved : SingleParkViewStrings.lbl_avaliable, leftFontSize: 18, leftFontTitleWeight: .semibold, fontColor: singleItem.reserved ? Color.orange : Color.blue)
+                .padding(.top)
             Spacer()
-            ButtonView(title: SingleParkViewStrings.btn_BookName,
-                       function: {
-            },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-            Spacer()
+            NavigationLink(destination: HomeTopTabView().navigationBarHidden(true)
+                            .navigationBarBackButtonHidden(true), isActive: $backButton) {
+                ButtonView(title: singleItem.booked ? SingleParkViewStrings.btn_CancelBook : SingleParkViewStrings.btn_BookName,
+                           function: {
+                    if singleItem.booked {
+                        singleParkViewModel.updateBookDocument(documentId: singleItem.documentId)
+                    } else {
+                        singleParkViewModel.updateDocument(documentId: singleItem.documentId)
+                    }
+                },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                    .padding(.bottom, 50.0).alert(isPresented: $singleParkViewModel.showSucessAlert, content: { () -> Alert in
+                        Alert(title:  Text(singleItem.booked ? SingleParkViewStrings.alt_titleCancelBooking : SingleParkViewStrings.alt_titleBooking), message: Text(singleItem.booked ? SingleParkViewStrings.alt_messageCancelBooking : SingleParkViewStrings.alt_messageBooking), dismissButton: .default(Text(SingleParkViewStrings.btn_Dismiss), action: {
+                            backButton = true
+                        }))
+                    })
+            }
+            //            Spacer()
         }
         .padding(.horizontal)
     }
@@ -59,7 +65,7 @@ struct SingleParkView: View {
 
 struct SingleParkView_Previews: PreviewProvider {
     @StateObject static var singleitm = HomeViewModel()
-
+    
     static var previews: some View {
         SingleParkView(singleItem: singleitm.parkModel[0])
     }
