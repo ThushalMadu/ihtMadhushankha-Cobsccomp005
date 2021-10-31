@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SingleParkView: View {
     var singleItem: ParkModel
@@ -25,6 +26,7 @@ struct SingleParkView: View {
                 .padding(.top)
                 .frame(height:UIScreen.main.bounds.height/7)
             Spacer()
+            
             HStack{
                 Spacer()
                 if(singleItem.parkCategory == "VIP"){
@@ -34,12 +36,16 @@ struct SingleParkView: View {
                 }
                 Spacer()
             }
-            SingleDetailRow(leftTitle: SingleParkViewStrings.lbl_parkingSlotname, rightTitle: singleItem.parkName, leftFontSize: 18, leftFontTitleWeight: .semibold)
-                .padding(.top)
-            SingleDetailRow(leftTitle: SingleParkViewStrings.lbl_parkingSlotBookingStatus, rightTitle: singleItem.booked ? SingleParkViewStrings.lbl_alrdyBook : SingleParkViewStrings.lbl_avaliable, leftFontSize: 18, leftFontTitleWeight: .semibold, fontColor: singleItem.booked ? Color.orange : Color.blue)
-                .padding(.top)
-            SingleDetailRow(leftTitle: SingleParkViewStrings.lbl_parkingSlotReserveStatus, rightTitle: singleItem.reserved ? SingleParkViewStrings.lbl_alrdyRseeved : SingleParkViewStrings.lbl_avaliable, leftFontSize: 18, leftFontTitleWeight: .semibold, fontColor: singleItem.reserved ? Color.orange : Color.blue)
-                .padding(.top)
+            Group {
+                SingleDetailRow(leftTitle: "Time", rightTitle: String("\(singleItem.bookTime.getFormattedDate(format: "MMM d, h:mm a"))"), leftFontSize: 18, leftFontTitleWeight: .semibold)
+                    .padding(.top)
+                SingleDetailRow(leftTitle: SingleParkViewStrings.lbl_parkingSlotname, rightTitle: singleItem.parkName, leftFontSize: 18, leftFontTitleWeight: .semibold)
+                    .padding(.top)
+                SingleDetailRow(leftTitle: SingleParkViewStrings.lbl_parkingSlotBookingStatus, rightTitle: singleItem.booked ? SingleParkViewStrings.lbl_alrdyBook : SingleParkViewStrings.lbl_avaliable, leftFontSize: 18, leftFontTitleWeight: .semibold, fontColor: singleItem.booked ? Color.orange : Color.blue)
+                    .padding(.top)
+                SingleDetailRow(leftTitle: SingleParkViewStrings.lbl_parkingSlotReserveStatus, rightTitle: singleItem.reserved ? SingleParkViewStrings.lbl_alrdyRseeved : SingleParkViewStrings.lbl_avaliable, leftFontSize: 18, leftFontTitleWeight: .semibold, fontColor: singleItem.reserved ? Color.orange : Color.blue)
+                    .padding(.top)
+            }
             Spacer()
             NavigationLink(destination: HomeTopTabView().navigationBarHidden(true)
                             .navigationBarBackButtonHidden(true), isActive: $backButton) {
@@ -57,6 +63,7 @@ struct SingleParkView: View {
                         }))
                     })
             }
+            
             //            Spacer()
         }
         .padding(.horizontal)

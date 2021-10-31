@@ -55,12 +55,20 @@ struct HomeView: View {
                                     .foregroundColor(Color.green)
                             }
                         }
+                        Spacer()
+                        if(item.booked){
+                            VStack{
+                                Text(String("\(viewModel.getRemainTime(dateValue: item.bookTime))"))
+                                    .font(.headline)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color.red)
+                            }
+                        }else{
+                          EmptyView()
+                        }
                     }.frame(height: UIScreen.main.bounds.height/12, alignment: .center)
                 }
             }
-            //                .refreshable {
-            //                    viewModel.fetchBookReseveData()
-            //                }
             .onAppear() {
                 if (type == "Avaliable"){
                     viewModel.fetchAllData()
@@ -70,32 +78,6 @@ struct HomeView: View {
                     viewModel.fetchBookReseveData()
                 }
             }
-            //            } else {
-            //                List(viewModel.parkModel, id: \.documentId) { item in
-            //                    HStack{
-            //                        Text("Parking Name: \(item.parkName)")
-            //                        Spacer()
-            //                        if(item.booked){
-            //                            VStack{
-            //                                Text("Booked")
-            //                                    .font(.headline)
-            //                                    .fontWeight(.semibold)
-            //                                    .foregroundColor(Color.red)
-            //                            }
-            //                        }else{
-            //                            VStack{
-            //                                Text("Avaliable")
-            //                                    .font(.headline)
-            //                                    .fontWeight(.semibold)
-            //                                    .foregroundColor(Color.green)
-            //                            }
-            //                        }
-            //                    }.frame(height: UIScreen.main.bounds.height/12, alignment: .center)
-            //                }
-            //                .onAppear() {
-            //                    viewModel.fetchBookReseveData()
-            //                }
-            //            }
         }
     }
 }

@@ -12,117 +12,133 @@ class HomeViewModel: ObservableObject {
     @Published var parkModel = [ParkModel]()
     @Published var uservehicle = ""
     
+    
+    func getRemainTime(dateValue: Date) -> Int {
+        let caldate: Date = dateValue
+        let interval = Date() - caldate
+        return interval.minute!
+    }
+    
     func fetchAllData() {
-            Firestore
-                .firestore()
-                .collection("parkSlots")
-                .whereField("booked", isEqualTo: false)
-                .whereField("reserved", isEqualTo: false)
-                .getDocuments { (snapshot, error) in
-                    guard let snapshot = snapshot, error == nil else {
-                        //handle error
-                        return
-                    }
-                    for document in snapshot.documents {
-                        let documentData = document.data()
-                        if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool {
-                            
-                            self.getDocument(userId: userId)
-                            self.parkModel.removeAll()
-                            
-                            let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "")
-                            
-                            let docRef1 = Firestore.firestore().collection("users").document(userId)
-                            
-                            docRef1.getDocument { (document, error) in
-                                if let document = document, document.exists {
-                                    _ = document.data().map(String.init(describing:)) ?? "nil"
-                                    let fieldValue = document.get("vehicleNumber") as? String
-                                    let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "")
-                                    self.parkModel.append(ParkModel1)
-                                } else {
-                                    print("fieldValue1 Document does not exist")
-                                    self.parkModel.append(ParkModel2)
-                                }
+        Firestore
+            .firestore()
+            .collection("parkSlots")
+            .whereField("booked", isEqualTo: false)
+            .whereField("reserved", isEqualTo: false)
+            .getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot, error == nil else {
+                    //handle error
+                    return
+                }
+                for document in snapshot.documents {
+                    let documentData = document.data()
+                    if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
+                        
+                        self.getDocument(userId: userId)
+                        self.parkModel.removeAll()
+                        //                            let caldate: Date = bookTime.dateValue()
+                        //                            let interval = Date() - caldate
+                        //                            print(interval.minute!)
+                        
+                        
+                        let date: Date = bookTime.dateValue()
+                        
+                        let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
+                        
+                        let docRef1 = Firestore.firestore().collection("users").document(userId)
+                        
+                        docRef1.getDocument { (document, error) in
+                            if let document = document, document.exists {
+                                _ = document.data().map(String.init(describing:)) ?? "nil"
+                                let fieldValue = document.get("vehicleNumber") as? String
+                                let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "", bookTime: date)
+                                self.parkModel.append(ParkModel1)
+                            } else {
+                                print("fieldValue1 Document does not exist")
+                                self.parkModel.append(ParkModel2)
                             }
                         }
                     }
                 }
-        }
+            }
+    }
     func fetchBookReseveData() {
-            Firestore
-                .firestore()
-                .collection("parkSlots")
-                .whereField("booked", isEqualTo: true)
-                .whereField("reserved", isEqualTo: true)
-                .getDocuments { (snapshot, error) in
-                    guard let snapshot = snapshot, error == nil else {
-                        //handle error
-                        return
-                    }
-                    for document in snapshot.documents {
-                        let documentData = document.data()
-                        if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool {
-                            
-                            self.getDocument(userId: userId)
-                            self.parkModel.removeAll()
-                            
-                            let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "")
-                            
-                            let docRef1 = Firestore.firestore().collection("users").document(userId)
-                            
-                            docRef1.getDocument { (document, error) in
-                                if let document = document, document.exists {
-                                    _ = document.data().map(String.init(describing:)) ?? "nil"
-                                    let fieldValue = document.get("vehicleNumber") as? String
-                                    let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "")
-                                    self.parkModel.append(ParkModel1)
-                                } else {
-                                    print("fieldValue1 Document does not exist")
-                                    self.parkModel.append(ParkModel2)
-                                }
+        Firestore
+            .firestore()
+            .collection("parkSlots")
+            .whereField("booked", isEqualTo: true)
+            .whereField("reserved", isEqualTo: true)
+            .getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot, error == nil else {
+                    //handle error
+                    return
+                }
+                for document in snapshot.documents {
+                    let documentData = document.data()
+                    if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
+                        
+                        self.getDocument(userId: userId)
+                        self.parkModel.removeAll()
+                        //                            let date = bookTime.dateValue().getFormattedDate(format: "MMM d, h:mm a")
+                        let date: Date = bookTime.dateValue()
+                        
+                        let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
+                        
+                        let docRef1 = Firestore.firestore().collection("users").document(userId)
+                        
+                        docRef1.getDocument { (document, error) in
+                            if let document = document, document.exists {
+                                _ = document.data().map(String.init(describing:)) ?? "nil"
+                                let fieldValue = document.get("vehicleNumber") as? String
+                                let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "", bookTime: date)
+                                self.parkModel.append(ParkModel1)
+                            } else {
+                                print("fieldValue1 Document does not exist")
+                                self.parkModel.append(ParkModel2)
                             }
                         }
                     }
                 }
-        }
+            }
+    }
     func fetchBookData() {
-            Firestore
-                .firestore()
-                .collection("parkSlots")
-                .whereField("booked", isEqualTo: true)
-                .whereField("reserved", isEqualTo: false)
-                .getDocuments { (snapshot, error) in
-                    guard let snapshot = snapshot, error == nil else {
-                        //handle error
-                        return
-                    }
-                    for document in snapshot.documents {
-                        let documentData = document.data()
-                        if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool {
-                            
-                            self.getDocument(userId: userId)
-                            self.parkModel.removeAll()
-                            
-                            let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "")
-                            
-                            let docRef1 = Firestore.firestore().collection("users").document(userId)
-                            
-                            docRef1.getDocument { (document, error) in
-                                if let document = document, document.exists {
-                                    _ = document.data().map(String.init(describing:)) ?? "nil"
-                                    let fieldValue = document.get("vehicleNumber") as? String
-                                    let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "")
-                                    self.parkModel.append(ParkModel1)
-                                } else {
-                                    print("fieldValue1 Document does not exist")
-                                    self.parkModel.append(ParkModel2)
-                                }
+        Firestore
+            .firestore()
+            .collection("parkSlots")
+            .whereField("booked", isEqualTo: true)
+            .whereField("reserved", isEqualTo: false)
+            .getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot, error == nil else {
+                    //handle error
+                    return
+                }
+                for document in snapshot.documents {
+                    let documentData = document.data()
+                    if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
+                        
+                        self.getDocument(userId: userId)
+                        self.parkModel.removeAll()
+                        let date: Date = bookTime.dateValue()
+                        
+                        let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
+                        
+                        let docRef1 = Firestore.firestore().collection("users").document(userId)
+                        
+                        docRef1.getDocument { (document, error) in
+                            if let document = document, document.exists {
+                                _ = document.data().map(String.init(describing:)) ?? "nil"
+                                let fieldValue = document.get("vehicleNumber") as? String
+                                let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "", bookTime: date)
+                                self.parkModel.append(ParkModel1)
+                            } else {
+                                print("fieldValue1 Document does not exist")
+                                self.parkModel.append(ParkModel2)
                             }
                         }
                     }
                 }
-        }
+            }
+    }
     
     func getDocument(userId: String) {
         let docRef = Firestore.firestore().collection("users").document(userId)
@@ -132,7 +148,6 @@ class HomeViewModel: ObservableObject {
                 _ = document.data().map(String.init(describing:)) ?? "nil"
                 let fieldValue = document.get("vehicleNumber") as? String
                 DispatchQueue.main.async {
-                    print(fieldValue!)
                     self.uservehicle = fieldValue! // << store result
                 }
             } else {
@@ -148,7 +163,6 @@ class HomeViewModel: ObservableObject {
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let property = document.get("name") as! String
-                //print("Document data string: \(property)")
                 firebaseResult["name"] = property
                 completion(firebaseResult)
             } else {
@@ -158,4 +172,24 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+}
+
+
+
+
+extension Date {
+    func getFormattedDate(format: String) -> String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        return dateformat.string(from: self)
+    }
+    static func -(recent: Date, previous: Date) -> (month: Int?, day: Int?, hour: Int?, minute: Int?, second: Int?) {
+        let day = Calendar.current.dateComponents([.day], from: previous, to: recent).day
+        let month = Calendar.current.dateComponents([.month], from: previous, to: recent).month
+        let hour = Calendar.current.dateComponents([.hour], from: previous, to: recent).hour
+        let minute = Calendar.current.dateComponents([.minute], from: previous, to: recent).minute
+        let second = Calendar.current.dateComponents([.second], from: previous, to: recent).second
+        
+        return (month: month, day: day, hour: hour, minute: minute, second: second)
+    }
 }

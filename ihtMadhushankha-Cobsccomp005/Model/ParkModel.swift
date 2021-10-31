@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct ParkModel {
     var documentId: String
@@ -15,5 +16,5 @@ struct ParkModel {
     var reserved: Bool
     var booked: Bool
     var uservehicle:String
-
+    var bookTime:Date
 }

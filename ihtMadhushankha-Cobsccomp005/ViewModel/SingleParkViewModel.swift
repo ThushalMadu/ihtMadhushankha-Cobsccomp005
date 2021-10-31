@@ -17,10 +17,11 @@ class SingleParkViewModel: ObservableObject {
     func updateDocument(documentId: String) {
         // [START update_document]
         let washingtonRef = Firestore.firestore().collection("parkSlots").document(documentId)
-        
+
         // Set the "capital" field of the city 'DC'
         washingtonRef.updateData([
-            "booked": true
+            "booked": true,
+            "bookTime": Timestamp(date: Date())
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
