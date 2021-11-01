@@ -23,6 +23,7 @@ class HomeViewModel: ObservableObject {
         Firestore
             .firestore()
             .collection("parkSlots")
+            .order(by: "parkName")
             .whereField("booked", isEqualTo: false)
             .whereField("reserved", isEqualTo: false)
             .getDocuments { (snapshot, error) in

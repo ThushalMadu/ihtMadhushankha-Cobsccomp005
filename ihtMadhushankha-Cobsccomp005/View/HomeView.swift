@@ -78,7 +78,8 @@ struct HomeView: View {
                     viewModel.fetchBookReseveData()
                 }
             }
-        }
+        }.navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
     }
 }
 

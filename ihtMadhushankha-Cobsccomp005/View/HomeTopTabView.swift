@@ -19,16 +19,18 @@ struct HomeTopTabView: View {
     init() {
         UINavigationBar.appearance().barTintColor = UIColor(#colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1))
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().isTranslucent = true
     }
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             GeometryReader { geo in
                 VStack(spacing: 0) {
                     // Tabs
-                    Tabs(tabs: tabs, geoWidth: geo.size.width, selectedTab: $selectedTab)
-                    
+                    TopLeftTitle(title: "Welcome NIBM Parking").padding([.leading], 15.0)
+                        .padding(.top, 60.0)
+                    Tabs(tabs: tabs, geoWidth: geo.size.width, selectedTab: $selectedTab).padding(.top, 20.0)
+
                     // Views
                     TabView(selection: $selectedTab,
                             content: {
@@ -42,10 +44,9 @@ struct HomeTopTabView: View {
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 }
                 .foregroundColor(Color(#colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1)))
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+                .edgesIgnoringSafeArea(.top)
             }
-        }
+//        }
     }
 }
 

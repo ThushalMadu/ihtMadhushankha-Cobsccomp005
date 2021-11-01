@@ -18,7 +18,7 @@ struct LoginView: View {
     @State var user = User()
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ScrollView {
                 VStack{
                     Spacer()
@@ -54,22 +54,25 @@ struct LoginView: View {
                     if(loginViewModel.loadHome){
                         ProgressView(LoginViewStrings.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center)
                     } else{
-                        ButtonView(title: LoginViewStrings.btn_signIn,
-                                   function: {
-                            defer{
-                                print("finally try catch")
-                            }
-                            do {
-                                try user.signInValidate()
-                                loginViewModel.login(email: user.email, password: user.password)
-                            } catch {
-                                errorMessageLogin = error.localizedDescription
-                                errorOccured = true
-                            }
-                        },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                            .alert(isPresented: $errorOccured) { () -> Alert in
-                                Alert(title: Text(errorMessageLogin))
-                            }
+                        NavigationLink(destination: TabMainView(), isActive:$loginViewModel.isActiveLoginHome) {
+                            ButtonView(title: LoginViewStrings.btn_signIn,
+                                       function: {
+                                defer{
+                                    print("finally try catch")
+                                }
+                                do {
+                                    try user.signInValidate()
+                                    loginViewModel.login(email: user.email, password: user.password)
+                                } catch {
+                                    errorMessageLogin = error.localizedDescription
+                                    errorOccured = true
+                                }
+                            },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                                .alert(isPresented: $errorOccured) { () -> Alert in
+                                    Alert(title: Text(errorMessageLogin))
+                                }
+                        }
+                        
                     }
                     LabelledDivider(label: "OR").padding(.top, 10.0)
                     NavigationLink(destination: SignUpView(), isActive:$isActiveLinkSignUp) {
@@ -81,7 +84,7 @@ struct LoginView: View {
                         }
                     }
                 }
-            }
+//            }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }

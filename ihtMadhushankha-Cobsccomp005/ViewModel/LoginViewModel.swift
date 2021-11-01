@@ -12,6 +12,8 @@ class LoginViewModel: ObservableObject {
     
     private var db = Firestore.firestore()
     @Published var loadHome = false
+    @Published var isActiveLoginHome = false
+
     @Published var errorMessageLogin = ""
 
     func login(email: String, password: String) {
@@ -22,9 +24,11 @@ class LoginViewModel: ObservableObject {
                 self.loadHome = false
                 self.errorMessageLogin = error?.localizedDescription ?? ""
             } else {
-                print("success")
+                print(result!.user.uid)
+                UserDefaults.standard.set(result!.user.uid, forKey: "userId")
                 self.loadHome = false
                 self.errorMessageLogin = "success"
+                self.isActiveLoginHome = true
             }
         }
     }

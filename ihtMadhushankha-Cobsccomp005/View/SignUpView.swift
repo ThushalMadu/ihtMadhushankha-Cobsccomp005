@@ -12,6 +12,7 @@ struct SignUpView: View {
     @State private var errorMessageSignUp = ""
     @State private var errorOccured = false
     @State private var isActiveLinkSignIn = false
+    @State private var isActiveLinkHome = false
     @StateObject var signUpViewModel = SignUpViewModel()
     
     @State var user = User()
@@ -48,22 +49,24 @@ struct SignUpView: View {
                 if(signUpViewModel.loadHome){
                     ProgressView(SignUpViewStrings.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center)
                 } else {
-                    ButtonView(title: SignUpViewStrings.btn_signUp,
-                               function: {
-                        defer{
-                            print("finally try catch")
-                        }
-                        do {
-                            try user.signUpValidate()
-                            signUpViewModel.addUser(name: user.name, email: user.email, nic: user.nic, vehicleNumber: user.vehicleNumber, password: user.password)
-                        } catch {
-                            errorMessageSignUp = error.localizedDescription
-                            errorOccured = true
-                        }
-                    },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                        .alert(isPresented: $errorOccured) { () -> Alert in
-                            Alert(title: Text(errorMessageSignUp))
-                        }
+                    NavigationLink(destination: TabMainView(), isActive:$signUpViewModel.isActiveHome) {
+                        ButtonView(title: SignUpViewStrings.btn_signUp,
+                                   function: {
+                            defer{
+                                print("finally try catch")
+                            }
+                            do {
+                                try user.signUpValidate()
+                                signUpViewModel.addUser(name: user.name, email: user.email, nic: user.nic, vehicleNumber: user.vehicleNumber, password: user.password)
+                            } catch {
+                                errorMessageSignUp = error.localizedDescription
+                                errorOccured = true
+                            }
+                        },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                            .alert(isPresented: $errorOccured) { () -> Alert in
+                                Alert(title: Text(errorMessageSignUp))
+                            }
+                    }
                 }
                 NavigationLink(destination: LoginView()
                                 .navigationBarHidden(true)

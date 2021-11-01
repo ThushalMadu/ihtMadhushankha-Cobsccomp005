@@ -12,7 +12,8 @@ class SignUpViewModel: ObservableObject {
     
     private var db = Firestore.firestore()
     @Published var loadHome = false
-    
+    @Published var isActiveHome = false
+
     func addUser(name: String, email: String, nic: String, vehicleNumber: String, password:String){
         let docData: [String: Any] = [
             "name": name,
@@ -34,7 +35,9 @@ class SignUpViewModel: ObservableObject {
                             self.loadHome = false
                         } else {
                             print("Document successfully written!")
+                            UserDefaults.standard.set(userID, forKey: "userId")
                             self.loadHome = false
+                            self.isActiveHome = true
                         }
                     }
                 }

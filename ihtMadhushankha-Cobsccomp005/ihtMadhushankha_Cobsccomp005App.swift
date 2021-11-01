@@ -13,9 +13,19 @@ struct ihtMadhushankha_Cobsccomp005App: App {
     init() {
            FirebaseApp.configure()
        }
+    let userId = UserDefaults.standard.string(forKey: "userId")
+
     var body: some Scene {
         WindowGroup {
-            HomeTopTabView()
+            if(userId == nil){
+                NavigationView{
+                    LoginView()
+                }
+            } else {
+                NavigationView{
+                    TabMainView()
+                }
+            }
         }
     }
 }
