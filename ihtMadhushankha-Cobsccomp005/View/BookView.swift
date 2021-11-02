@@ -12,7 +12,6 @@ struct BookView: View {
         VStack{
             TopLeftTitle(title: "Booking").padding([ .leading], 15.0)
                 .padding(.top, 60.0)
-
             Spacer()
         }.edgesIgnoringSafeArea(.top)
     }

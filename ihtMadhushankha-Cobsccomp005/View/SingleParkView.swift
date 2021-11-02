@@ -15,7 +15,6 @@ struct SingleParkView: View {
     
     var body: some View {
         VStack {
-            Spacer()
             HStack{
                 TextTitle(title: SingleParkViewStrings.lbl_parkingDetails, fontSize: 30, fontTitleWeight: .semibold)
                 Spacer()

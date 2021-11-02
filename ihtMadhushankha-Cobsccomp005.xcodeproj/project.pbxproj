@@ -54,6 +54,8 @@
 		A3C8408527272D780011161C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C8408427272D780011161C /* HomeViewModel.swift */; };
 		A3C84087272730DD0011161C /* ParkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C84086272730DD0011161C /* ParkingView.swift */; };
 		A3C84089272740C40011161C /* ParkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C84088272740C40011161C /* ParkModel.swift */; };
+		A3D7026F27311BA000834840 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7026E27311BA000834840 /* SettingsViewModel.swift */; };
+		A3D7027127311CFA00834840 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7027027311CFA00834840 /* UserData.swift */; };
 		A3FC8837272C813100E53914 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC8836272C813100E53914 /* Tab.swift */; };
 		A3FC8839272C814400E53914 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC8838272C814400E53914 /* Tabs.swift */; };
 		A3FC883B272C81AF00E53914 /* HomeTopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */; };
@@ -132,6 +134,8 @@
 		A3C8408427272D780011161C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A3C84086272730DD0011161C /* ParkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingView.swift; sourceTree = "<group>"; };
 		A3C84088272740C40011161C /* ParkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkModel.swift; sourceTree = "<group>"; };
+		A3D7026E27311BA000834840 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A3D7027027311CFA00834840 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		A3FC8836272C813100E53914 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A3FC8838272C814400E53914 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopTabView.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C778BF2723DE6B009D670A /* User.swift */,
+				A3D7027027311CFA00834840 /* UserData.swift */,
 				A3FC8836272C813100E53914 /* Tab.swift */,
 				A3C84088272740C40011161C /* ParkModel.swift */,
 			);
@@ -306,6 +311,7 @@
 				A3C778BB2723DE02009D670A /* ContentViewModel.swift */,
 				A371AA282726B75A002EAC57 /* SignUpViewModel.swift */,
 				A3C840802726CEC00011161C /* LoginViewModel.swift */,
+				A3D7026E27311BA000834840 /* SettingsViewModel.swift */,
 				A3A843AB272DC2700090D7A2 /* SingleParkViewModel.swift */,
 				A3C8408427272D780011161C /* HomeViewModel.swift */,
 				A3C840822726D2EE0011161C /* ForgetPasswordViewModel.swift */,
@@ -609,10 +615,12 @@
 				A3C778BC2723DE02009D670A /* ContentViewModel.swift in Sources */,
 				A381D0582725EA1200D15288 /* LabelledDivider.swift in Sources */,
 				A3C84089272740C40011161C /* ParkModel.swift in Sources */,
+				A3D7027127311CFA00834840 /* UserData.swift in Sources */,
 				A381D0542725E17000D15288 /* LoginViewStrings.swift in Sources */,
 				A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */,
 				A381D0562725E24900D15288 /* SecureFieldView.swift in Sources */,
 				A3A843AC272DC2700090D7A2 /* SingleParkViewModel.swift in Sources */,
+				A3D7026F27311BA000834840 /* SettingsViewModel.swift in Sources */,
 				A381D0502725DDCF00D15288 /* ButtonViewStyle.swift in Sources */,
 				A381D0522725DDE200D15288 /* ButtonView.swift in Sources */,
 				A381D0482725DA0000D15288 /* ForgetPasswordView.swift in Sources */,

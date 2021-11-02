@@ -9,6 +9,7 @@ target 'ihtMadhushankha-Cobsccomp005' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift', '> 7.0-beta'
 
   target 'ihtMadhushankha-Cobsccomp005Tests' do
     inherit! :search_paths

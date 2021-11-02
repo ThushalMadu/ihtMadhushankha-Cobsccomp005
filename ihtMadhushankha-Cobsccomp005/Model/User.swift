@@ -14,6 +14,7 @@ struct User {
     var vehicleNumber: String = ""
     var nic: String = ""
     var password: String = ""
+    var status: String = ""
     
     func signUpValidate() throws {
         if (name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty){

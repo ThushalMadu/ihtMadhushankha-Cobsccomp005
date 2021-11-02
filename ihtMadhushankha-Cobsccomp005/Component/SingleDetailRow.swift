@@ -17,7 +17,7 @@ struct SingleDetailRow: View {
     
     var body: some View {
         HStack{
-            TextTitle(title: leftTitle, fontSize: 16, fontTitleWeight: .regular)
+            TextTitle(title: leftTitle, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.gray)
             Spacer()
             TextTitle(title: rightTitle, fontSize: leftFontSize, fontTitleWeight: leftFontTitleWeight, fontColor: fontColor)
         }
