@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-struct ParkModel {
+struct ParkModel: Codable {
     var documentId: String
     var parkName : String
     var userId: String
