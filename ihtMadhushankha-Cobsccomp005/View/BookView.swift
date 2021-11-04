@@ -11,10 +11,7 @@ struct BookView: View {
     @StateObject var settingViewModel = SettingsViewModel()
     let userId = UserDefaults.standard.string(forKey: "userId")
     @StateObject var viewModel = HomeViewModel()
-    @State private var selectedColorIndex = 0
     @State private var starRatingSelection: String = ""
-    let provinces = ["Western","Southern","Central","North Central"]
-    @State private var selectedProvince = ""
     
     var body: some View {
         VStack{
@@ -35,7 +32,12 @@ struct BookView: View {
                     Spacer()
                     Picker("Please choose a Type", selection: $starRatingSelection) {
                         ForEach(viewModel.parkModel, id: \.documentId) { object in
-                            Text(object.parkName)
+                            //                            Text(object.parkName)
+                            if(object.parkCategory == "VIP"){
+                                TextTitle(title: object.parkName, fontSize: 18, fontTitleWeight: .semibold, fontColor: Color.red)
+                            }else {
+                                TextTitle(title: object.parkName, fontSize: 18, fontTitleWeight: .regular)
+                            }
                         }
                     }
                     .pickerStyle(WheelPickerStyle())

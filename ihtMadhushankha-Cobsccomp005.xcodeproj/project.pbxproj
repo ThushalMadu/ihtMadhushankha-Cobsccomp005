@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		602063669C1D5972C5308E06 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */; };
 		653C537DCC2E895B0B61F05E /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DAB2BA04D79F9908283440 /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework */; };
+		A333450C27345B2700E7C090 /* QRScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A333450B27345B2700E7C090 /* QRScanView.swift */; };
+		A333450E2734631D00E7C090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A333450D2734631D00E7C090 /* LaunchScreen.storyboard */; };
 		A35161F727289253005F031E /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F627289253005F031E /* SignUpValidation.swift */; };
 		A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F82728A9AB005F031E /* CollectionNames.swift */; };
 		A371AA292726B75A002EAC57 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA282726B75A002EAC57 /* SignUpViewModel.swift */; };
@@ -85,6 +87,8 @@
 		16B4C89255FB7F3B187E5848 /* Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig"; sourceTree = "<group>"; };
 		547E8593A9EF3DDC010DC3EC /* Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005/Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig"; sourceTree = "<group>"; };
 		8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A333450B27345B2700E7C090 /* QRScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanView.swift; sourceTree = "<group>"; };
+		A333450D2734631D00E7C090 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A35161F627289253005F031E /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
 		A35161F82728A9AB005F031E /* CollectionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNames.swift; sourceTree = "<group>"; };
 		A371AA282726B75A002EAC57 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				A3C778C52723F6CD009D670A /* GoogleService-Info.plist */,
 				A381D03B2725D77800D15288 /* Poppins */,
 				A3C778922723DD39009D670A /* Preview Content */,
+				A333450D2734631D00E7C090 /* LaunchScreen.storyboard */,
 			);
 			path = "ihtMadhushankha-Cobsccomp005";
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				A371AA2A2726BB74002EAC57 /* HomeView.swift */,
 				A3975FFF27304FFF0092F81A /* SettingsView.swift */,
 				A3975FFD27304FED0092F81A /* BookView.swift */,
+				A333450B27345B2700E7C090 /* QRScanView.swift */,
 				A3FC883C272C855600E53914 /* SingleParkView.swift */,
 				A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */,
 				A381D0472725DA0000D15288 /* ForgetPasswordView.swift */,
@@ -469,6 +475,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A333450E2734631D00E7C090 /* LaunchScreen.storyboard in Resources */,
 				A381D0432725D93200D15288 /* Poppins-SemiBold.ttf in Resources */,
 				A381D0452725D93200D15288 /* Poppins-Medium.ttf in Resources */,
 				A381D0442725D93200D15288 /* Poppins-Light.ttf in Resources */,
@@ -626,6 +633,7 @@
 				A381D0482725DA0000D15288 /* ForgetPasswordView.swift in Sources */,
 				A3AE2F82272D1C5800330608 /* SingleDetailRow.swift in Sources */,
 				A3FC8837272C813100E53914 /* Tab.swift in Sources */,
+				A333450C27345B2700E7C090 /* QRScanView.swift in Sources */,
 				A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */,
 				A381D03A2725D57D00D15288 /* SignUpView.swift in Sources */,
 				A381D04E2725DD7600D15288 /* TextViewStyle.swift in Sources */,
@@ -803,15 +811,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ihtMadhushankha-Cobsccomp005/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ihtMadhushankha-Cobsccomp005/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NIBM Parking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -834,15 +845,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ihtMadhushankha-Cobsccomp005/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ihtMadhushankha-Cobsccomp005/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NIBM Parking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
