@@ -12,17 +12,14 @@ import FirebaseFirestoreSwift
 class SettingsViewModel: ObservableObject {
     
     @Published var userData = [UserData]()
-    @Published var email = ""
-    @Published var name = ""
-    @Published var vehicleNumber = ""
-    @Published var nic = ""
-    @Published var status = ""
+
     
     
     
     func getJStoreUserFromDB(documentId: String) {
         let docRef = Firestore.firestore().collection("users").document(documentId)
-        
+        self.userData.removeAll()
+
         docRef.getDocument { (document, error) in
             let result = Result {
                 try document?.data(as: UserData.self).asDictionary()
@@ -31,12 +28,9 @@ class SettingsViewModel: ObservableObject {
             case .success(let user):
                 if let user = user {
                     // A `City` value was successfully initialized from the DocumentSnapshot.
-                    self.name = user["name"] as? String ?? ""
-                    self.email = user["email"] as? String ?? ""
-                    self.vehicleNumber = user["vehicleNumber"] as? String ?? ""
-                    self.nic = user["nic"] as? String ?? ""
-                    self.status = user["status"] as? String ?? ""
-                                        
+                    print(user)
+//                    let date: Date = (user["statusTime"] as? Timestamp).dateValue()
+                    self.userData = [UserData(email: user["email"] as? String ?? "", name: user["name"] as? String ?? "", nic: user["nic"] as? String ?? "", parkId: user["parkId"] as? String ?? "", status: user["status"] as? String ?? "", vehicleNumber: user["vehicleNumber"] as? String ?? "")]
                 } else {
                     // A nil value was successfully initialized from the DocumentSnapshot,
                     // or the DocumentSnapshot was nil.
@@ -47,6 +41,9 @@ class SettingsViewModel: ObservableObject {
                 print("Error decoding city: \(error)")
             }
         }
+    }
+    func fetchData(documentId: String) {
+        
     }
 }
 

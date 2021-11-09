@@ -70,13 +70,18 @@ struct HomeView: View {
                 }
             }
             .onAppear() {
+                viewModel.updatefetchAllData()
+
+                
                 if (type == "Avaliable"){
                     viewModel.fetchAllData()
                 } else if (type == "Book"){
+                    print("Booking Clicj TAB")
                     viewModel.fetchBookData()
-                } else if (type == "Reservation"){
-                    viewModel.fetchBookReseveData()
                 }
+//                else if (type == "Reservation"){
+//                    viewModel.fetchBookReseveData()
+//                }
             }
         }.navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)

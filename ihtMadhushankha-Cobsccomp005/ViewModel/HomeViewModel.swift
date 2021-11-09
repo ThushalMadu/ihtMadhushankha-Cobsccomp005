@@ -55,7 +55,6 @@ class HomeViewModel: ObservableObject {
                                 let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "", bookTime: date)
                                 self.parkModel.append(ParkModel1)
                             } else {
-                                print("fieldValue1 Document does not exist")
                                 self.parkModel.append(ParkModel2)
                             }
                         }
@@ -83,6 +82,12 @@ class HomeViewModel: ObservableObject {
                         //                            let date = bookTime.dateValue().getFormattedDate(format: "MMM d, h:mm a")
                         let date: Date = bookTime.dateValue()
                         
+                        //                        if(self.getRemainTime(dateValue: date) > 10){
+                        //                            self.updateDocument(documentId: userId)
+                        //
+                        //                        }
+                        
+                        
                         let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
                         
                         let docRef1 = Firestore.firestore().collection("users").document(userId)
@@ -94,7 +99,6 @@ class HomeViewModel: ObservableObject {
                                 let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "", bookTime: date)
                                 self.parkModel.append(ParkModel1)
                             } else {
-                                print("fieldValue1 Document does not exist")
                                 self.parkModel.append(ParkModel2)
                             }
                         }
@@ -103,6 +107,8 @@ class HomeViewModel: ObservableObject {
             }
     }
     func fetchBookData() {
+        self.parkModel.removeAll()
+
         Firestore
             .firestore()
             .collection("parkSlots")
@@ -118,7 +124,7 @@ class HomeViewModel: ObservableObject {
                     if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
                         
                         self.getDocument(userId: userId)
-                        self.parkModel.removeAll()
+//                        self.parkModel.removeAll()
                         let date: Date = bookTime.dateValue()
                         
                         let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
@@ -132,7 +138,6 @@ class HomeViewModel: ObservableObject {
                                 let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "", bookTime: date)
                                 self.parkModel.append(ParkModel1)
                             } else {
-                                print("fieldValue1 Document does not exist")
                                 self.parkModel.append(ParkModel2)
                             }
                         }
@@ -173,6 +178,64 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    
+    func updateUserDocument(documentId: String) {
+        // [START update_document]
+        let washingtonRef = Firestore.firestore().collection("users").document(documentId)
+        
+        // Set the "capital" field of the city 'DC'
+        washingtonRef.updateData([
+            "status": "bang",
+            "parkId": "",
+            "statusTime": Timestamp(date: Date())
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+    }
+    func updateParkDocument(parkId: String) {
+        // [START update_document]
+        let washingtonRef = Firestore.firestore().collection("parkSlots").document(parkId)
+        
+        // Set the "capital" field of the city 'DC'
+        washingtonRef.updateData([
+            "booked": false,
+            "reserved": false,
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+    }
+    
+    
+    func updatefetchAllData() {
+        Firestore
+            .firestore()
+            .collection("parkSlots")
+            .getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot, error == nil else {
+                    //handle error
+                    return
+                }
+                for document in snapshot.documents {
+                    let documentData = document.data()
+                    if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
+                        
+                        let date: Date = bookTime.dateValue()
+                        if(booked && self.getRemainTime(dateValue: date) > 10){
+                            self.updateUserDocument(documentId: userId)
+                            self.updateParkDocument(parkId: documentId)
+                        }
+                    }
+                }
+            }
+    }
 }
 
 

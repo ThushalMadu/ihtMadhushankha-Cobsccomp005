@@ -16,7 +16,8 @@ struct SignUpView: View {
     @StateObject var signUpViewModel = SignUpViewModel()
     
     @State var user = User()
-    
+    @Environment(\.openURL) var openURL
+
     var body: some View {
         ScrollView {
             VStack{
@@ -41,7 +42,9 @@ struct SignUpView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 .padding([.top, .leading, .bottom], 30.0)
                 HStack {
-                    TextTitle(title: SignUpViewStrings.lbl_TermsandCondition, fontSize: 14, fontTitleWeight: .regular, fontColor:Color.gray).multilineTextAlignment(.leading)
+                    TermsAndConditionLink(function: {
+                        openURL(URL(string: "https://ihthushaldev.blogspot.com/2021/07/privacy-policy-of-my-mobile-applications.html")!)
+                    }).multilineTextAlignment(.leading)
                         .padding([.leading, .bottom, .trailing], 30.0)
                     Spacer()
                 }

@@ -13,7 +13,7 @@ struct HomeTopTabView: View {
     let tabs: [Tab] = [
         .init(icon: Image(systemName: "folder.badge.plus"), title: "Avaliable"),
         .init(icon: Image(systemName: "film.fill"), title: "Book"),
-        .init(icon: Image(systemName: "book.fill"), title: "Reservation")
+//        .init(icon: Image(systemName: "book.fill"), title: "Reservation")
     ]
     
     init() {
@@ -38,8 +38,8 @@ struct HomeTopTabView: View {
                             .tag(0)
                         HomeView(type: "Book")
                             .tag(1)
-                        HomeView(type: "Reservation")
-                            .tag(2)
+//                        HomeView(type: "Reservation")
+//                            .tag(2)
                     })
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 }

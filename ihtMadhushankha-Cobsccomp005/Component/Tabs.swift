@@ -70,8 +70,7 @@ struct Tabs_Previews: PreviewProvider {
     static var previews: some View {
         Tabs(fixed: true,
              tabs: [.init(icon: Image(systemName: "star.fill"), title: "Tab 1"),
-                    .init(icon: Image(systemName: "star.fill"), title: "Tab 2"),
-                    .init(icon: Image(systemName: "star.fill"), title: "Tab 3")],
+                    .init(icon: Image(systemName: "star.fill"), title: "Tab 2")],
              geoWidth: 375,
              selectedTab: .constant(0))
     }

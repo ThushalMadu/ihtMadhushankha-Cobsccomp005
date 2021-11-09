@@ -21,7 +21,6 @@ struct SingleParkViewStrings{
     static let lbl_alrdyRseeved: String = "Already Reserved"
     static let alt_titleBooking: String = "Sucesfully Book Parking Slot"
     static let alt_titleCancelBooking: String = "Sucesfully Cancel Booked Parking Slot"
-
     static let alt_messageBooking: String = "Please come to your parking slot in 15 minutes and reserve it.If you cant come it will automatically disbale"
     static let alt_messageCancelBooking: String = "You cannot book up to 15 minutes parking Slots. that is the rule of system"
 }

@@ -17,13 +17,13 @@ struct ButtonViewStyle: ButtonStyle {
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .frame(width: definWidth, height: definHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .frame(width: definWidth, height: definHeight, alignment: .center)
             .padding()
             .background(isEnabled ? backgroundColor1 : backgroundColor1.opacity(0.5))
             .clipShape(Capsule())
             .foregroundColor(isEnabled ? backgroundColor2 : backgroundColor2.opacity(0.5))
             .opacity(configuration.isPressed ? 0.8 : 1.0)
-            .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
+            .font(.title3)
     }
 }
 

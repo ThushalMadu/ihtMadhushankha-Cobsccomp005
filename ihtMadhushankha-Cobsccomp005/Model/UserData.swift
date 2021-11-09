@@ -17,11 +17,11 @@ import Foundation
 //    var statusTime: Date
 //}
 struct UserData: Codable {
-    let email, name, vehicleNumber: String
-    let nic, status: String
-
-    enum CodingKeys: String, CodingKey {
-        case email, name
-        case vehicleNumber, nic, status
-    }
+    var email: String
+    var name: String
+    var nic: String
+    var parkId:String
+    var status: String
+    var vehicleNumber:String
+//    var statusTime:Date
 }

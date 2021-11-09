@@ -9,10 +9,11 @@ import SwiftUI
 
 struct TopLeftTitle: View {
     var title:String
+    var fontSize:CGFloat = 24
 
     var body: some View {
         HStack{
-            TextTitle(title: title, fontSize: 24, fontTitleWeight: .semibold)
+            TextTitle(title: title, fontSize: fontSize, fontTitleWeight: .semibold)
             Spacer()
         }
     }

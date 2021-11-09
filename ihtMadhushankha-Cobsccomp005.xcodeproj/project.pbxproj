@@ -11,8 +11,11 @@
 		653C537DCC2E895B0B61F05E /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DAB2BA04D79F9908283440 /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework */; };
 		A333450C27345B2700E7C090 /* QRScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A333450B27345B2700E7C090 /* QRScanView.swift */; };
 		A333450E2734631D00E7C090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A333450D2734631D00E7C090 /* LaunchScreen.storyboard */; };
+		A3386EC82739092500F99562 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3386EC72739092500F99562 /* BookingViewModel.swift */; };
+		A341B0632736A7000047E40E /* LogOutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A341B0622736A7000047E40E /* LogOutButtonView.swift */; };
 		A35161F727289253005F031E /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F627289253005F031E /* SignUpValidation.swift */; };
 		A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F82728A9AB005F031E /* CollectionNames.swift */; };
+		A358B8F7273A756A00B2EB38 /* BookingSingleGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */; };
 		A371AA292726B75A002EAC57 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA282726B75A002EAC57 /* SignUpViewModel.swift */; };
 		A371AA2B2726BB74002EAC57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA2A2726BB74002EAC57 /* HomeView.swift */; };
 		A381D0382725D57100D15288 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0372725D57100D15288 /* LoginView.swift */; };
@@ -33,6 +36,7 @@
 		A381D0582725EA1200D15288 /* LabelledDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0572725EA1200D15288 /* LabelledDivider.swift */; };
 		A381D05A2725ECE200D15288 /* SignUpViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0592725ECE200D15288 /* SignUpViewStrings.swift */; };
 		A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */; };
+		A39717642736BEDD00482989 /* TermsAndConditionLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39717632736BEDD00482989 /* TermsAndConditionLink.swift */; };
 		A3975FFC27304FD30092F81A /* TabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3975FFB27304FD30092F81A /* TabMainView.swift */; };
 		A3975FFE27304FED0092F81A /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3975FFD27304FED0092F81A /* BookView.swift */; };
 		A397600027304FFF0092F81A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3975FFF27304FFF0092F81A /* SettingsView.swift */; };
@@ -89,8 +93,11 @@
 		8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A333450B27345B2700E7C090 /* QRScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanView.swift; sourceTree = "<group>"; };
 		A333450D2734631D00E7C090 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A3386EC72739092500F99562 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
+		A341B0622736A7000047E40E /* LogOutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButtonView.swift; sourceTree = "<group>"; };
 		A35161F627289253005F031E /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
 		A35161F82728A9AB005F031E /* CollectionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNames.swift; sourceTree = "<group>"; };
+		A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSingleGeneral.swift; sourceTree = "<group>"; };
 		A371AA282726B75A002EAC57 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A371AA2A2726BB74002EAC57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A381D0372725D57100D15288 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -112,6 +119,7 @@
 		A381D0572725EA1200D15288 /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
 		A381D0592725ECE200D15288 /* SignUpViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewStrings.swift; sourceTree = "<group>"; };
 		A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewStrings.swift; sourceTree = "<group>"; };
+		A39717632736BEDD00482989 /* TermsAndConditionLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionLink.swift; sourceTree = "<group>"; };
 		A3975FFB27304FD30092F81A /* TabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainView.swift; sourceTree = "<group>"; };
 		A3975FFD27304FED0092F81A /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		A3975FFF27304FFF0092F81A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -239,6 +247,7 @@
 		A3C7788B2723DD37009D670A /* ihtMadhushankha-Cobsccomp005 */ = {
 			isa = PBXGroup;
 			children = (
+				A333450D2734631D00E7C090 /* LaunchScreen.storyboard */,
 				A35161F527289227005F031E /* Validation */,
 				A3C778BA2723DD9F009D670A /* Data */,
 				A3C778B72723DD5F009D670A /* Model */,
@@ -251,7 +260,6 @@
 				A3C778C52723F6CD009D670A /* GoogleService-Info.plist */,
 				A381D03B2725D77800D15288 /* Poppins */,
 				A3C778922723DD39009D670A /* Preview Content */,
-				A333450D2734631D00E7C090 /* LaunchScreen.storyboard */,
 			);
 			path = "ihtMadhushankha-Cobsccomp005";
 			sourceTree = "<group>";
@@ -319,6 +327,7 @@
 				A3C840802726CEC00011161C /* LoginViewModel.swift */,
 				A3D7026E27311BA000834840 /* SettingsViewModel.swift */,
 				A3A843AB272DC2700090D7A2 /* SingleParkViewModel.swift */,
+				A3386EC72739092500F99562 /* BookingViewModel.swift */,
 				A3C8408427272D780011161C /* HomeViewModel.swift */,
 				A3C840822726D2EE0011161C /* ForgetPasswordViewModel.swift */,
 			);
@@ -334,9 +343,12 @@
 				A381D0512725DDE200D15288 /* ButtonView.swift */,
 				A3AE2F81272D1C5800330608 /* SingleDetailRow.swift */,
 				A381D0572725EA1200D15288 /* LabelledDivider.swift */,
+				A341B0622736A7000047E40E /* LogOutButtonView.swift */,
 				A381D04B2725DD4100D15288 /* TextFieldView.swift */,
 				A3976001273055340092F81A /* TopLeftTitle.swift */,
 				A3FC8838272C814400E53914 /* Tabs.swift */,
+				A39717632736BEDD00482989 /* TermsAndConditionLink.swift */,
+				A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */,
 				A381D04D2725DD7600D15288 /* TextViewStyle.swift */,
 				A381D0492725DC4E00D15288 /* ColorExtension.swift */,
 			);
@@ -612,6 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C7788F2723DD37009D670A /* ContentView.swift in Sources */,
+				A39717642736BEDD00482989 /* TermsAndConditionLink.swift in Sources */,
 				A3C840832726D2EE0011161C /* ForgetPasswordViewModel.swift in Sources */,
 				A381D0382725D57100D15288 /* LoginView.swift in Sources */,
 				A3C840812726CEC00011161C /* LoginViewModel.swift in Sources */,
@@ -626,6 +639,7 @@
 				A381D0542725E17000D15288 /* LoginViewStrings.swift in Sources */,
 				A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */,
 				A381D0562725E24900D15288 /* SecureFieldView.swift in Sources */,
+				A3386EC82739092500F99562 /* BookingViewModel.swift in Sources */,
 				A3A843AC272DC2700090D7A2 /* SingleParkViewModel.swift in Sources */,
 				A3D7026F27311BA000834840 /* SettingsViewModel.swift in Sources */,
 				A381D0502725DDCF00D15288 /* ButtonViewStyle.swift in Sources */,
@@ -637,6 +651,7 @@
 				A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */,
 				A381D03A2725D57D00D15288 /* SignUpView.swift in Sources */,
 				A381D04E2725DD7600D15288 /* TextViewStyle.swift in Sources */,
+				A358B8F7273A756A00B2EB38 /* BookingSingleGeneral.swift in Sources */,
 				A371AA2B2726BB74002EAC57 /* HomeView.swift in Sources */,
 				A3976002273055340092F81A /* TopLeftTitle.swift in Sources */,
 				A3C778C02723DE6B009D670A /* User.swift in Sources */,
@@ -649,6 +664,7 @@
 				A3FC883D272C855600E53914 /* SingleParkView.swift in Sources */,
 				A3FC883B272C81AF00E53914 /* HomeTopTabView.swift in Sources */,
 				A3C778C22723DF15009D670A /* TextTitle.swift in Sources */,
+				A341B0632736A7000047E40E /* LogOutButtonView.swift in Sources */,
 				A3C84087272730DD0011161C /* ParkingView.swift in Sources */,
 				A35161F727289253005F031E /* SignUpValidation.swift in Sources */,
 				A381D04A2725DC4E00D15288 /* ColorExtension.swift in Sources */,

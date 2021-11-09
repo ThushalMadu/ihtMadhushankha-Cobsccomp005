@@ -12,13 +12,19 @@ struct ButtonView: View {
     var function: () -> Void
     var width:CGFloat
     var height:CGFloat
-
+    var fontSize:CGFloat = 18
+    var fontTitleWeight:Font.Weight = .regular
+    var fontColor = Color.white
+    
     var body: some View {
         Button(action: {
             self.function()
         })
         {
             Text(title)
+                .font(Font.custom("Poppins-Regular", size: fontSize))
+                .fontWeight(fontTitleWeight)
+                .foregroundColor(fontColor)
         }
         .accessibility(identifier: "Component_Button")
         .buttonStyle(ButtonViewStyle(definWidth: width, definHeight: height))
