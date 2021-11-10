@@ -34,8 +34,8 @@ struct LoginView: View {
                                 .padding(.top, 20.0)
                             Spacer()
                         }
-                        TextFieldView(title: "Email Address", text: $user.email)
-                        SecureFieldView(title: "Password", text: $user.password)
+                        TextFieldView(title: LoginViewStrings.lbl_email, text: $user.email)
+                        SecureFieldView(title: LoginViewStrings.lbl_password, text: $user.password)
                         HStack{
                             Spacer()
                             NavigationLink(destination: ForgetPasswordView(), isActive:$isActiveLinkForget) {

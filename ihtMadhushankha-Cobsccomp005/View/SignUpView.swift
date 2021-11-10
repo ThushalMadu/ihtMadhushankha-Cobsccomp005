@@ -33,17 +33,17 @@ struct SignUpView: View {
                         TextTitle(title: SignUpViewStrings.lbl_titleSignUp, fontSize: 30, fontTitleWeight: .semibold)
                         Spacer()
                     }
-                    TextFieldView(title: "Full Name", text: $user.name)
-                    TextFieldView(title: "Email Address", text: $user.email)
-                    TextFieldView(title: "NIC", text: $user.nic)
-                    TextFieldView(title: "Vehicle Number", text: $user.vehicleNumber)
-                    SecureFieldView(title: "Password", text: $user.password)
+                    TextFieldView(title: SignUpViewStrings.lbl_FullName, text: $user.name)
+                    TextFieldView(title: SignUpViewStrings.lbl_Email, text: $user.email)
+                    TextFieldView(title: SignUpViewStrings.lbl_Nic, text: $user.nic)
+                    TextFieldView(title: SignUpViewStrings.lbl_vehicleNum, text: $user.vehicleNumber)
+                    SecureFieldView(title: SignUpViewStrings.lbl_pass, text: $user.password)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 .padding([.top, .leading, .bottom], 30.0)
                 HStack {
                     TermsAndConditionLink(function: {
-                        openURL(URL(string: "https://ihthushaldev.blogspot.com/2021/07/privacy-policy-of-my-mobile-applications.html")!)
+                        openURL(URL(string: SignUpViewStrings.terms_Link)!)
                     }).multilineTextAlignment(.leading)
                         .padding([.leading, .bottom, .trailing], 30.0)
                     Spacer()

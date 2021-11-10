@@ -16,17 +16,17 @@ struct BookView: View {
     
     var body: some View {
         VStack{
-            TopLeftTitle(title: "Booking").padding([ .leading], 20.0)
+            TopLeftTitle(title: BookViewString.lbl_Book).padding([ .leading], 20.0)
                 .padding(.top, 60.0)
             Image("reserveBook")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.top)
                 .frame(height:UIScreen.main.bounds.height/4)
-            TopLeftTitle(title: "General Information",fontSize: 18).padding([.top, .leading], 20.0)
+            TopLeftTitle(title: BookViewString.lbl_generalInfo,fontSize: 18).padding([.top, .leading], 20.0)
             VStack(alignment: .center, spacing: 30){
-                BookingSingleGeneral(topTitle: "Register Number", buttomTitle: userId!, imageName: "person.fill")
-                BookingSingleGeneral(topTitle: "Vehicle Number", buttomTitle: settingViewModel.userData.first?.vehicleNumber ?? "no", imageName: "car.fill")
+                BookingSingleGeneral(topTitle: BookViewString.lbl_regiNum, buttomTitle: userId!, imageName: "person.fill")
+                BookingSingleGeneral(topTitle: BookViewString.lbl_vehiclNum, buttomTitle: settingViewModel.userData.first?.vehicleNumber ?? "no", imageName: "car.fill")
                 if(settingViewModel.userData.first?.parkId == ""){
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
@@ -34,10 +34,10 @@ struct BookView: View {
                             .shadow(radius: 2, x: 1, y: 3)
                             .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height/8, alignment: .center)
                         HStack {
-                            TextTitle(title: "Select Park Slot", fontSize: 17, fontTitleWeight: .regular, fontColor:Color.black)
+                            TextTitle(title: BookViewString.lbl_selectPark, fontSize: 17, fontTitleWeight: .regular, fontColor:Color.black)
                                 .padding(.leading, 20.0)
                             Spacer()
-                            Text("You selected: \(starRatingSelection)")
+//                            Text("You selected: \(starRatingSelection)")
                             Section {
                                 Picker("Park Slots", selection: $starRatingSelection) {
                                     ForEach(viewModel.parkModel, id: \.documentId) {
@@ -55,34 +55,34 @@ struct BookView: View {
                     }
                 } else {
                     HStack{
-                        TopLeftTitle(title: "Parking Slot Detail",fontSize: 18)
+                        TopLeftTitle(title: BookViewString.lbl_parkSlotsDetails,fontSize: 18)
                         Spacer()
-                        BookingSingleGeneral(topTitle: "Parking Slot ID", buttomTitle: settingViewModel.userData.first?.parkId ?? "Waiting", imageName: "parkingsign.circle.fill")
+                        BookingSingleGeneral(topTitle: BookViewString.lbl_parkSlotsId, buttomTitle: settingViewModel.userData.first?.parkId ?? BookViewString.lbl_waiting, imageName: "parkingsign.circle.fill")
                     }
                 }
             }.padding(.horizontal, 25.0)
             Spacer()
             if(settingViewModel.userData.first?.parkId == ""){
                 VStack(alignment: .center){
-                    ButtonView(title: "Reserve Park Slot",
+                    ButtonView(title: BookViewString.btn_reserveSlot,
                                function: {
                         if(settingViewModel.userData.first?.status == "active" && starRatingSelection == ""){
                             bookingViewModel.updateDocument(documentId: starRatingSelection, userId: userId!)
                             settingViewModel.getJStoreUserFromDB(documentId: userId!)
                         } else {
-                            print("Cannot Book you are banged please wait movement")
+                            print(BookViewString.err_cannotBook)
                         }
                         
                     },width:UIScreen.main.bounds.width/2,height: UIScreen.main.bounds.height/48)
                 }
             } else {
                 VStack(alignment: .center, spacing: 30){
-                    ButtonView(title: "Cancel Reserve Park Slot",
+                    ButtonView(title: BookViewString.btn_CancelResrve,
                                function: {
                         bookingViewModel.updateBookDocument(documentId: settingViewModel.userData.first!.parkId, userId: userId!)
                         settingViewModel.getJStoreUserFromDB(documentId: userId!)
                     },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                    ButtonView(title: "Scan QR",
+                    ButtonView(title: BookViewString.btn_ScanQr,
                                function: {
                         
                     },width:UIScreen.main.bounds.width/2,height: UIScreen.main.bounds.height/48).padding(.bottom,30.0)

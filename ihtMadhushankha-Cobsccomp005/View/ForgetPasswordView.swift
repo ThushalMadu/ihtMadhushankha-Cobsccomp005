@@ -36,7 +36,7 @@ struct ForgetPasswordView: View {
                             .padding([.trailing], 20.0)
                         Spacer()
                     }
-                    TextFieldView(title: "Email Address", text: $user.email)
+                    TextFieldView(title: ForgetPasswordViewStrings.lbl_email, text: $user.email)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 .padding([.top, .leading], 30.0)

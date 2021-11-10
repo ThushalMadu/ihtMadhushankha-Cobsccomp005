@@ -27,16 +27,16 @@ struct HomeTopTabView: View {
             GeometryReader { geo in
                 VStack(spacing: 0) {
                     // Tabs
-                    TopLeftTitle(title: "Welcome NIBM Parking").padding([.leading], 15.0)
+                    TopLeftTitle(title: HomeViewString.lbl_welcome).padding([.leading], 15.0)
                         .padding(.top, 60.0)
                     Tabs(tabs: tabs, geoWidth: geo.size.width, selectedTab: $selectedTab).padding(.top, 20.0)
 
                     // Views
                     TabView(selection: $selectedTab,
                             content: {
-                        HomeView(type: "Avaliable")
+                        HomeView(type: HomeViewString.tab_Avaliable)
                             .tag(0)
-                        HomeView(type: "Book")
+                        HomeView(type: HomeViewString.tab_Book)
                             .tag(1)
 //                        HomeView(type: "Reservation")
 //                            .tag(2)

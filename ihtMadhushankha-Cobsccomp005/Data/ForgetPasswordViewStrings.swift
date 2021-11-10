@@ -10,5 +10,6 @@ import Foundation
 struct ForgetPasswordViewStrings{
     static let btn_submit: String = "Submit"
     static let lbl_forgetPassword: String = "Forget Password?"
+    static let lbl_email: String = "Email Address"
     static let lbl_titleForgetPassword: String = "Don't Worry its happen Please enter your Email Address to Assiocated with Your Account"
 }

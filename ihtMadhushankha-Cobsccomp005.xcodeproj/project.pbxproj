@@ -62,6 +62,9 @@
 		A3C84089272740C40011161C /* ParkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C84088272740C40011161C /* ParkModel.swift */; };
 		A3D7026F27311BA000834840 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7026E27311BA000834840 /* SettingsViewModel.swift */; };
 		A3D7027127311CFA00834840 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7027027311CFA00834840 /* UserData.swift */; };
+		A3E2B0DF273C71890062A9A6 /* HomeViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B0DE273C71890062A9A6 /* HomeViewString.swift */; };
+		A3E2B0E1273C72780062A9A6 /* BookViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B0E0273C72780062A9A6 /* BookViewString.swift */; };
+		A3E2B0E3273C757B0062A9A6 /* TabMainViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B0E2273C757B0062A9A6 /* TabMainViewString.swift */; };
 		A3FC8837272C813100E53914 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC8836272C813100E53914 /* Tab.swift */; };
 		A3FC8839272C814400E53914 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC8838272C814400E53914 /* Tabs.swift */; };
 		A3FC883B272C81AF00E53914 /* HomeTopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */; };
@@ -148,6 +151,9 @@
 		A3C84088272740C40011161C /* ParkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkModel.swift; sourceTree = "<group>"; };
 		A3D7026E27311BA000834840 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		A3D7027027311CFA00834840 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		A3E2B0DE273C71890062A9A6 /* HomeViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewString.swift; sourceTree = "<group>"; };
+		A3E2B0E0273C72780062A9A6 /* BookViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewString.swift; sourceTree = "<group>"; };
+		A3E2B0E2273C757B0062A9A6 /* TabMainViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainViewString.swift; sourceTree = "<group>"; };
 		A3FC8836272C813100E53914 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A3FC8838272C814400E53914 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopTabView.swift; sourceTree = "<group>"; };
@@ -362,7 +368,10 @@
 				A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */,
 				A35161F82728A9AB005F031E /* CollectionNames.swift */,
 				A3FC883E272C91A300E53914 /* SingleParkViewStrings.swift */,
+				A3E2B0E0273C72780062A9A6 /* BookViewString.swift */,
 				A381D0532725E17000D15288 /* LoginViewStrings.swift */,
+				A3E2B0DE273C71890062A9A6 /* HomeViewString.swift */,
+				A3E2B0E2273C757B0062A9A6 /* TabMainViewString.swift */,
 				A381D0592725ECE200D15288 /* SignUpViewStrings.swift */,
 			);
 			path = Data;
@@ -640,6 +649,7 @@
 				A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */,
 				A381D0562725E24900D15288 /* SecureFieldView.swift in Sources */,
 				A3386EC82739092500F99562 /* BookingViewModel.swift in Sources */,
+				A3E2B0E3273C757B0062A9A6 /* TabMainViewString.swift in Sources */,
 				A3A843AC272DC2700090D7A2 /* SingleParkViewModel.swift in Sources */,
 				A3D7026F27311BA000834840 /* SettingsViewModel.swift in Sources */,
 				A381D0502725DDCF00D15288 /* ButtonViewStyle.swift in Sources */,
@@ -651,10 +661,12 @@
 				A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */,
 				A381D03A2725D57D00D15288 /* SignUpView.swift in Sources */,
 				A381D04E2725DD7600D15288 /* TextViewStyle.swift in Sources */,
+				A3E2B0E1273C72780062A9A6 /* BookViewString.swift in Sources */,
 				A358B8F7273A756A00B2EB38 /* BookingSingleGeneral.swift in Sources */,
 				A371AA2B2726BB74002EAC57 /* HomeView.swift in Sources */,
 				A3976002273055340092F81A /* TopLeftTitle.swift in Sources */,
 				A3C778C02723DE6B009D670A /* User.swift in Sources */,
+				A3E2B0DF273C71890062A9A6 /* HomeViewString.swift in Sources */,
 				A3C8408527272D780011161C /* HomeViewModel.swift in Sources */,
 				A3FC8839272C814400E53914 /* Tabs.swift in Sources */,
 				A3975FFC27304FD30092F81A /* TabMainView.swift in Sources */,
