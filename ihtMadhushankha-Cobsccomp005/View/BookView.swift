@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct BookView: View {
     @StateObject var settingViewModel = SettingsViewModel()
@@ -13,7 +14,7 @@ struct BookView: View {
     @StateObject var viewModel = HomeViewModel()
     @State private var starRatingSelection: String = ""
     @StateObject var bookingViewModel = BookingViewModel()
-    
+    @StateObject var locationManager = LocationManager()
     var body: some View {
         VStack{
             TopLeftTitle(title: BookViewString.lbl_Book).padding([ .leading], 20.0)
@@ -37,10 +38,10 @@ struct BookView: View {
                             TextTitle(title: BookViewString.lbl_selectPark, fontSize: 17, fontTitleWeight: .regular, fontColor:Color.black)
                                 .padding(.leading, 20.0)
                             Spacer()
-//                            Text("You selected: \(starRatingSelection)")
+                            //                            Text("You selected: \(starRatingSelection)")
                             Section {
                                 Picker("Park Slots", selection: $starRatingSelection) {
-                                    ForEach(viewModel.parkModel, id: \.documentId) {
+                                    ForEach(settingViewModel.parkModel, id: \.documentId) {
                                         //                                                    Text(object.parkName)
                                         if($0.parkCategory == "VIP"){
                                             TextTitle(title: $0.parkName, fontSize: 18, fontTitleWeight: .semibold, fontColor: Color.red)
@@ -66,7 +67,8 @@ struct BookView: View {
                 VStack(alignment: .center){
                     ButtonView(title: BookViewString.btn_reserveSlot,
                                function: {
-                        if(settingViewModel.userData.first?.status == "active" && starRatingSelection == ""){
+                        print(locationManager.getLocationMetere())
+                        if(settingViewModel.userData.first?.status == "active"){
                             bookingViewModel.updateDocument(documentId: starRatingSelection, userId: userId!)
                             settingViewModel.getJStoreUserFromDB(documentId: userId!)
                         } else {
@@ -94,7 +96,8 @@ struct BookView: View {
         }.edgesIgnoringSafeArea(.top)
             .onAppear {
                 settingViewModel.getJStoreUserFromDB(documentId: userId!)
-                viewModel.fetchAllData()
+                settingViewModel.fetchAllParkData()
+                
             }
     }
 }
@@ -104,3 +107,12 @@ struct BookView_Previews: PreviewProvider {
         BookView()
     }
 }
+
+
+
+//let coordinate₀ = CLLocation(latitude: 7.935893, longitude: 81.025787)
+//let coordinate₁ = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0)
+//
+//let distanceInMeters = coordinate₁.distance(from: coordinate₀)
+//
+//print("Distance is   ",distanceInMeters)

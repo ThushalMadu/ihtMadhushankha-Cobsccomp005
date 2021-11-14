@@ -12,7 +12,8 @@ import FirebaseFirestoreSwift
 class SettingsViewModel: ObservableObject {
     
     @Published var userData = [UserData]()
-
+    @Published var parkModel = [ParkModel]()
+    @Published var uservehicle = ""
     
     
     
@@ -42,8 +43,30 @@ class SettingsViewModel: ObservableObject {
             }
         }
     }
-    func fetchData(documentId: String) {
-        
+    func fetchAllParkData() {
+        self.parkModel.removeAll()
+        Firestore
+            .firestore()
+            .collection("parkSlots")
+            .order(by: "parkName")
+            .whereField("booked", isEqualTo: false)
+            .whereField("parkCategory", isEqualTo: "Normal")
+            .whereField("reserved", isEqualTo: false)
+            .getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot, error == nil else {
+                    //handle error
+                    return
+                }
+                for document in snapshot.documents {
+                    let documentData = document.data()
+                    if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
+                        let date: Date = bookTime.dateValue()
+                        let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
+                        self.parkModel.append(ParkModel2)
+                        print(self.parkModel.count)
+                    }
+                }
+            }
     }
 }
 

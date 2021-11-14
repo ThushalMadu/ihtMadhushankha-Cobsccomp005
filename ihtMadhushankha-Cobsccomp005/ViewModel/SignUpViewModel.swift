@@ -13,7 +13,7 @@ class SignUpViewModel: ObservableObject {
     private var db = Firestore.firestore()
     @Published var loadHome = false
     @Published var isActiveHome = false
-
+    
     func addUser(name: String, email: String, nic: String, vehicleNumber: String, password:String){
         let docData: [String: Any] = [
             "name": name,

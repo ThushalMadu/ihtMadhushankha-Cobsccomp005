@@ -8,7 +8,7 @@
 import Foundation
 
 struct HomeViewString{
-    static let lbl_welcome: String = "New to Nibm? Register"
+    static let lbl_welcome: String = "Welcome NIBM Parking"
     static let tab_Avaliable: String = "Avaliable"
     static let tab_Book: String = "Book"
 

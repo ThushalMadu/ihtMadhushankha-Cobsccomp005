@@ -61,6 +61,8 @@ class HomeViewModel: ObservableObject {
                     }
                 }
             }
+        updatefetchAllData()
+        updateUsersBangData()
     }
     func fetchBookReseveData() {
         Firestore
@@ -79,15 +81,7 @@ class HomeViewModel: ObservableObject {
                         
                         self.getDocument(userId: userId)
                         self.parkModel.removeAll()
-                        //                            let date = bookTime.dateValue().getFormattedDate(format: "MMM d, h:mm a")
                         let date: Date = bookTime.dateValue()
-                        
-                        //                        if(self.getRemainTime(dateValue: date) > 10){
-                        //                            self.updateDocument(documentId: userId)
-                        //
-                        //                        }
-                        
-                        
                         let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
                         
                         let docRef1 = Firestore.firestore().collection("users").document(userId)
@@ -108,7 +102,7 @@ class HomeViewModel: ObservableObject {
     }
     func fetchBookData() {
         self.parkModel.removeAll()
-
+        
         Firestore
             .firestore()
             .collection("parkSlots")
@@ -124,7 +118,7 @@ class HomeViewModel: ObservableObject {
                     if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
                         
                         self.getDocument(userId: userId)
-//                        self.parkModel.removeAll()
+                        //                        self.parkModel.removeAll()
                         let date: Date = bookTime.dateValue()
                         
                         let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
@@ -144,6 +138,7 @@ class HomeViewModel: ObservableObject {
                     }
                 }
             }
+        updateUsersBangData()
     }
     
     func getDocument(userId: String) {
@@ -179,28 +174,49 @@ class HomeViewModel: ObservableObject {
     }
     
     
-    func updateUserDocument(documentId: String) {
-        // [START update_document]
+    func updateUserDocument(documentId: String,bookTime: Timestamp) {
+
         let washingtonRef = Firestore.firestore().collection("users").document(documentId)
         
-        // Set the "capital" field of the city 'DC'
+        let normal: Date = bookTime.dateValue().withAddedMinutes(minutes: 3)
         washingtonRef.updateData([
             "status": "bang",
+            "parkId": "",
+            "statusTime": Timestamp(date: normal)
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated with user Banged")
+            }
+        }
+        
+        
+        
+    }
+    func updateUserBangDocument(documentId: String,bookTime: Timestamp) {
+
+        let washingtonRef = Firestore.firestore().collection("users").document(documentId)
+        
+        washingtonRef.updateData([
+            "status": "active",
             "parkId": "",
             "statusTime": Timestamp(date: Date())
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
             } else {
-                print("Document successfully updated")
+                print("Document successfully updated with User Active")
             }
         }
     }
+    
+    
+    
     func updateParkDocument(parkId: String) {
-        // [START update_document]
+
         let washingtonRef = Firestore.firestore().collection("parkSlots").document(parkId)
         
-        // Set the "capital" field of the city 'DC'
         washingtonRef.updateData([
             "booked": false,
             "reserved": false,
@@ -228,9 +244,32 @@ class HomeViewModel: ObservableObject {
                     if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
                         
                         let date: Date = bookTime.dateValue()
-                        if(booked && self.getRemainTime(dateValue: date) > 10){
-                            self.updateUserDocument(documentId: userId)
+                        if(booked && self.getRemainTime(dateValue: date) > 2){
+                            self.updateUserDocument(documentId: userId, bookTime: bookTime)
                             self.updateParkDocument(parkId: documentId)
+                        }
+                    }
+                }
+            }
+        updateUsersBangData()
+    }
+    func updateUsersBangData() {
+        Firestore
+            .firestore()
+            .collection("users")
+            .whereField("status", isEqualTo: "bang")
+            .getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot, error == nil else {
+                    //handle error
+                    return
+                }
+                for document in snapshot.documents {
+                    let documentData = document.data()
+                    if let documentId = document.documentID as? String, let statusTime = documentData["statusTime"] as? Timestamp {
+                        
+                        let date: Date = statusTime.dateValue()
+                        if(self.getRemainTime(dateValue: date) > 2) {
+                            self.updateUserBangDocument(documentId: documentId, bookTime: statusTime)
                         }
                     }
                 }
@@ -255,5 +294,8 @@ extension Date {
         let second = Calendar.current.dateComponents([.second], from: previous, to: recent).second
         
         return (month: month, day: day, hour: hour, minute: minute, second: second)
+    }
+    func withAddedMinutes(minutes: Double) -> Date {
+        addingTimeInterval(minutes * 60)
     }
 }

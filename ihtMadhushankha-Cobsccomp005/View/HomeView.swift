@@ -70,14 +70,16 @@ struct HomeView: View {
                 }
             }
             .onAppear() {
-                viewModel.updatefetchAllData()
-
-                
+//                viewModel.updatefetchAllData()
+//                viewModel.updateUsersBangData()
                 if (type == "Avaliable"){
                     viewModel.fetchAllData()
+                    print("This Avaliable Tab Calling")
+//                    viewModel.updateUsersBangData()
                 } else if (type == "Book"){
                     print("Booking Clicj TAB")
                     viewModel.fetchBookData()
+//                    viewModel.updateUsersBangData()
                 }
 //                else if (type == "Reservation"){
 //                    viewModel.fetchBookReseveData()
