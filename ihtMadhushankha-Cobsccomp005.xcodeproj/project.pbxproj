@@ -17,6 +17,7 @@
 		A34A68422742272F00F6FA76 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68412742272F00F6FA76 /* CameraPreview.swift */; };
 		A34A68442742275600F6FA76 /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68432742275600F6FA76 /* QrCodeScannerView.swift */; };
 		A34A68462742277B00F6FA76 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68452742277B00F6FA76 /* ScannerViewModel.swift */; };
+		A34A68482742E77500F6FA76 /* DoneReservationComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68472742E77500F6FA76 /* DoneReservationComp.swift */; };
 		A35161F727289253005F031E /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F627289253005F031E /* SignUpValidation.swift */; };
 		A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F82728A9AB005F031E /* CollectionNames.swift */; };
 		A358B8F7273A756A00B2EB38 /* BookingSingleGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */; };
@@ -108,6 +109,7 @@
 		A34A68412742272F00F6FA76 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		A34A68432742275600F6FA76 /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
 		A34A68452742277B00F6FA76 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		A34A68472742E77500F6FA76 /* DoneReservationComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneReservationComp.swift; sourceTree = "<group>"; };
 		A35161F627289253005F031E /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
 		A35161F82728A9AB005F031E /* CollectionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNames.swift; sourceTree = "<group>"; };
 		A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSingleGeneral.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				A3AE2F81272D1C5800330608 /* SingleDetailRow.swift */,
 				A381D0572725EA1200D15288 /* LabelledDivider.swift */,
 				A341B0622736A7000047E40E /* LogOutButtonView.swift */,
+				A34A68472742E77500F6FA76 /* DoneReservationComp.swift */,
 				A381D04B2725DD4100D15288 /* TextFieldView.swift */,
 				A3976001273055340092F81A /* TopLeftTitle.swift */,
 				A3FC8838272C814400E53914 /* Tabs.swift */,
@@ -677,6 +680,7 @@
 				A3D7026F27311BA000834840 /* SettingsViewModel.swift in Sources */,
 				A381D0502725DDCF00D15288 /* ButtonViewStyle.swift in Sources */,
 				A381D0522725DDE200D15288 /* ButtonView.swift in Sources */,
+				A34A68482742E77500F6FA76 /* DoneReservationComp.swift in Sources */,
 				A381D0482725DA0000D15288 /* ForgetPasswordView.swift in Sources */,
 				A3AE2F82272D1C5800330608 /* SingleDetailRow.swift in Sources */,
 				A3FC8837272C813100E53914 /* Tab.swift in Sources */,
