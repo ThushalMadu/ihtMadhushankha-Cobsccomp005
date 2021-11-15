@@ -62,12 +62,14 @@ struct SignUpView: View {
                                 try user.signUpValidate()
                                 signUpViewModel.addUser(name: user.name, email: user.email, nic: user.nic, vehicleNumber: user.vehicleNumber, password: user.password)
                             } catch {
-                                errorMessageSignUp = error.localizedDescription
-                                errorOccured = true
+//                                errorMessageSignUp = error.localizedDescription
+//                                errorOccured = true
+                                signUpViewModel.errorMessageSignUp = error.localizedDescription
+                                signUpViewModel.errorAlertSignUp = true
                             }
                         },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                            .alert(isPresented: $errorOccured) { () -> Alert in
-                                Alert(title: Text(errorMessageSignUp))
+                            .alert(isPresented: $signUpViewModel.errorAlertSignUp) { () -> Alert in
+                                Alert(title: Text(signUpViewModel.errorMessageSignUp))
                             }
                     }
                 }

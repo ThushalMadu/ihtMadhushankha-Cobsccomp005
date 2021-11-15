@@ -24,6 +24,7 @@ struct ihtMadhushankha_Cobsccomp005App: App {
             } else {
                 NavigationView{
                     TabMainView()
+//                    ScannerView()
                 }
             }
         }

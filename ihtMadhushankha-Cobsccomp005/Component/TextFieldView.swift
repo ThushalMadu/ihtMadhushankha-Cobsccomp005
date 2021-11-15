@@ -26,7 +26,7 @@ struct TextFieldView: View {
         .background(
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color.white)
-                        .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 1, y: 3)
+                        .shadow(color: Color.gray.opacity(0.3), radius: 3, x: 1, y: 2)
             )
     }
 }

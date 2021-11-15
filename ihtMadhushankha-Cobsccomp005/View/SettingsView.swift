@@ -11,6 +11,7 @@ struct SettingsView: View {
     
     @StateObject var settingViewModel = SettingsViewModel()
     let userId = UserDefaults.standard.string(forKey: "userId")
+    @StateObject var viewModel = HomeViewModel()
 
     var body: some View {
         VStack{
@@ -33,11 +34,13 @@ struct SettingsView: View {
             }
             .padding(.leading, 15.0)
             .padding(.trailing, 15.0)
-            LogOutButtonView().padding(.top, 30.0)
+            LogOutButtonView()
+                .padding(.bottom, 30.0)
             Spacer()
                 
         }.edgesIgnoringSafeArea(.top)
             .onAppear {
+                viewModel.updateUsersBangData()
                 settingViewModel.getJStoreUserFromDB(documentId: userId!)
             }
     }

@@ -190,9 +190,6 @@ class HomeViewModel: ObservableObject {
                 print("Document successfully updated with user Banged")
             }
         }
-        
-        
-        
     }
     func updateUserBangDocument(documentId: String,bookTime: Timestamp) {
 

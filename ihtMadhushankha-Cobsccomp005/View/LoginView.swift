@@ -64,13 +64,18 @@ struct LoginView: View {
                                     try user.signInValidate()
                                     loginViewModel.login(email: user.email, password: user.password)
                                 } catch {
-                                    errorMessageLogin = error.localizedDescription
-                                    errorOccured = true
+//                                    errorMessageLogin = error.localizedDescription
+//                                    errorOccured = true
+                                    loginViewModel.errorMessageLogin = error.localizedDescription
+                                    loginViewModel.errorAlert = true
                                 }
                             },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                                .alert(isPresented: $errorOccured) { () -> Alert in
-                                    Alert(title: Text(errorMessageLogin))
+                                .alert(isPresented: $loginViewModel.errorAlert) { () -> Alert in
+                                    Alert(title: Text(loginViewModel.errorMessageLogin))
                                 }
+//                                .alert(isPresented: $loginViewModel.errorAlert) { () -> Alert in
+//                                    Alert(title: Text(loginViewModel.errorMessageLogin))
+//                                }
                         }
                         
                     }

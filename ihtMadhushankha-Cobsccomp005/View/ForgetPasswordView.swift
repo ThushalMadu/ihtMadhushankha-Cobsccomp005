@@ -54,12 +54,14 @@ struct ForgetPasswordView: View {
                             try user.forgetValidate()
                             forgetPasswordViewModel.sendPasswordReset(withEmail: user.email)
                         } catch {
-                            errorMessageForget = error.localizedDescription
-                            errorOccured = true
+//                            errorMessageForget = error.localizedDescription
+//                            errorOccured = true
+                            forgetPasswordViewModel.errorMessageForget = error.localizedDescription
+                            forgetPasswordViewModel.errorAlertForget = true
                         }
                     },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                        .alert(isPresented: $errorOccured) { () -> Alert in
-                            Alert(title: Text(errorMessageForget))
+                        .alert(isPresented: $forgetPasswordViewModel.errorAlertForget) { () -> Alert in
+                            Alert(title: Text(forgetPasswordViewModel.errorMessageForget))
                         }
                 }
             }

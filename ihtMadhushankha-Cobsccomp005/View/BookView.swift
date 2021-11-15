@@ -15,6 +15,9 @@ struct BookView: View {
     @State private var starRatingSelection: String = ""
     @StateObject var bookingViewModel = BookingViewModel()
     @StateObject var locationManager = LocationManager()
+    @State private var isActiveLinkQrScanner = false
+    @State private var isCheckBangAlert = false
+    
     var body: some View {
         VStack{
             TopLeftTitle(title: BookViewString.lbl_Book).padding([ .leading], 20.0)
@@ -41,13 +44,8 @@ struct BookView: View {
                             //                            Text("You selected: \(starRatingSelection)")
                             Section {
                                 Picker("Park Slots", selection: $starRatingSelection) {
-                                    ForEach(settingViewModel.parkModel, id: \.documentId) {
-                                        //                                                    Text(object.parkName)
-                                        if($0.parkCategory == "VIP"){
-                                            TextTitle(title: $0.parkName, fontSize: 18, fontTitleWeight: .semibold, fontColor: Color.red)
-                                        }else {
+                                    ForEach(bookingViewModel.parkModel, id: \.documentId) {
                                             TextTitle(title: $0.parkName, fontSize: 18, fontTitleWeight: .regular)
-                                        }
                                     }
                                 }
                             }
@@ -73,31 +71,41 @@ struct BookView: View {
                             settingViewModel.getJStoreUserFromDB(documentId: userId!)
                         } else {
                             print(BookViewString.err_cannotBook)
+                            isCheckBangAlert = true
                         }
-                        
                     },width:UIScreen.main.bounds.width/2,height: UIScreen.main.bounds.height/48)
+                        .alert(isPresented: $isCheckBangAlert) { () -> Alert in
+                            Alert(title: Text("You are bang with cancel Reservation, Please Hold movement.😉"))
+                        }
                 }
             } else {
-                VStack(alignment: .center, spacing: 30){
+                VStack(alignment: .center, spacing: 20){
                     ButtonView(title: BookViewString.btn_CancelResrve,
                                function: {
                         bookingViewModel.updateBookDocument(documentId: settingViewModel.userData.first!.parkId, userId: userId!)
                         settingViewModel.getJStoreUserFromDB(documentId: userId!)
                     },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                    //                    NavigationLink(destination: ScannerView(), isActive:$isActiveLinkQrScanner) {
                     ButtonView(title: BookViewString.btn_ScanQr,
                                function: {
-                        
-                    },width:UIScreen.main.bounds.width/2,height: UIScreen.main.bounds.height/48).padding(.bottom,30.0)
+                        isActiveLinkQrScanner = true
+                    },width:UIScreen.main.bounds.width/2,height: UIScreen.main.bounds.height/48)
+                        .sheet(isPresented: $isActiveLinkQrScanner) {
+                            ScannerView()
+                        }
+                    //                    }
+                    
                 }
-                .padding(.vertical, 30.0)
+                .padding(.top)
+                //                .padding(.vertical, 30.0)
             }
             Spacer()
             
         }.edgesIgnoringSafeArea(.top)
             .onAppear {
                 settingViewModel.getJStoreUserFromDB(documentId: userId!)
-                settingViewModel.fetchAllParkData()
-                
+                bookingViewModel.fetchAllParkData()
+                viewModel.updateUsersBangData()
             }
     }
 }
