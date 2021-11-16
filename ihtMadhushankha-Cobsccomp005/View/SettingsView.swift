@@ -12,7 +12,8 @@ struct SettingsView: View {
     @StateObject var settingViewModel = SettingsViewModel()
     let userId = UserDefaults.standard.string(forKey: "userId")
     @StateObject var viewModel = HomeViewModel()
-
+    @StateObject private var userAuth = UserAuth()
+    
     var body: some View {
         VStack{
             TopLeftTitle(title: SettingViewString.lbl_settings).padding([.leading], 15.0)
@@ -34,10 +35,13 @@ struct SettingsView: View {
             }
             .padding(.leading, 15.0)
             .padding(.trailing, 15.0)
-            LogOutButtonView()
-                .padding(.bottom, 30.0)
+            NavigationLink(destination: TabMainView(), isActive:$userAuth.isLoggedOut) {
+                LogOutButtonView(function: {
+                    userAuth.logout()
+                })
+            }
+            .padding(.bottom, 30.0)
             Spacer()
-                
         }.edgesIgnoringSafeArea(.top)
             .onAppear {
                 viewModel.updateUsersBangData()

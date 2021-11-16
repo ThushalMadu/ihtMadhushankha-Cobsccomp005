@@ -21,6 +21,8 @@
 		A35161F727289253005F031E /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F627289253005F031E /* SignUpValidation.swift */; };
 		A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F82728A9AB005F031E /* CollectionNames.swift */; };
 		A358B8F7273A756A00B2EB38 /* BookingSingleGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */; };
+		A360BCC92743DD4300FDAB02 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360BCC82743DD4300FDAB02 /* UserAuth.swift */; };
+		A360BCCD27443C0B00FDAB02 /* ParkSingleComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360BCCC27443C0B00FDAB02 /* ParkSingleComp.swift */; };
 		A371AA292726B75A002EAC57 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA282726B75A002EAC57 /* SignUpViewModel.swift */; };
 		A371AA2B2726BB74002EAC57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA2A2726BB74002EAC57 /* HomeView.swift */; };
 		A381D0382725D57100D15288 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0372725D57100D15288 /* LoginView.swift */; };
@@ -113,6 +115,8 @@
 		A35161F627289253005F031E /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
 		A35161F82728A9AB005F031E /* CollectionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNames.swift; sourceTree = "<group>"; };
 		A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSingleGeneral.swift; sourceTree = "<group>"; };
+		A360BCC82743DD4300FDAB02 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		A360BCCC27443C0B00FDAB02 /* ParkSingleComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkSingleComp.swift; sourceTree = "<group>"; };
 		A371AA282726B75A002EAC57 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A371AA2A2726BB74002EAC57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A381D0372725D57100D15288 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 				A3C778BB2723DE02009D670A /* ContentViewModel.swift */,
 				A371AA282726B75A002EAC57 /* SignUpViewModel.swift */,
 				A3C840802726CEC00011161C /* LoginViewModel.swift */,
+				A360BCC82743DD4300FDAB02 /* UserAuth.swift */,
 				A3D7026E27311BA000834840 /* SettingsViewModel.swift */,
 				A3A843AB272DC2700090D7A2 /* SingleParkViewModel.swift */,
 				A3386EC72739092500F99562 /* BookingViewModel.swift */,
@@ -372,6 +377,7 @@
 				A34A68472742E77500F6FA76 /* DoneReservationComp.swift */,
 				A381D04B2725DD4100D15288 /* TextFieldView.swift */,
 				A3976001273055340092F81A /* TopLeftTitle.swift */,
+				A360BCCC27443C0B00FDAB02 /* ParkSingleComp.swift */,
 				A3FC8838272C814400E53914 /* Tabs.swift */,
 				A39717632736BEDD00482989 /* TermsAndConditionLink.swift */,
 				A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */,
@@ -681,8 +687,10 @@
 				A381D0502725DDCF00D15288 /* ButtonViewStyle.swift in Sources */,
 				A381D0522725DDE200D15288 /* ButtonView.swift in Sources */,
 				A34A68482742E77500F6FA76 /* DoneReservationComp.swift in Sources */,
+				A360BCCD27443C0B00FDAB02 /* ParkSingleComp.swift in Sources */,
 				A381D0482725DA0000D15288 /* ForgetPasswordView.swift in Sources */,
 				A3AE2F82272D1C5800330608 /* SingleDetailRow.swift in Sources */,
+				A360BCC92743DD4300FDAB02 /* UserAuth.swift in Sources */,
 				A3FC8837272C813100E53914 /* Tab.swift in Sources */,
 				A34A68442742275600F6FA76 /* QrCodeScannerView.swift in Sources */,
 				A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */,

@@ -19,14 +19,13 @@ struct SignUpView: View {
     @Environment(\.openURL) var openURL
 
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack{
-                Spacer()
                 Image("signUpImage")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.top)
-                    .frame(height:UIScreen.main.bounds.height/3.7)
+                    .frame(height:UIScreen.main.bounds.height/3.7).padding(.top, 20.0)
                 
                 VStack(alignment: .leading, spacing: 30){
                     HStack{
@@ -84,7 +83,7 @@ struct SignUpView: View {
                     }
                 }
             }
-        }
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 

@@ -17,16 +17,20 @@ struct ihtMadhushankha_Cobsccomp005App: App {
 
     var body: some Scene {
         WindowGroup {
-            if(userId == nil){
-                NavigationView{
-                    LoginView()
-                }
-            } else {
-                NavigationView{
-                    TabMainView()
+            NavigationView{
+                TabMainView()
 //                    ScannerView()
-                }
             }
+//            if(userId == nil){
+//                NavigationView{
+//                    LoginView()
+//                }
+//            } else {
+//                NavigationView{
+//                    TabMainView()
+////                    ScannerView()
+//                }
+//            }
         }
     }
 }

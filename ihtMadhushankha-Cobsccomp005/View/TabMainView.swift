@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TabMainView: View {
+    let userId = UserDefaults.standard.string(forKey: "userId")
+
     var body: some View {
         TabView {
             HomeTopTabView().tabItem {
@@ -16,18 +18,34 @@ struct TabMainView: View {
             }.tag(1)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
-            BookView().tabItem {
-                Image(systemName: "book")
-                Text(TabMainViewString.lbl_Book).font(Font.custom("Poppins-Regular", size: 18))
-            }.tag(2)
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
-            SettingsView().tabItem {
-                Image(systemName: "person.circle")
-                Text(TabMainViewString.lbl_Settings).font(Font.custom("Poppins-Regular", size: 18))
-            }.tag(3)
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+            if(userId == nil){
+                LoginView().tabItem {
+                    Image(systemName: "book")
+                    Text("Login").font(Font.custom("Poppins-Regular", size: 18))
+                }.tag(2)
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+                LoginView().tabItem {
+                    Image(systemName: "person.circle")
+                    Text("Login").font(Font.custom("Poppins-Regular", size: 18))
+                }.tag(3)
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+            } else {
+                BookView().tabItem {
+                    Image(systemName: "book")
+                    Text(TabMainViewString.lbl_Book).font(Font.custom("Poppins-Regular", size: 18))
+                }.tag(2)
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+                SettingsView().tabItem {
+                    Image(systemName: "person.circle")
+                    Text(TabMainViewString.lbl_Settings).font(Font.custom("Poppins-Regular", size: 18))
+                }.tag(3)
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+            }
+            
         }.accentColor(Color.app_Blue)
     }
 }

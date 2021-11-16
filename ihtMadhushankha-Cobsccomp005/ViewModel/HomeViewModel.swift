@@ -99,6 +99,7 @@ class HomeViewModel: ObservableObject {
                     }
                 }
             }
+        updateUsersBangData()
     }
     func fetchBookData() {
         self.parkModel.removeAll()

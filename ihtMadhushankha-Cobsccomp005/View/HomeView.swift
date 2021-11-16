@@ -12,63 +12,26 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     @State var reserverdName = ""
     var type: String
+    var items: [GridItem] {
+      Array(repeating: .init(.adaptive(minimum: 300)), count: 2)
+    }
     
     var body: some View {
         VStack {
             //            if #available(iOS 15.0, *) {
-            List(viewModel.parkModel, id: \.documentId) { item in
-                NavigationLink(destination: SingleParkView(singleItem: item)) {
-                    HStack{
-                        Text("Parking Name: \(item.parkName)")
-                        Spacer()
-                        if(item.parkCategory == "VIP"){
-                            VStack{
-                                Text("VIP")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.red)
-                            }
-                        }else{
-                            Text("Normal")
-                                .font(.headline)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.green)
-                        }
-                        Spacer()
-                        if(item.reserved){
-                            VStack{
-                                Text("Reserved")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.red)
-                                
-                                Text(item.uservehicle)
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.red)
-                            }
-                        }else{
-                            VStack{
-                                Text("Avaliable")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.green)
-                            }
-                        }
-                        Spacer()
-                        if(item.booked){
-                            VStack{
-                                Text(String("\(viewModel.getRemainTime(dateValue: item.bookTime))"))
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.red)
-                            }
-                        }else{
-                          EmptyView()
-                        }
-                    }.frame(height: UIScreen.main.bounds.height/12, alignment: .center)
-                }
-            }
+//            List(viewModel.parkModel, id: \.documentId) { item in
+//                NavigationLink(destination: SingleParkView(singleItem: item)) {
+//                    ParkSingleComp(parkName: item.parkName, parkCategory: item.parkCategory, vehicleNumber: item.uservehicle, reserved: item.reserved, booked: item.booked, remainTime:String("\(viewModel.getRemainTime(dateValue: item.bookTime))"))
+//                }
+//            }
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVGrid(columns: items, spacing: 15) {
+                ForEach(viewModel.parkModel, id: \.documentId) { item in
+                      ParkSingleComp(parkName: item.parkName, parkCategory: item.parkCategory, vehicleNumber: item.uservehicle, reserved: item.reserved, booked: item.booked, remainTime:String("\(viewModel.getRemainTime(dateValue: item.bookTime))"))
+                  }
+                  .padding(.horizontal)
+                }.padding(.top, 10.0)
+              }
             .onAppear() {
 //                viewModel.updatefetchAllData()
 //                viewModel.updateUsersBangData()
@@ -81,11 +44,12 @@ struct HomeView: View {
                     viewModel.fetchBookData()
 //                    viewModel.updateUsersBangData()
                 }
-//                else if (type == "Reservation"){
-//                    viewModel.fetchBookReseveData()
-//                }
+                else if (type == "Reservation"){
+                    viewModel.fetchBookReseveData()
+                }
             }
-        }.navigationBarHidden(true)
+        }.edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
     }
 }

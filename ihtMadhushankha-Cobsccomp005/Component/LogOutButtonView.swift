@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct LogOutButtonView: View {
+    var function: () -> Void
+
     var body: some View {
         Button(action: {
-            
+            self.function()
         }) {
             HStack{
                 Text("Log Out")
@@ -31,7 +33,7 @@ struct LogOutButtonView: View {
 }
 struct LogOutButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        LogOutButtonView()
+        LogOutButtonView(function: {print("done")})
     }
 }
 

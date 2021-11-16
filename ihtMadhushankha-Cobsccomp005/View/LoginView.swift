@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    
-    
+
     @State private var errorMessageLogin = ""
     @State private var errorOccured = false
     @State private var isActiveLinkSignUp = false
@@ -18,15 +17,14 @@ struct LoginView: View {
     @State var user = User()
     
     var body: some View {
-//        NavigationView {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack{
-                    Spacer()
                     Image("signInImage")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(.top)
                         .frame(height:UIScreen.main.bounds.height/3.7)
+                        .padding(.top, 40.0)
                     
                     VStack(alignment: .leading, spacing: 20){
                         HStack{
@@ -79,6 +77,8 @@ struct LoginView: View {
                         }
                         
                     }
+                    Spacer()
+
                     LabelledDivider(label: "OR").padding(.top, 10.0)
                     NavigationLink(destination: SignUpView(), isActive:$isActiveLinkSignUp) {
                         Button(action: {
@@ -90,9 +90,8 @@ struct LoginView: View {
                     }
                 }
 //            }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
-        }
+            
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 
