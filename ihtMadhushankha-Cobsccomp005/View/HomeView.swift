@@ -11,46 +11,51 @@ struct HomeView: View {
     
     @StateObject var viewModel = HomeViewModel()
     @State var reserverdName = ""
+    @State var loader:Bool = true
+    @State private var isActiveLink = false
+    
     var type: String
     var items: [GridItem] {
-      Array(repeating: .init(.adaptive(minimum: 300)), count: 2)
+        Array(repeating: .init(.adaptive(minimum: 300)), count: 2)
     }
-    
     var body: some View {
         VStack {
-            //            if #available(iOS 15.0, *) {
-//            List(viewModel.parkModel, id: \.documentId) { item in
-//                NavigationLink(destination: SingleParkView(singleItem: item)) {
-//                    ParkSingleComp(parkName: item.parkName, parkCategory: item.parkCategory, vehicleNumber: item.uservehicle, reserved: item.reserved, booked: item.booked, remainTime:String("\(viewModel.getRemainTime(dateValue: item.bookTime))"))
-//                }
-//            }
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVGrid(columns: items, spacing: 15) {
-                ForEach(viewModel.parkModel, id: \.documentId) { item in
-                      ParkSingleComp(parkName: item.parkName, parkCategory: item.parkCategory, vehicleNumber: item.uservehicle, reserved: item.reserved, booked: item.booked, remainTime:String("\(viewModel.getRemainTime(dateValue: item.bookTime))"))
-                  }
-                  .padding(.horizontal)
-                }.padding(.top, 10.0)
-              }
-            .onAppear() {
-//                viewModel.updatefetchAllData()
-//                viewModel.updateUsersBangData()
-                if (type == "Avaliable"){
-                    viewModel.fetchAllData()
-                    print("This Avaliable Tab Calling")
-//                    viewModel.updateUsersBangData()
-                } else if (type == "Book"){
-                    print("Booking Clicj TAB")
-                    viewModel.fetchBookData()
-//                    viewModel.updateUsersBangData()
-                }
-                else if (type == "Reservation"){
-                    viewModel.fetchBookReseveData()
+            if(viewModel.loadAvaliable){
+                Spacer()
+                ProgressView("Please Wait").progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center).accentColor(Color.app_Blue)
+                Spacer()
+            } else{
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVGrid(columns: items, spacing: 10) {
+                        ForEach(viewModel.parkModel, id: \.documentId) { item in
+                            NavigationLink(destination: SingleParkView(singleItem: item),isActive: $isActiveLink) {
+                                ParkSingleComp(parkName: item.parkName, parkCategory: item.parkCategory, vehicleNumber: item.uservehicle, reserved: item.reserved, booked: item.booked, remainTime:String("\(viewModel.getRemainTime(dateValue: item.bookTime))"), function: {
+                                    isActiveLink = true
+                                    print(isActiveLink)
+                                })
+                            }
+                        }
+                        .padding(.horizontal)
+                    }.padding(.top, 10.0)
                 }
             }
-        }.edgesIgnoringSafeArea(.top)
+        }
+        .onAppear() {
+            if (type == "Avaliable"){
+                print(viewModel.loadAvaliable)
+                viewModel.fetchAllData()
+                
+            } else if (type == "Book"){
+                viewModel.fetchBookData()
+            }
+            else if (type == "Reservation"){
+                viewModel.fetchBookReseveData()
+            }
+        }
         .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+        .edgesIgnoringSafeArea(.top)
+        .navigationBarBackButtonHidden(true)
+        
     }
 }
 

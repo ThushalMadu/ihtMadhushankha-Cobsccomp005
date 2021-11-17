@@ -316,18 +316,18 @@
 		A3C778B62723DD54009D670A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A381D0392725D57D00D15288 /* SignUpView.swift */,
-				A381D0372725D57100D15288 /* LoginView.swift */,
-				A381D0472725DA0000D15288 /* ForgetPasswordView.swift */,
 				A3C7788E2723DD37009D670A /* ContentView.swift */,
 				A34A683D274226D400F6FA76 /* ScannerView.swift */,
 				A34A68432742275600F6FA76 /* QrCodeScannerView.swift */,
 				A3C84086272730DD0011161C /* ParkingView.swift */,
-				A3975FFB27304FD30092F81A /* TabMainView.swift */,
-				A371AA2A2726BB74002EAC57 /* HomeView.swift */,
+				A3FC883C272C855600E53914 /* SingleParkView.swift */,
+				A381D0472725DA0000D15288 /* ForgetPasswordView.swift */,
+				A381D0392725D57D00D15288 /* SignUpView.swift */,
+				A381D0372725D57100D15288 /* LoginView.swift */,
 				A3975FFF27304FFF0092F81A /* SettingsView.swift */,
 				A3975FFD27304FED0092F81A /* BookView.swift */,
-				A3FC883C272C855600E53914 /* SingleParkView.swift */,
+				A371AA2A2726BB74002EAC57 /* HomeView.swift */,
+				A3975FFB27304FD30092F81A /* TabMainView.swift */,
 				A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */,
 			);
 			path = View;

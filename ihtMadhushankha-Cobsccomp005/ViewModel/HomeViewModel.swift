@@ -11,6 +11,7 @@ import Firebase
 class HomeViewModel: ObservableObject {
     @Published var parkModel = [ParkModel]()
     @Published var uservehicle = ""
+    @Published var loadAvaliable:Bool = false
     
     
     func getRemainTime(dateValue: Date) -> Int {
@@ -20,6 +21,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func fetchAllData() {
+        self.loadAvaliable = true
         Firestore
             .firestore()
             .collection("parkSlots")
@@ -37,11 +39,6 @@ class HomeViewModel: ObservableObject {
                         
                         self.getDocument(userId: userId)
                         self.parkModel.removeAll()
-                        //                            let caldate: Date = bookTime.dateValue()
-                        //                            let interval = Date() - caldate
-                        //                            print(interval.minute!)
-                        
-                        
                         let date: Date = bookTime.dateValue()
                         
                         let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
@@ -54,6 +51,7 @@ class HomeViewModel: ObservableObject {
                                 let fieldValue = document.get("vehicleNumber") as? String
                                 let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "", bookTime: date)
                                 self.parkModel.append(ParkModel1)
+                                self.loadAvaliable = false
                             } else {
                                 self.parkModel.append(ParkModel2)
                             }
@@ -65,6 +63,7 @@ class HomeViewModel: ObservableObject {
         updateUsersBangData()
     }
     func fetchBookReseveData() {
+        
         Firestore
             .firestore()
             .collection("parkSlots")
@@ -102,6 +101,7 @@ class HomeViewModel: ObservableObject {
         updateUsersBangData()
     }
     func fetchBookData() {
+        
         self.parkModel.removeAll()
         
         Firestore
@@ -176,7 +176,7 @@ class HomeViewModel: ObservableObject {
     
     
     func updateUserDocument(documentId: String,bookTime: Timestamp) {
-
+        
         let washingtonRef = Firestore.firestore().collection("users").document(documentId)
         
         let normal: Date = bookTime.dateValue().withAddedMinutes(minutes: 3)
@@ -193,7 +193,7 @@ class HomeViewModel: ObservableObject {
         }
     }
     func updateUserBangDocument(documentId: String,bookTime: Timestamp) {
-
+        
         let washingtonRef = Firestore.firestore().collection("users").document(documentId)
         
         washingtonRef.updateData([
@@ -212,7 +212,7 @@ class HomeViewModel: ObservableObject {
     
     
     func updateParkDocument(parkId: String) {
-
+        
         let washingtonRef = Firestore.firestore().collection("parkSlots").document(parkId)
         
         washingtonRef.updateData([

@@ -14,10 +14,12 @@ class SettingsViewModel: ObservableObject {
     @Published var userData = [UserData]()
     @Published var parkModel = [ParkModel]()
     @Published var uservehicle = ""
+    @Published var loaderSetting:Bool = false
 
     
     
     func getJStoreUserFromDB(documentId: String) {
+        loaderSetting = true
         let docRef = Firestore.firestore().collection("users").document(documentId)
         self.userData.removeAll()
 
@@ -30,8 +32,10 @@ class SettingsViewModel: ObservableObject {
                 if let user = user {
                     print(user)
                     self.userData = [UserData(email: user["email"] as? String ?? "", name: user["name"] as? String ?? "", nic: user["nic"] as? String ?? "", parkId: user["parkId"] as? String ?? "", status: user["status"] as? String ?? "", vehicleNumber: user["vehicleNumber"] as? String ?? "")]
+                    self.loaderSetting = false
                 } else {
                     print("Document does not exist")
+                    self.loaderSetting = false
                 }
             case .failure(let error):
                 print("Error decoding city: \(error)")

@@ -13,6 +13,7 @@ class BookingViewModel: ObservableObject {
     @Published var parkModel = [ParkModel]()
     @Published var uservehicle = ""
     @Published var showSucessAlert = false
+    @Published var parkDataLoader = false
 
     func updateDocument(documentId: String, userId: String) {
         // [START update_document]
@@ -74,6 +75,7 @@ class BookingViewModel: ObservableObject {
         }
     }
     func fetchAllParkData() {
+        self.parkDataLoader = true
         self.parkModel.removeAll()
         Firestore
             .firestore()
@@ -93,6 +95,7 @@ class BookingViewModel: ObservableObject {
                         let date: Date = bookTime.dateValue()
                         let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
                         self.parkModel.append(ParkModel2)
+                        self.parkDataLoader = false
                         print(self.parkModel.count)
                     }
                 }

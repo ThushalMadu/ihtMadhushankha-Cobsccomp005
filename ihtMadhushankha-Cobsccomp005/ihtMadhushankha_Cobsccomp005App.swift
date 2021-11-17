@@ -19,18 +19,8 @@ struct ihtMadhushankha_Cobsccomp005App: App {
         WindowGroup {
             NavigationView{
                 TabMainView()
-//                    ScannerView()
             }
-//            if(userId == nil){
-//                NavigationView{
-//                    LoginView()
-//                }
-//            } else {
-//                NavigationView{
-//                    TabMainView()
-////                    ScannerView()
-//                }
-//            }
+
         }
     }
 }

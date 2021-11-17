@@ -23,7 +23,7 @@ struct ForgetPasswordView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.top)
-                    .frame(height:UIScreen.main.bounds.height/2.8)
+                    .frame(height:UIScreen.main.bounds.height/3.2)
                 
                 VStack(alignment: .leading, spacing: 30){
                     HStack{
@@ -35,6 +35,13 @@ struct ForgetPasswordView: View {
                         TextTitle(title: ForgetPasswordViewStrings.lbl_titleForgetPassword, fontSize: 14, fontTitleWeight: .regular)
                             .padding([.trailing], 20.0)
                         Spacer()
+                    }
+                    if(forgetPasswordViewModel.sucessDetail){
+                        HStack{
+                            TextTitle(title: "SucessFully sent reset password link to your email", fontSize: 14, fontTitleWeight: .regular, fontColor: Color.green)
+                                .padding([.trailing], 20.0)
+                            Spacer()
+                        }
                     }
                     TextFieldView(title: ForgetPasswordViewStrings.lbl_email, text: $user.email)
                 }
