@@ -60,7 +60,7 @@ struct LoginView: View {
                                 }
                                 do {
                                     try user.signInValidate()
-                                    loginViewModel.login(email: user.email, password: user.password)
+                                    loginViewModel.signIn(email: user.email, password: user.password)
                                 } catch {
 //                                    errorMessageLogin = error.localizedDescription
 //                                    errorOccured = true

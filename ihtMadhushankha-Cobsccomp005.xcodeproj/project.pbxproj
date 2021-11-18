@@ -74,6 +74,8 @@
 		A3E2B0DF273C71890062A9A6 /* HomeViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B0DE273C71890062A9A6 /* HomeViewString.swift */; };
 		A3E2B0E1273C72780062A9A6 /* BookViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B0E0273C72780062A9A6 /* BookViewString.swift */; };
 		A3E2B0E3273C757B0062A9A6 /* TabMainViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B0E2273C757B0062A9A6 /* TabMainViewString.swift */; };
+		A3EEEFDC2746E46500A2A770 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EEEFDB2746E46500A2A770 /* LoginService.swift */; };
+		A3EEEFDE2746F42F00A2A770 /* MockLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EEEFDD2746F42F00A2A770 /* MockLoginService.swift */; };
 		A3FC8837272C813100E53914 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC8836272C813100E53914 /* Tab.swift */; };
 		A3FC8839272C814400E53914 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC8838272C814400E53914 /* Tabs.swift */; };
 		A3FC883B272C81AF00E53914 /* HomeTopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */; };
@@ -172,6 +174,8 @@
 		A3E2B0DE273C71890062A9A6 /* HomeViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewString.swift; sourceTree = "<group>"; };
 		A3E2B0E0273C72780062A9A6 /* BookViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewString.swift; sourceTree = "<group>"; };
 		A3E2B0E2273C757B0062A9A6 /* TabMainViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainViewString.swift; sourceTree = "<group>"; };
+		A3EEEFDB2746E46500A2A770 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A3EEEFDD2746F42F00A2A770 /* MockLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginService.swift; sourceTree = "<group>"; };
 		A3FC8836272C813100E53914 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A3FC8838272C814400E53914 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopTabView.swift; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C7789D2723DD39009D670A /* ihtMadhushankha_Cobsccomp005Tests.swift */,
+				A3EEEFDD2746F42F00A2A770 /* MockLoginService.swift */,
 			);
 			path = "ihtMadhushankha-Cobsccomp005Tests";
 			sourceTree = "<group>";
@@ -316,10 +321,10 @@
 		A3C778B62723DD54009D670A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A3C84086272730DD0011161C /* ParkingView.swift */,
 				A3C7788E2723DD37009D670A /* ContentView.swift */,
 				A34A683D274226D400F6FA76 /* ScannerView.swift */,
 				A34A68432742275600F6FA76 /* QrCodeScannerView.swift */,
-				A3C84086272730DD0011161C /* ParkingView.swift */,
 				A3FC883C272C855600E53914 /* SingleParkView.swift */,
 				A381D0472725DA0000D15288 /* ForgetPasswordView.swift */,
 				A381D0392725D57D00D15288 /* SignUpView.swift */,
@@ -350,6 +355,7 @@
 				A3C778BB2723DE02009D670A /* ContentViewModel.swift */,
 				A371AA282726B75A002EAC57 /* SignUpViewModel.swift */,
 				A3C840802726CEC00011161C /* LoginViewModel.swift */,
+				A3EEEFDB2746E46500A2A770 /* LoginService.swift */,
 				A360BCC82743DD4300FDAB02 /* UserAuth.swift */,
 				A3D7026E27311BA000834840 /* SettingsViewModel.swift */,
 				A3A843AB272DC2700090D7A2 /* SingleParkViewModel.swift */,
@@ -663,6 +669,7 @@
 				A39717642736BEDD00482989 /* TermsAndConditionLink.swift in Sources */,
 				A3C840832726D2EE0011161C /* ForgetPasswordViewModel.swift in Sources */,
 				A34A68422742272F00F6FA76 /* CameraPreview.swift in Sources */,
+				A3EEEFDC2746E46500A2A770 /* LoginService.swift in Sources */,
 				A381D0382725D57100D15288 /* LoginView.swift in Sources */,
 				A34A68402742271000F6FA76 /* QrCodeCameraDelegate.swift in Sources */,
 				A3C840812726CEC00011161C /* LoginViewModel.swift in Sources */,
@@ -725,6 +732,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C7789E2723DD39009D670A /* ihtMadhushankha_Cobsccomp005Tests.swift in Sources */,
+				A3EEEFDE2746F42F00A2A770 /* MockLoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
