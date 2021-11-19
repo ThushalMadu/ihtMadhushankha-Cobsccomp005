@@ -51,6 +51,7 @@ struct ParkSingleComp: View {
                         TextTitle(title: "Reserved", fontSize: 14, fontTitleWeight: .regular, fontColor: Color.red)
                         TextTitle(title: vehicleNumber, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.red)
                     }
+                    .padding(.bottom, 20.0)
                 }else{
                     EmptyView()
                 }

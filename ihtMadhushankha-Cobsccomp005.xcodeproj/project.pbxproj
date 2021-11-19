@@ -18,6 +18,7 @@
 		A34A68442742275600F6FA76 /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68432742275600F6FA76 /* QrCodeScannerView.swift */; };
 		A34A68462742277B00F6FA76 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68452742277B00F6FA76 /* ScannerViewModel.swift */; };
 		A34A68482742E77500F6FA76 /* DoneReservationComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68472742E77500F6FA76 /* DoneReservationComp.swift */; };
+		A34F4BED27482A150008AB04 /* uiTestLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F4BEC27482A150008AB04 /* uiTestLoginView.swift */; };
 		A35161F727289253005F031E /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F627289253005F031E /* SignUpValidation.swift */; };
 		A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F82728A9AB005F031E /* CollectionNames.swift */; };
 		A358B8F7273A756A00B2EB38 /* BookingSingleGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */; };
@@ -114,6 +115,7 @@
 		A34A68432742275600F6FA76 /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
 		A34A68452742277B00F6FA76 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
 		A34A68472742E77500F6FA76 /* DoneReservationComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneReservationComp.swift; sourceTree = "<group>"; };
+		A34F4BEC27482A150008AB04 /* uiTestLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiTestLoginView.swift; sourceTree = "<group>"; };
 		A35161F627289253005F031E /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
 		A35161F82728A9AB005F031E /* CollectionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNames.swift; sourceTree = "<group>"; };
 		A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSingleGeneral.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C778A72723DD39009D670A /* ihtMadhushankha_Cobsccomp005UITests.swift */,
+				A34F4BEC27482A150008AB04 /* uiTestLoginView.swift */,
 				A3C778A92723DD39009D670A /* ihtMadhushankha_Cobsccomp005UITestsLaunchTests.swift */,
 			);
 			path = "ihtMadhushankha-Cobsccomp005UITests";
@@ -741,6 +744,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C778A82723DD39009D670A /* ihtMadhushankha_Cobsccomp005UITests.swift in Sources */,
+				A34F4BED27482A150008AB04 /* uiTestLoginView.swift in Sources */,
 				A3C778AA2723DD39009D670A /* ihtMadhushankha_Cobsccomp005UITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

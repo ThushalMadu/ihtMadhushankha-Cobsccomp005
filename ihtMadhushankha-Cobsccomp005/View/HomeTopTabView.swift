@@ -27,7 +27,7 @@ struct HomeTopTabView: View {
             GeometryReader { geo in
                 VStack(spacing: 0) {
                     // Tabs
-                    TopLeftTitle(title: HomeViewString.lbl_welcome).padding([.leading], 15.0)
+                    TopLeftTitle(title: HomeViewString.lbl_welcome).padding([.leading], 15.0).accessibility(identifier: "HomeView_TextTitle")
                         .padding(.top, 60.0)
                     Tabs(tabs: tabs, geoWidth: geo.size.width, selectedTab: $selectedTab).padding(.top, 20.0)
 
@@ -40,7 +40,7 @@ struct HomeTopTabView: View {
                             .tag(1)
                         HomeView(type: "Reservation")
                             .tag(2)
-                    })
+                    }).accessibility(identifier: "HomeView_TopTab_Avaliable")
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 }
                 .foregroundColor(Color(#colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1)))

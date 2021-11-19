@@ -22,6 +22,8 @@ class HomeViewModel: ObservableObject {
     
     func fetchAllData() {
         self.loadAvaliable = true
+        self.parkModel.removeAll()
+
         Firestore
             .firestore()
             .collection("parkSlots")
@@ -37,25 +39,26 @@ class HomeViewModel: ObservableObject {
                     let documentData = document.data()
                     if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
                         
-                        self.getDocument(userId: userId)
-                        self.parkModel.removeAll()
+//                        self.getDocument(userId: userId)
                         let date: Date = bookTime.dateValue()
                         
                         let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
-                        
-                        let docRef1 = Firestore.firestore().collection("users").document(userId)
-                        
-                        docRef1.getDocument { (document, error) in
-                            if let document = document, document.exists {
-                                _ = document.data().map(String.init(describing:)) ?? "nil"
-                                let fieldValue = document.get("vehicleNumber") as? String
-                                let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "", bookTime: date)
-                                self.parkModel.append(ParkModel1)
-                                self.loadAvaliable = false
-                            } else {
-                                self.parkModel.append(ParkModel2)
-                            }
-                        }
+                        self.parkModel.append(ParkModel2)
+                                                        self.loadAvaliable = false
+
+//                        let docRef1 = Firestore.firestore().collection("users").document(userId)
+//
+//                        docRef1.getDocument { (document, error) in
+//                            if let document = document, document.exists {
+//                                _ = document.data().map(String.init(describing:)) ?? "nil"
+//                                let fieldValue = document.get("vehicleNumber") as? String
+//                                let ParkModel1 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: fieldValue ?? "", bookTime: date)
+//                                self.parkModel.append(ParkModel1)
+//                                self.loadAvaliable = false
+//                            } else {
+//                                self.parkModel.append(ParkModel2)
+//                            }
+//                        }
                     }
                 }
             }
@@ -63,11 +66,11 @@ class HomeViewModel: ObservableObject {
         updateUsersBangData()
     }
     func fetchBookReseveData() {
-        
+        self.parkModel.removeAll()
         Firestore
             .firestore()
             .collection("parkSlots")
-            .whereField("booked", isEqualTo: true)
+            .whereField("booked", isEqualTo: false)
             .whereField("reserved", isEqualTo: true)
             .getDocuments { (snapshot, error) in
                 guard let snapshot = snapshot, error == nil else {
@@ -82,7 +85,7 @@ class HomeViewModel: ObservableObject {
                         self.parkModel.removeAll()
                         let date: Date = bookTime.dateValue()
                         let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
-                        
+
                         let docRef1 = Firestore.firestore().collection("users").document(userId)
                         
                         docRef1.getDocument { (document, error) in
@@ -101,9 +104,7 @@ class HomeViewModel: ObservableObject {
         updateUsersBangData()
     }
     func fetchBookData() {
-        
         self.parkModel.removeAll()
-        
         Firestore
             .firestore()
             .collection("parkSlots")
@@ -112,6 +113,7 @@ class HomeViewModel: ObservableObject {
             .getDocuments { (snapshot, error) in
                 guard let snapshot = snapshot, error == nil else {
                     //handle error
+                    print("No Items")
                     return
                 }
                 for document in snapshot.documents {
@@ -123,7 +125,7 @@ class HomeViewModel: ObservableObject {
                         let date: Date = bookTime.dateValue()
                         
                         let ParkModel2 = ParkModel(documentId: documentId,parkName: parkName, userId: userId, parkCategory: parkCategory, reserved: reserved, booked: booked, uservehicle: "", bookTime: date)
-                        
+
                         let docRef1 = Firestore.firestore().collection("users").document(userId)
                         
                         docRef1.getDocument { (document, error) in
