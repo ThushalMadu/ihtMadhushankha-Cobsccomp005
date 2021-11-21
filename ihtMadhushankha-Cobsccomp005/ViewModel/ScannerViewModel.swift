@@ -11,15 +11,17 @@ import Firebase
 class ScannerViewModel: ObservableObject {
     
     /// Defines how often we are going to try looking for a new QR-code in the camera feed.
-    let scanInterval: Double = 1.0
+    @Published var scanInterval: Double = 5.0
     
     @Published var torchIsOn: Bool = false
     @Published var lastQrCode: String = ""
     @Published var showSucessUpdateUser = false
     @Published var showSucessUpdatePark = false
+    @Published var showSucessAlert = false
 
     func onFoundQrCode(_ code: String) {
         self.lastQrCode = code
+        self.showSucessAlert = true
     }
     func updateReserveDocument(documentId: String, userId: String) {
         // [START update_document]

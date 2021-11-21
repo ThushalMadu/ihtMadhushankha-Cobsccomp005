@@ -10,8 +10,8 @@ import SwiftUI
 struct DoneReservationComp: View {
     var body: some View {
         HStack{
-            Text("Reserved Park Slot")
-                .font(Font.custom("Poppins-Medium", size: 22))
+            Text(BookViewString.lbl_ReservedParkDone)
+                .font(Font.custom(FontCustomString.font_Poppins_Medium, size: 22))
                 .fontWeight(.semibold)
                 .foregroundColor(Color.green)
             Image(systemName: "checkmark.circle")

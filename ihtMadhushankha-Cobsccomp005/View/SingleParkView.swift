@@ -25,7 +25,6 @@ struct SingleParkView: View {
                 .padding(.top)
                 .frame(height:UIScreen.main.bounds.height/7)
             Spacer()
-            
             HStack{
                 Spacer()
                 if(singleItem.parkCategory == "VIP"){
@@ -46,24 +45,6 @@ struct SingleParkView: View {
                     .padding(.top)
             }
             Spacer()
-//            NavigationLink(destination: HomeTopTabView().navigationBarHidden(true)
-//                            .navigationBarBackButtonHidden(true), isActive: $backButton) {
-//                ButtonView(title: singleItem.booked ? SingleParkViewStrings.btn_CancelBook : SingleParkViewStrings.btn_BookName,
-//                           function: {
-//                    if singleItem.booked {
-//                        singleParkViewModel.updateBookDocument(documentId: singleItem.documentId)
-//                    } else {
-//                        singleParkViewModel.updateDocument(documentId: singleItem.documentId)
-//                    }
-//                },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-//                    .padding(.bottom, 50.0).alert(isPresented: $singleParkViewModel.showSucessAlert, content: { () -> Alert in
-//                        Alert(title:  Text(singleItem.booked ? SingleParkViewStrings.alt_titleCancelBooking : SingleParkViewStrings.alt_titleBooking), message: Text(singleItem.booked ? SingleParkViewStrings.alt_messageCancelBooking : SingleParkViewStrings.alt_messageBooking), dismissButton: .default(Text(SingleParkViewStrings.btn_Dismiss), action: {
-//                            backButton = true
-//                        }))
-//                    })
-//            }
-            
-            //            Spacer()
         }
         .padding(.horizontal)
     }

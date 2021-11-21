@@ -23,7 +23,7 @@ struct ParkSingleComp: View {
             self.function()
         }) {
             VStack{
-                if(parkCategory == "VIP"){
+                if(parkCategory == HomeViewString.parkSlot_VIP){
                     Image("vipCar")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -38,17 +38,17 @@ struct ParkSingleComp: View {
                 }
                 TextTitle(title: parkName, fontSize: 24, fontTitleWeight: .semibold, fontColor: Color.gray)
                 Spacer()
-                if(parkCategory == "VIP"){
+                if(parkCategory == HomeViewString.parkSlot_VIP){
                     VStack{
-                        TextTitle(title: "VIP", fontSize: 14, fontTitleWeight: .semibold, fontColor: Color.red)
+                        TextTitle(title: HomeViewString.parkSlot_VIP, fontSize: 14, fontTitleWeight: .semibold, fontColor: Color.red)
                     }
                 }else{
-                    TextTitle(title: "Normal", fontSize: 14, fontTitleWeight: .semibold, fontColor: Color.green)
+                    TextTitle(title: HomeViewString.parkSlot_Normal, fontSize: 14, fontTitleWeight: .semibold, fontColor: Color.green)
                 }
                 Spacer()
                 if(reserved){
                     VStack{
-                        TextTitle(title: "Reserved", fontSize: 14, fontTitleWeight: .regular, fontColor: Color.red)
+                        TextTitle(title: HomeViewString.parkSlot_Reserved, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.red)
                         TextTitle(title: vehicleNumber, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.red)
                     }
                     .padding(.bottom, 20.0)

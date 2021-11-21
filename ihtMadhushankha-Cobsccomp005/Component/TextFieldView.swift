@@ -15,7 +15,7 @@ struct TextFieldView: View {
     var body: some View {
         VStack{
             TextField(title, text: $text)
-                .font(.custom("Poppins-Regular", size: 16))
+                .font(.custom(FontCustomString.font_Poppins_Regular, size: 16))
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .keyboardType(keyboardType)

@@ -21,4 +21,9 @@ struct BookViewString{
     static let err_cannotBook: String = "Cannot Book you are banged please wait movement"
     static let btn_CancelResrve: String = "Cancel Reserve Park Slot"
     static let btn_ScanQr: String = "Scan QR"
+    static let alert_EnterToArea: String = "Please Enter Area of NIBM (1 KM Range) "
+    static let alert_selectSlot: String = "Please Select Any Parking Slot"
+    static let alert_UserBang: String = "You are bang with cancel Reservation, Please Hold movement.😉"
+    static let lbl_PleaseWait: String = "Please Wait"
+    static let lbl_ReservedParkDone: String = "Reserved Park Slot"
 }

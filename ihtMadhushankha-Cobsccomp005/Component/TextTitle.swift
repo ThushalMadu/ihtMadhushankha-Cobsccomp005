@@ -15,7 +15,7 @@ struct TextTitle: View {
 
     var body: some View {
         Text(title)
-            .font(Font.custom("Poppins-Regular", size: fontSize))
+            .font(Font.custom(FontCustomString.font_Poppins_Regular, size: fontSize))
             .fontWeight(fontTitleWeight)
             .foregroundColor(fontColor)
             .accessibility(identifier: "Component_TextTile")

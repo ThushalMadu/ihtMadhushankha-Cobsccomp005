@@ -17,7 +17,7 @@ struct SignUpView: View {
     
     @State var user = User()
     @Environment(\.openURL) var openURL
-
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack{
@@ -61,8 +61,8 @@ struct SignUpView: View {
                                 try user.signUpValidate()
                                 signUpViewModel.addUser(name: user.name, email: user.email, nic: user.nic, vehicleNumber: user.vehicleNumber, password: user.password)
                             } catch {
-//                                errorMessageSignUp = error.localizedDescription
-//                                errorOccured = true
+                                //                                errorMessageSignUp = error.localizedDescription
+                                //                                errorOccured = true
                                 signUpViewModel.errorMessageSignUp = error.localizedDescription
                                 signUpViewModel.errorAlertSignUp = true
                             }

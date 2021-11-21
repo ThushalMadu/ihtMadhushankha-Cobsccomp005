@@ -14,7 +14,7 @@ struct ForgetPasswordView: View {
     @StateObject var forgetPasswordViewModel = ForgetPasswordViewModel()
     @State private var errorOccured = false
     @State var user = User()
-
+    
     var body: some View {
         ScrollView {
             VStack{
@@ -38,7 +38,7 @@ struct ForgetPasswordView: View {
                     }
                     if(forgetPasswordViewModel.sucessDetail){
                         HStack{
-                            TextTitle(title: "SucessFully sent reset password link to your email", fontSize: 14, fontTitleWeight: .regular, fontColor: Color.green)
+                            TextTitle(title: ForgetPasswordViewStrings.lbl_sucessMsg, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.green)
                                 .padding([.trailing], 20.0)
                             Spacer()
                         }
@@ -61,8 +61,8 @@ struct ForgetPasswordView: View {
                             try user.forgetValidate()
                             forgetPasswordViewModel.sendPasswordReset(withEmail: user.email)
                         } catch {
-//                            errorMessageForget = error.localizedDescription
-//                            errorOccured = true
+                            //                            errorMessageForget = error.localizedDescription
+                            //                            errorOccured = true
                             forgetPasswordViewModel.errorMessageForget = error.localizedDescription
                             forgetPasswordViewModel.errorAlertForget = true
                         }

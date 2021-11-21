@@ -18,7 +18,7 @@ struct TermsAndConditionLink: View {
                 self.function()
             }) {
                 Text(SignUpViewStrings.lbl_TermsandCondition)
-                    .font(Font.custom("Poppins-Regular", size: 14))
+                    .font(Font.custom(FontCustomString.font_Poppins_Regular, size: 14))
                     .fontWeight(.regular)
                     .foregroundColor(Color.blue)
             }
@@ -31,3 +31,4 @@ struct TermsAndConditionLink_Previews: PreviewProvider {
         TermsAndConditionLink(function: {print("")})
     }
 }
+

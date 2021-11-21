@@ -22,34 +22,34 @@ struct HomeView: View {
         VStack {
             if(viewModel.loadAvaliable){
                 Spacer()
-                ProgressView("Please Wait").progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center).accentColor(Color.app_Blue).accessibility(identifier: "HomeView_ProgressView")
+                ProgressView(HomeViewString.lbl_PleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center).accentColor(Color.app_Blue).accessibility(identifier: "HomeView_ProgressView")
                 Spacer()
             } else{
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVGrid(columns: items, spacing: 10) {
                         ForEach(viewModel.parkModel, id: \.documentId) { item in
-//                            NavigationLink(destination: SingleParkView(singleItem: item),isActive: $isActiveLink) {
-                                ParkSingleComp(parkName: item.parkName, parkCategory: item.parkCategory, vehicleNumber: item.uservehicle, reserved: item.reserved, booked: item.booked, remainTime:String("\(viewModel.getRemainTime(dateValue: item.bookTime))"), function: {
-                                    isActiveLink = true
-                                    print(isActiveLink)
-                                }).accessibility(identifier: "HomeView_ParkSingleComp")
-//                            }
+                            //                            NavigationLink(destination: SingleParkView(singleItem: item),isActive: $isActiveLink) {
+                            ParkSingleComp(parkName: item.parkName, parkCategory: item.parkCategory, vehicleNumber: item.uservehicle, reserved: item.reserved, booked: item.booked, remainTime:String("\(viewModel.getRemainTime(dateValue: item.bookTime))"), function: {
+                                isActiveLink = true
+                                print(isActiveLink)
+                            }).accessibility(identifier: "HomeView_ParkSingleComp")
+                            //                            }
                         }
                         .padding(.horizontal)
                     }.padding(.top, 10.0)
-                    .accessibility(identifier: "HomeView_LazyVGrid")
+                        .accessibility(identifier: "HomeView_LazyVGrid")
                 }.accessibility(identifier: "HomeView_ScrollParkSlots")
             }
         }
         .onAppear() {
-            if (type == "Avaliable"){
+            if (type == HomeViewString.tab_Avaliable){
                 print(viewModel.loadAvaliable)
                 viewModel.fetchAllData()
                 
-            } else if (type == "Book"){
+            } else if (type == HomeViewString.tab_Book){
                 viewModel.fetchBookData()
             }
-            else if (type == "Reservation"){
+            else if (type == HomeViewString.tab_Reservation){
                 viewModel.fetchBookReseveData()
             }
         }

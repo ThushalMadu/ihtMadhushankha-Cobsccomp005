@@ -11,9 +11,9 @@ struct HomeTopTabView: View {
     @State private var selectedTab: Int = 0
     
     let tabs: [Tab] = [
-        .init(icon: Image(systemName: "folder.badge.plus"), title: "Avaliable"),
-        .init(icon: Image(systemName: "film.fill"), title: "Book"),
-        .init(icon: Image(systemName: "book.fill"), title: "Reservation")
+        .init(icon: Image(systemName: "folder.badge.plus"), title: HomeViewString.tab_Avaliable),
+        .init(icon: Image(systemName: "film.fill"), title: HomeViewString.tab_Book),
+        .init(icon: Image(systemName: "book.fill"), title: HomeViewString.tab_Reservation)
     ]
     
     init() {
@@ -38,7 +38,7 @@ struct HomeTopTabView: View {
                             .tag(0)
                         HomeView(type: HomeViewString.tab_Book)
                             .tag(1)
-                        HomeView(type: "Reservation")
+                        HomeView(type: HomeViewString.tab_Reservation)
                             .tag(2)
                     }).accessibility(identifier: "HomeView_TopTab_Avaliable")
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

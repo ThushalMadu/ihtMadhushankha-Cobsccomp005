@@ -15,37 +15,39 @@ struct SettingsView: View {
     @StateObject private var userAuth = UserAuth()
     
     var body: some View {
-        VStack{
-            TopLeftTitle(title: SettingViewString.lbl_settings).padding([.leading], 15.0)
-                .padding(.top, 60.0)
-            Image("menuseLap")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 2))
-                .shadow(radius: 3)
-                .frame(width: 200, height: 200, alignment: .center)
-            if(settingViewModel.loaderSetting){
-                ProgressView("Please Wait").progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center).accentColor(Color.app_Blue)
-            } else {
-                VStack(alignment: .leading, spacing: 20){
-                    TopLeftTitle(title: SettingViewString.lbl_generalInfo,fontSize: 18)
-                    BookingSingleGeneral(topTitle: "Register Number", buttomTitle: userId!, imageName: "grid")
-                    BookingSingleGeneral(topTitle: "Name", buttomTitle: settingViewModel.userData.first?.name ?? "no", imageName: "dial.min")
-                    BookingSingleGeneral(topTitle: "Email", buttomTitle: settingViewModel.userData.first?.email ?? "no", imageName: "envelope")
-                    BookingSingleGeneral(topTitle: "Vehicle Number", buttomTitle: settingViewModel.userData.first?.vehicleNumber ?? "no", imageName: "car")
-                    BookingSingleGeneral(topTitle: "NIC", buttomTitle: settingViewModel.userData.first?.nic ?? "no", imageName: "menucard")
+        ScrollView{
+            VStack{
+                TopLeftTitle(title: SettingViewString.lbl_settings).padding([.leading], 15.0)
+                    .padding(.top, 60.0)
+                Image("menuseLap")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                    .shadow(radius: 3)
+                    .frame(width: 200, height: 200, alignment: .center)
+                if(settingViewModel.loaderSetting){
+                    ProgressView(SettingViewString.lbl_PleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center).accentColor(Color.app_Blue)
+                } else {
+                    VStack(alignment: .leading, spacing: 20){
+                        TopLeftTitle(title: SettingViewString.lbl_generalInfo,fontSize: 18)
+                        BookingSingleGeneral(topTitle: SettingViewString.lbl_RegiNumber, buttomTitle: userId!, imageName: "grid")
+                        BookingSingleGeneral(topTitle: SettingViewString.lbl_Name, buttomTitle: settingViewModel.userData.first?.name ?? "no", imageName: "dial.min")
+                        BookingSingleGeneral(topTitle: SettingViewString.lbl_Email, buttomTitle: settingViewModel.userData.first?.email ?? "no", imageName: "envelope")
+                        BookingSingleGeneral(topTitle: SettingViewString.lbl_VehicleNum, buttomTitle: settingViewModel.userData.first?.vehicleNumber ?? "no", imageName: "car")
+                        BookingSingleGeneral(topTitle: SettingViewString.lbl_Nic, buttomTitle: settingViewModel.userData.first?.nic ?? "no", imageName: "menucard")
+                    }
+                    .padding(.leading, 15.0)
+                    .padding(.trailing, 15.0)
                 }
-                .padding(.leading, 15.0)
-                .padding(.trailing, 15.0)
+                NavigationLink(destination: TabMainView(), isActive:$userAuth.isLoggedOut) {
+                    LogOutButtonView(function: {
+                        userAuth.logout()
+                    })
+                }
+                .padding(.bottom, 30.0)
+                Spacer()
             }
-            NavigationLink(destination: TabMainView(), isActive:$userAuth.isLoggedOut) {
-                LogOutButtonView(function: {
-                    userAuth.logout()
-                })
-            }
-            .padding(.bottom, 30.0)
-            Spacer()
         }.edgesIgnoringSafeArea(.top)
             .onAppear {
                 viewModel.updateUsersBangData()

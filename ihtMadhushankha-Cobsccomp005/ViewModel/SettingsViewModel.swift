@@ -16,8 +16,6 @@ class SettingsViewModel: ObservableObject {
     @Published var uservehicle = ""
     @Published var loaderSetting:Bool = false
 
-    
-    
     func getJStoreUserFromDB(documentId: String) {
         loaderSetting = true
         let docRef = Firestore.firestore().collection("users").document(documentId)
@@ -33,6 +31,7 @@ class SettingsViewModel: ObservableObject {
                     print(user)
                     self.userData = [UserData(email: user["email"] as? String ?? "", name: user["name"] as? String ?? "", nic: user["nic"] as? String ?? "", parkId: user["parkId"] as? String ?? "", status: user["status"] as? String ?? "", vehicleNumber: user["vehicleNumber"] as? String ?? "")]
                     self.loaderSetting = false
+                    print("User UPDATE IN AFTER RESERVATION OF QR CODE")
                 } else {
                     print("Document does not exist")
                     self.loaderSetting = false

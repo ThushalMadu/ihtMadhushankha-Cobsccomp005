@@ -13,6 +13,7 @@ struct ScannerView: View {
     @Binding var parkkId : String
     let userId = UserDefaults.standard.string(forKey: "userId")
     @State private var isCheckParkId = false
+    @StateObject var settingViewModel = SettingsViewModel()
     
     var body: some View {
         VStack{
@@ -23,7 +24,7 @@ struct ScannerView: View {
                     .interval(delay: self.viewModel.scanInterval)
                 VStack {
                     VStack {
-                        Text("Keep scanning for QR-codes")
+                        Text(ScannerViewString.lbl_QrScan)
                             .font(.subheadline)
                         Text(self.viewModel.lastQrCode)
                             .bold()
@@ -35,7 +36,7 @@ struct ScannerView: View {
                     Spacer()
                     HStack {
                         Button(action: {
-                            self.viewModel.torchIsOn.toggle()
+                            self.viewModel.torchIsOn = true
                         }, label: {
                             Image(systemName: self.viewModel.torchIsOn ? "bolt.fill" : "bolt.slash.fill")
                                 .imageScale(.large)
@@ -47,28 +48,44 @@ struct ScannerView: View {
                     .cornerRadius(10)
                     
                 }.padding()
-            }
-            if(self.viewModel.lastQrCode == ""){
-                EmptyView()
-            }else {
-                ButtonView(title: "Confirm Reservation",
-                           function: {
-                    if(parkkId == self.viewModel.lastQrCode){
-                        viewModel.updateReserveDocument(documentId: self.viewModel.lastQrCode, userId: userId ?? "23ew")
-                        presentationMode.wrappedValue.dismiss()
-                    } else {
-                        isCheckParkId = true
+            }.alert(isPresented: self.$viewModel.showSucessAlert, content: { () -> Alert in
+                Alert(title: Text(ScannerViewString.lbl_AlertTitle),
+                      message: Text("\(ScannerViewString.lbl_AlertMessage+self.viewModel.lastQrCode)"),
+                      primaryButton: .default(Text(ScannerViewString.btn_AlertConfirm), action: {
+                    viewModel.updateReserveDocument(documentId: self.viewModel.lastQrCode, userId: userId ?? "23ew")
+                    presentationMode.wrappedValue.dismiss()
+                    DispatchQueue.main.async {
+                        settingViewModel.getJStoreUserFromDB(documentId: userId!)
                     }
-                },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45).padding(.top)
-                    .alert(isPresented: $isCheckParkId) { () -> Alert in
-                        Alert(title: Text("You check Differnet Park. Please Try again."))
-                    }
-            }
-            ButtonView(title: "Cancel QR View",
+                }),
+                      secondaryButton: .cancel()
+                )
+            })
+            //            if(self.viewModel.lastQrCode == ""){
+            //                EmptyView()
+            //            }else {
+            //                ButtonView(title: "Confirm Reservation",
+            //                           function: {
+            //                    if(String(parkkId) == String(self.viewModel.lastQrCode)){
+            //                        isCheckParkId = true
+            //                        presentationMode.wrappedValue.dismiss()
+            //                    } else {
+            //                        isCheckParkId = true
+            //                    }
+            //                },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45).padding(.top)
+            //                    .alert(isPresented: $isCheckParkId) { () -> Alert in
+            //                        Alert(title: Text("You check Differnet Park. Please Try again."))
+            //                    }
+            //
+            //
+            //            }
+            ButtonView(title: ScannerViewString.btn_CancleQr,
                        function: {
                 presentationMode.wrappedValue.dismiss()
             },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
                 .padding(.vertical)
+        }.onAppear(){
+            print(parkkId)
         }
         
     }
@@ -77,7 +94,6 @@ struct ScannerView: View {
 struct ScannerView_Previews: PreviewProvider {
     
     @State static var parkIds: String = ""
-    
     
     static var previews: some View {
         ScannerView(parkkId: $parkIds)

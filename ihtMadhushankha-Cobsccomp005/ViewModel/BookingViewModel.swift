@@ -14,6 +14,7 @@ class BookingViewModel: ObservableObject {
     @Published var uservehicle = ""
     @Published var showSucessAlert = false
     @Published var parkDataLoader = false
+    @Published var parkDataIDFirst = ""
 
     func updateDocument(documentId: String, userId: String) {
         // [START update_document]
@@ -99,6 +100,7 @@ class BookingViewModel: ObservableObject {
                         print(self.parkModel.count)
                     }
                 }
+                self.parkDataIDFirst = self.parkModel.first?.documentId ?? "wait"
             }
     }
 }

@@ -15,8 +15,8 @@ struct LogOutButtonView: View {
             self.function()
         }) {
             HStack{
-                Text("Log Out")
-                    .font(Font.custom("Poppins-Regular", size: 18))
+                Text(SettingViewString.btn_LogOut)
+                    .font(Font.custom(FontCustomString.font_Poppins_Regular, size: 18))
                     .fontWeight(.semibold)
                     .foregroundColor(Color.red)
                 Image(systemName: "rectangle.portrait.and.arrow.right")

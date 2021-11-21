@@ -11,7 +11,7 @@ import AVFoundation
 
 class QrCodeCameraDelegate: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     
-    var scanInterval: Double = 1.0
+    var scanInterval: Double = 5.0
     var lastTime = Date(timeIntervalSince1970: 0)
     
     var onResult: (String) -> Void = { _  in }
@@ -26,7 +26,7 @@ class QrCodeCameraDelegate: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     @objc func onSimulateScanning(){
-        foundBarcode(mockData ?? "Simulated QR-code result.")
+        foundBarcode(mockData ?? "6")
     }
     
     func foundBarcode(_ stringValue: String) {
