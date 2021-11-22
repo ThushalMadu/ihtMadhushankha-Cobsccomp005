@@ -19,7 +19,7 @@ struct ForgetPasswordView: View {
         ScrollView {
             VStack{
                 Spacer()
-                Image("forgetPassword")
+                Image(ImageAssetsString.image_ForgetPass_Image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.top)

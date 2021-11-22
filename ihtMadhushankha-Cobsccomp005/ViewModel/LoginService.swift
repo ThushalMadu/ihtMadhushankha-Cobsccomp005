@@ -18,7 +18,7 @@ class LoginService: LoginServiceProtocol {
                 completion(.failure(error!))
             } else {
                 completion(.success(()))
-                UserDefaults.standard.set(result!.user.uid, forKey: "userId")
+                UserDefaults.standard.set(result!.user.uid, forKey: UserDefaultKeyStrings.key_UserId)
             }
         }
     }

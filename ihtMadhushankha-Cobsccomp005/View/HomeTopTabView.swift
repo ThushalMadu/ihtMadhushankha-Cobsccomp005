@@ -11,9 +11,9 @@ struct HomeTopTabView: View {
     @State private var selectedTab: Int = 0
     
     let tabs: [Tab] = [
-        .init(icon: Image(systemName: "folder.badge.plus"), title: HomeViewString.tab_Avaliable),
-        .init(icon: Image(systemName: "film.fill"), title: HomeViewString.tab_Book),
-        .init(icon: Image(systemName: "book.fill"), title: HomeViewString.tab_Reservation)
+        .init(icon: Image(systemName: ImageAssetsString.image_Home_AvaliableTab), title: HomeViewString.tab_Avaliable),
+        .init(icon: Image(systemName: ImageAssetsString.image_Home_BookTab), title: HomeViewString.tab_Book),
+        .init(icon: Image(systemName: ImageAssetsString.image_Home_ReservationTab), title: HomeViewString.tab_Reservation)
     ]
     
     init() {
@@ -27,7 +27,7 @@ struct HomeTopTabView: View {
             GeometryReader { geo in
                 VStack(spacing: 0) {
                     // Tabs
-                    TopLeftTitle(title: HomeViewString.lbl_welcome).padding([.leading], 15.0).accessibility(identifier: "HomeView_TextTitle")
+                    TopLeftTitle(title: HomeViewString.lbl_welcome).padding([.leading], 15.0).accessibility(identifier: AcesbilityIdentifierString.test_Home_TextTitle)
                         .padding(.top, 60.0)
                     Tabs(tabs: tabs, geoWidth: geo.size.width, selectedTab: $selectedTab).padding(.top, 20.0)
 

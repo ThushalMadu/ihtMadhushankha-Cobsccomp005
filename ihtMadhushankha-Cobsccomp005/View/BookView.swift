@@ -10,7 +10,7 @@ import CoreLocation
 
 struct BookView: View {
     @StateObject var settingViewModel = SettingsViewModel()
-    let userId = UserDefaults.standard.string(forKey: "userId")
+    let userId = UserDefaults.standard.string(forKey: UserDefaultKeyStrings.key_UserId)
     @StateObject var viewModel = HomeViewModel()
 //    @State private var starRatingSelection: String = ""
     @StateObject var bookingViewModel = BookingViewModel()
@@ -25,7 +25,7 @@ struct BookView: View {
             VStack{
                 TopLeftTitle(title: BookViewString.lbl_Book).padding([ .leading], 20.0)
                     .padding(.top, 60.0)
-                Image("reserveBook")
+                Image(ImageAssetsString.image_Book_Main)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.top)
@@ -33,9 +33,9 @@ struct BookView: View {
                 TopLeftTitle(title: BookViewString.lbl_generalInfo,fontSize: 18).padding([.top, .leading], 20.0)
                 if(settingViewModel.userData.first?.parkId != "" && settingViewModel.userData.first?.status == "parked"){
                     VStack(alignment: .center, spacing: 30){
-                        BookingSingleGeneral(topTitle: BookViewString.lbl_regiNum, buttomTitle: userId!, imageName: "person.fill")
-                        BookingSingleGeneral(topTitle: BookViewString.lbl_vehiclNum, buttomTitle: settingViewModel.userData.first?.vehicleNumber ?? "no", imageName: "car.fill")
-                        BookingSingleGeneral(topTitle: BookViewString.lbl_parkSlotsId, buttomTitle: settingViewModel.userData.first?.parkId ?? BookViewString.lbl_waiting, imageName: "parkingsign.circle.fill")
+                        BookingSingleGeneral(topTitle: BookViewString.lbl_regiNum, buttomTitle: userId!, imageName: ImageAssetsString.image_Book_Person)
+                        BookingSingleGeneral(topTitle: BookViewString.lbl_vehiclNum, buttomTitle: settingViewModel.userData.first?.vehicleNumber ?? "no", imageName: ImageAssetsString.image_Book_Car)
+                        BookingSingleGeneral(topTitle: BookViewString.lbl_parkSlotsId, buttomTitle: settingViewModel.userData.first?.parkId ?? BookViewString.lbl_waiting, imageName: ImageAssetsString.image_Book_ParkSign)
                         DoneReservationComp()
                     }.padding(.horizontal, 25.0)
                 } else {
@@ -43,8 +43,8 @@ struct BookView: View {
                         if(bookingViewModel.parkDataLoader && settingViewModel.loaderSetting){
                             ProgressView(BookViewString.lbl_PleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center).accentColor(Color.app_Blue)
                         } else {
-                            BookingSingleGeneral(topTitle: BookViewString.lbl_regiNum, buttomTitle: userId!, imageName: "person.fill")
-                            BookingSingleGeneral(topTitle: BookViewString.lbl_vehiclNum, buttomTitle: settingViewModel.userData.first?.vehicleNumber ?? "no", imageName: "car.fill")
+                            BookingSingleGeneral(topTitle: BookViewString.lbl_regiNum, buttomTitle: userId!, imageName: ImageAssetsString.image_Book_Person)
+                            BookingSingleGeneral(topTitle: BookViewString.lbl_vehiclNum, buttomTitle: settingViewModel.userData.first?.vehicleNumber ?? "no", imageName: ImageAssetsString.image_Book_Car)
                             if(settingViewModel.userData.first?.parkId == ""){
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 10)
@@ -70,7 +70,7 @@ struct BookView: View {
                                 HStack{
                                     TopLeftTitle(title: BookViewString.lbl_parkSlotsDetails,fontSize: 18)
                                     Spacer()
-                                    BookingSingleGeneral(topTitle: BookViewString.lbl_parkSlotsId, buttomTitle: settingViewModel.userData.first?.parkId ?? BookViewString.lbl_waiting, imageName: "parkingsign.circle.fill")
+                                    BookingSingleGeneral(topTitle: BookViewString.lbl_parkSlotsId, buttomTitle: settingViewModel.userData.first?.parkId ?? BookViewString.lbl_waiting, imageName: ImageAssetsString.image_Book_ParkSign)
                                 }
                             }
                         }

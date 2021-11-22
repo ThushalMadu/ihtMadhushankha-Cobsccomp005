@@ -14,7 +14,7 @@ struct DoneReservationComp: View {
                 .font(Font.custom(FontCustomString.font_Poppins_Medium, size: 22))
                 .fontWeight(.semibold)
                 .foregroundColor(Color.green)
-            Image(systemName: "checkmark.circle")
+            Image(systemName: ImageAssetsString.image_Component_DoneReservationComp)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width:30, height:30)

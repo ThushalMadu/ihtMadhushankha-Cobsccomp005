@@ -19,21 +19,21 @@ struct LoginView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack{
-                Image("signInImage")
+                Image(ImageAssetsString.image_Login_Image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.top)
                     .frame(height:UIScreen.main.bounds.height/3.7)
-                    .padding(.top, 40.0).accessibility(identifier: "LoginView_ImageView")
+                    .padding(.top, 40.0).accessibility(identifier: AcesbilityIdentifierString.test_Login_Image)
                 
                 VStack(alignment: .leading, spacing: 20){
                     HStack{
-                        TextTitle(title: LoginViewStrings.lbl_titleSignIn, fontSize: 30, fontTitleWeight: .semibold).accessibility(identifier: "LoginView_TextView")
+                        TextTitle(title: LoginViewStrings.lbl_titleSignIn, fontSize: 30, fontTitleWeight: .semibold).accessibility(identifier: AcesbilityIdentifierString.test_Login_Text)
                             .padding(.top, 20.0)
                         Spacer()
                     }
-                    TextFieldView(title: LoginViewStrings.lbl_email, text: $user.email).accessibility(identifier: "LoginView_EmailField")
-                    SecureFieldView(title: LoginViewStrings.lbl_password, text: $user.password).accessibility(identifier: "LoginView_PassField")
+                    TextFieldView(title: LoginViewStrings.lbl_email, text: $user.email).accessibility(identifier: AcesbilityIdentifierString.test_Login_EmailField)
+                    SecureFieldView(title: LoginViewStrings.lbl_password, text: $user.password).accessibility(identifier: AcesbilityIdentifierString.test_Login_PassField)
                     HStack{
                         Spacer()
                         NavigationLink(destination: ForgetPasswordView(), isActive:$isActiveLinkForget) {
@@ -42,7 +42,7 @@ struct LoginView: View {
                             } label: {
                                 TextTitle(title: LoginViewStrings.lbl_forgetPassword, fontSize: 14, fontTitleWeight: .regular)
                                     .padding(.trailing, 30.0)
-                            }.accessibility(identifier: "LoginView_ForgetButton")
+                            }.accessibility(identifier: AcesbilityIdentifierString.test_Login_ForgetButton)
                         }
                     }
                 }
@@ -67,7 +67,7 @@ struct LoginView: View {
                                 loginViewModel.errorMessageLogin = error.localizedDescription
                                 loginViewModel.errorAlert = true
                             }
-                        },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45).accessibility(identifier: "LoginView_LoginButton")
+                        },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45).accessibility(identifier: AcesbilityIdentifierString.test_Login_LoginButton)
                             .alert(isPresented: $loginViewModel.errorAlert) { () -> Alert in
                                 Alert(title: Text(loginViewModel.errorMessageLogin))
                             }
@@ -79,14 +79,14 @@ struct LoginView: View {
                 }
                 Spacer()
                 
-                LabelledDivider(label: "OR").padding(.top, 10.0).accessibility(identifier: "LoginView_OrLabel")
+                LabelledDivider(label: "OR").padding(.top, 10.0).accessibility(identifier: AcesbilityIdentifierString.test_Login_OrLabel)
                 NavigationLink(destination: SignUpView(), isActive:$isActiveLinkSignUp) {
                     Button(action: {
                         isActiveLinkSignUp.toggle()
                     }) {
                         TextTitle(title: LoginViewStrings.lbl_dontHaveacnt, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
                             .padding(.top, 5.0)
-                    }.accessibility(identifier: "LoginView_NewUserButton")
+                    }.accessibility(identifier: AcesbilityIdentifierString.test_Login_NewUserButton)
                 }
             }
             //            }

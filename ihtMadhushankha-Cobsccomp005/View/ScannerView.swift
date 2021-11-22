@@ -11,7 +11,7 @@ struct ScannerView: View {
     @ObservedObject var viewModel = ScannerViewModel()
     @Environment(\.presentationMode) var presentationMode
     @Binding var parkkId : String
-    let userId = UserDefaults.standard.string(forKey: "userId")
+    let userId = UserDefaults.standard.string(forKey: UserDefaultKeyStrings.key_UserId)
     @State private var isCheckParkId = false
     @StateObject var settingViewModel = SettingsViewModel()
     
@@ -38,7 +38,7 @@ struct ScannerView: View {
                         Button(action: {
                             self.viewModel.torchIsOn = true
                         }, label: {
-                            Image(systemName: self.viewModel.torchIsOn ? "bolt.fill" : "bolt.slash.fill")
+                            Image(systemName: self.viewModel.torchIsOn ? ImageAssetsString.image_Scanner_Bolt : ImageAssetsString.image_Scanner_BoltSlash)
                                 .imageScale(.large)
                                 .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.blue)
                                 .padding()

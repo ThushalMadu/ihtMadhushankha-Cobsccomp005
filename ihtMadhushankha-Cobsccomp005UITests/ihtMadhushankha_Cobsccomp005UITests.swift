@@ -33,8 +33,8 @@ class ihtMadhushankha_Cobsccomp005UITests: XCTestCase {
         //        let avaliableElement = app.tabBars["HomeView_TopTab_Avaliable"]
         XCTAssertTrue(homeView_Text.exists, "Home View Title exists")
         //        XCTAssertTrue(avaliableElement.exists, "Home View TopTab Avaliable exists")
-        XCTAssertTrue(homeView_Scroll.waitForExistence(timeout: 5), "Home View Scroll View exists")
-        XCTAssertTrue(homeView_ParkSingleComp.waitForExistence(timeout: 6), "Home View Park Slots exists")
+        XCTAssertTrue(homeView_Scroll.waitForExistence(timeout: 10), "Home View Scroll View exists")
+        XCTAssertTrue(homeView_ParkSingleComp.waitForExistence(timeout: 10), "Home View Park Slots exists")
         //        XCTAssertTrue(homeView_LazyVGrid.waitForExistence(timeout: 5), "Home View LazyVGrid exists")
         //        XCTAssertTrue(homeView_ProgressView.waitForExistence(timeout: 5), "Home View Progressive View exists")
 //                let tabBar = app.tabBars["Tab Bar"]

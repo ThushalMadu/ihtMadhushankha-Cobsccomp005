@@ -48,7 +48,7 @@ class SignUpViewModel: ObservableObject {
                             self.errorMessageSignUp = ""
                             self.errorAlertSignUp = false
                             print("Document successfully written!")
-                            UserDefaults.standard.set(userID, forKey: "userId")
+                            UserDefaults.standard.set(userID, forKey: UserDefaultKeyStrings.key_UserId)
                             self.loadHome = false
                             self.isActiveHome = true
                         }

@@ -21,4 +21,5 @@ struct AcesbilityIdentifierString{
     static let test_Home_ParkSingleComp: String = "HomeView_ParkSingleComp"
     static let test_Home_LazyVGrid: String = "HomeView_LazyVGrid"
     static let test_Home_ScrollParkSlots: String = "HomeView_ScrollParkSlots"
+    static let test_Home_TextTitle: String = "HomeView_TextTitle"
 }

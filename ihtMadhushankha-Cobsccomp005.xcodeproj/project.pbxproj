@@ -22,6 +22,7 @@
 		A35161F727289253005F031E /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F627289253005F031E /* SignUpValidation.swift */; };
 		A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F82728A9AB005F031E /* CollectionNames.swift */; };
 		A358B8F7273A756A00B2EB38 /* BookingSingleGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */; };
+		A35E13C4274B82E6003598E3 /* UserDefaultKeyStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35E13C3274B82E6003598E3 /* UserDefaultKeyStrings.swift */; };
 		A360BCC92743DD4300FDAB02 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360BCC82743DD4300FDAB02 /* UserAuth.swift */; };
 		A360BCCD27443C0B00FDAB02 /* ParkSingleComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360BCCC27443C0B00FDAB02 /* ParkSingleComp.swift */; };
 		A371AA292726B75A002EAC57 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA282726B75A002EAC57 /* SignUpViewModel.swift */; };
@@ -122,6 +123,7 @@
 		A35161F627289253005F031E /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
 		A35161F82728A9AB005F031E /* CollectionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNames.swift; sourceTree = "<group>"; };
 		A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSingleGeneral.swift; sourceTree = "<group>"; };
+		A35E13C3274B82E6003598E3 /* UserDefaultKeyStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeyStrings.swift; sourceTree = "<group>"; };
 		A360BCC82743DD4300FDAB02 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		A360BCCC27443C0B00FDAB02 /* ParkSingleComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkSingleComp.swift; sourceTree = "<group>"; };
 		A371AA282726B75A002EAC57 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				A3FC883E272C91A300E53914 /* SingleParkViewStrings.swift */,
 				A3E2B0E0273C72780062A9A6 /* BookViewString.swift */,
 				A381E5962740E5CD008ABF0F /* SettingViewString.swift */,
+				A35E13C3274B82E6003598E3 /* UserDefaultKeyStrings.swift */,
 				A381D0532725E17000D15288 /* LoginViewStrings.swift */,
 				A3E2B0DE273C71890062A9A6 /* HomeViewString.swift */,
 				A3960BC4274AB1D300CCF7A5 /* ScannerViewString.swift */,
@@ -687,6 +690,7 @@
 				A34A68462742277B00F6FA76 /* ScannerViewModel.swift in Sources */,
 				A3FC883F272C91A300E53914 /* SingleParkViewStrings.swift in Sources */,
 				A381E5972740E5CD008ABF0F /* SettingViewString.swift in Sources */,
+				A35E13C4274B82E6003598E3 /* UserDefaultKeyStrings.swift in Sources */,
 				A371AA292726B75A002EAC57 /* SignUpViewModel.swift in Sources */,
 				A3C7788D2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift in Sources */,
 				A381D04C2725DD4100D15288 /* TextFieldView.swift in Sources */,

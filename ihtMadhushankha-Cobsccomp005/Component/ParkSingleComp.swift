@@ -24,13 +24,13 @@ struct ParkSingleComp: View {
         }) {
             VStack{
                 if(parkCategory == HomeViewString.parkSlot_VIP){
-                    Image("vipCar")
+                    Image(ImageAssetsString.image_Component_ParkCompoVip)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(.top, 10.0)
                         .frame(height:100)
                 }else{
-                    Image("normalCar")
+                    Image(ImageAssetsString.image_Component_ParkCompoNormal)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(.top, 10.0)

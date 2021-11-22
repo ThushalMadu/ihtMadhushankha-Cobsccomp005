@@ -16,7 +16,7 @@ class UserAuth: ObservableObject {
     }
 
     func logout() {
-        UserDefaults.standard.set(nil, forKey: "userId")
+        UserDefaults.standard.set(nil, forKey: UserDefaultKeyStrings.key_UserId)
         isLoggedOut = true
         print("done calling logout")
     }

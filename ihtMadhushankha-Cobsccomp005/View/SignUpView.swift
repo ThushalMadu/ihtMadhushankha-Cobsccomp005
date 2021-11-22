@@ -21,7 +21,7 @@ struct SignUpView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack{
-                Image("signUpImage")
+                Image(ImageAssetsString.image_SignUp_Image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.top)

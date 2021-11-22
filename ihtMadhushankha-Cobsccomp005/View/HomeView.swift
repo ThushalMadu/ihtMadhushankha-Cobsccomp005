@@ -22,7 +22,7 @@ struct HomeView: View {
         VStack {
             if(viewModel.loadAvaliable){
                 Spacer()
-                ProgressView(HomeViewString.lbl_PleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center).accentColor(Color.app_Blue).accessibility(identifier: "HomeView_ProgressView")
+                ProgressView(HomeViewString.lbl_PleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center).accentColor(Color.app_Blue).accessibility(identifier: AcesbilityIdentifierString.test_Home_ProgressView)
                 Spacer()
             } else{
                 ScrollView(.vertical, showsIndicators: false) {
@@ -32,13 +32,13 @@ struct HomeView: View {
                             ParkSingleComp(parkName: item.parkName, parkCategory: item.parkCategory, vehicleNumber: item.uservehicle, reserved: item.reserved, booked: item.booked, remainTime:String("\(viewModel.getRemainTime(dateValue: item.bookTime))"), function: {
                                 isActiveLink = true
                                 print(isActiveLink)
-                            }).accessibility(identifier: "HomeView_ParkSingleComp")
+                            }).accessibility(identifier: AcesbilityIdentifierString.test_Home_ParkSingleComp)
                             //                            }
                         }
                         .padding(.horizontal)
                     }.padding(.top, 10.0)
-                        .accessibility(identifier: "HomeView_LazyVGrid")
-                }.accessibility(identifier: "HomeView_ScrollParkSlots")
+                        .accessibility(identifier: AcesbilityIdentifierString.test_Home_LazyVGrid)
+                }.accessibility(identifier: AcesbilityIdentifierString.test_Home_ScrollParkSlots)
             }
         }
         .onAppear() {
