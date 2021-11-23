@@ -32,10 +32,8 @@ class SingleParkViewModel: ObservableObject {
         }
     }
     func updateBookDocument(documentId: String) {
-        // [START update_document]
         let washingtonRef = Firestore.firestore().collection("parkSlots").document(documentId)
         
-        // Set the "capital" field of the city 'DC'
         washingtonRef.updateData([
             "booked": false
         ]) { err in

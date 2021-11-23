@@ -9,18 +9,34 @@ import XCTest
 @testable import ihtMadhushankha_Cobsccomp005
 
 class ihtMadhushankha_Cobsccomp005Tests: XCTestCase {
-
+    
+    var loginViewModel: LoginViewModel!
+    var mockLoginService: MockLoginService!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+        mockLoginService = MockLoginService()
+        loginViewModel = .init(loginService: mockLoginService)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        loginViewModel = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLoginSucessTrue() throws {
+        
+        mockLoginService.loginResult = .success(())
+        
+        loginViewModel.signIn(email: "thushal@gmail.com", password: "thushal123")
+        XCTAssertTrue(loginViewModel.isActiveLoginHome)
+        
+    }
+    func testLoginFailureTrue() throws {
+        
+        mockLoginService.loginResult = .failure(NSError(domain: "", code: -1, userInfo: nil))
+        
+        loginViewModel.signIn(email: "thushal@gmail.com", password: "thushal123")
+//        XCTAssertNotNil(loginViewModel.error)
+        
     }
 
     func testPerformanceExample() throws {

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LoginView: View {
     
-    
     @State private var errorMessageLogin = ""
     @State private var errorOccured = false
     @State private var isActiveLinkSignUp = false
@@ -18,76 +17,76 @@ struct LoginView: View {
     @State var user = User()
     
     var body: some View {
-//        NavigationView {
-            ScrollView {
-                VStack{
-                    Spacer()
-                    Image("signInImage")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.top)
-                        .frame(height:UIScreen.main.bounds.height/3.7)
-                    
-                    VStack(alignment: .leading, spacing: 20){
-                        HStack{
-                            TextTitle(title: LoginViewStrings.lbl_titleSignIn, fontSize: 30, fontTitleWeight: .semibold)
-                                .padding(.top, 20.0)
-                            Spacer()
-                        }
-                        TextFieldView(title: LoginViewStrings.lbl_email, text: $user.email)
-                        SecureFieldView(title: LoginViewStrings.lbl_password, text: $user.password)
-                        HStack{
-                            Spacer()
-                            NavigationLink(destination: ForgetPasswordView(), isActive:$isActiveLinkForget) {
-                                Button {
-                                    isActiveLinkForget = true
-                                } label: {
-                                    TextTitle(title: LoginViewStrings.lbl_forgetPassword, fontSize: 14, fontTitleWeight: .regular)
-                                        .padding(.trailing, 30.0)
-                                }
-                            }
-                        }
+        ScrollView(showsIndicators: false) {
+            VStack{
+                Image(ImageAssetsString.image_Login_Image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.top)
+                    .frame(height:UIScreen.main.bounds.height/3.7)
+                    .padding(.top, 40.0).accessibility(identifier: AcesbilityIdentifierString.test_Login_Image)
+                
+                VStack(alignment: .leading, spacing: 20){
+                    HStack{
+                        TextTitle(title: LoginViewStrings.lbl_titleSignIn, fontSize: 30, fontTitleWeight: .semibold).accessibility(identifier: AcesbilityIdentifierString.test_Login_Text)
+                            .padding(.top, 20.0)
+                        Spacer()
                     }
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                    .padding([.top, .leading, .bottom], 30.0)
-                    
-                    if(loginViewModel.loadHome){
-                        ProgressView(LoginViewStrings.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center)
-                    } else{
-                        NavigationLink(destination: TabMainView(), isActive:$loginViewModel.isActiveLoginHome) {
-                            ButtonView(title: LoginViewStrings.btn_signIn,
-                                       function: {
-                                defer{
-                                    print("finally try catch")
-                                }
-                                do {
-                                    try user.signInValidate()
-                                    loginViewModel.login(email: user.email, password: user.password)
-                                } catch {
-                                    errorMessageLogin = error.localizedDescription
-                                    errorOccured = true
-                                }
-                            },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                                .alert(isPresented: $errorOccured) { () -> Alert in
-                                    Alert(title: Text(errorMessageLogin))
-                                }
-                        }
-                        
-                    }
-                    LabelledDivider(label: "OR").padding(.top, 10.0)
-                    NavigationLink(destination: SignUpView(), isActive:$isActiveLinkSignUp) {
-                        Button(action: {
-                            isActiveLinkSignUp.toggle()
-                        }) {
-                            TextTitle(title: LoginViewStrings.lbl_dontHaveacnt, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
-                                .padding(.top, 5.0)
+                    TextFieldView(title: LoginViewStrings.lbl_email, text: $user.email).accessibility(identifier: AcesbilityIdentifierString.test_Login_EmailField)
+                    SecureFieldView(title: LoginViewStrings.lbl_password, text: $user.password).accessibility(identifier: AcesbilityIdentifierString.test_Login_PassField)
+                    HStack{
+                        Spacer()
+                        NavigationLink(destination: ForgetPasswordView(), isActive:$isActiveLinkForget) {
+                            Button {
+                                isActiveLinkForget = true
+                            } label: {
+                                TextTitle(title: LoginViewStrings.lbl_forgetPassword, fontSize: 14, fontTitleWeight: .regular)
+                                    .padding(.trailing, 30.0)
+                            }.accessibility(identifier: AcesbilityIdentifierString.test_Login_ForgetButton)
                         }
                     }
                 }
-//            }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
-        }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                .padding([.top, .leading, .bottom], 30.0)
+                
+                if(loginViewModel.loadHome){
+                    ProgressView(LoginViewStrings.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center)
+                } else{
+                    NavigationLink(destination: TabMainView(), isActive:$loginViewModel.isActiveLoginHome) {
+                        ButtonView(title: LoginViewStrings.btn_signIn,
+                                   function: {
+                            defer{
+                                print("finally try catch")
+                            }
+                            do {
+                                try user.signInValidate()
+                                loginViewModel.signIn(email: user.email, password: user.password)
+                            } catch {
+                                loginViewModel.errorMessageLogin = error.localizedDescription
+                                loginViewModel.errorAlert = true
+                            }
+                        },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45).accessibility(identifier: AcesbilityIdentifierString.test_Login_LoginButton)
+                            .alert(isPresented: $loginViewModel.errorAlert) { () -> Alert in
+                                Alert(title: Text(loginViewModel.errorMessageLogin))
+                            }
+                    }
+                    
+                }
+                Spacer()
+                
+                LabelledDivider(label: "OR").padding(.top, 10.0).accessibility(identifier: AcesbilityIdentifierString.test_Login_OrLabel)
+                NavigationLink(destination: SignUpView(), isActive:$isActiveLinkSignUp) {
+                    Button(action: {
+                        isActiveLinkSignUp.toggle()
+                    }) {
+                        TextTitle(title: LoginViewStrings.lbl_dontHaveacnt, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
+                            .padding(.top, 5.0)
+                    }.accessibility(identifier: AcesbilityIdentifierString.test_Login_NewUserButton)
+                }
+            }
+            //            }
+            
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 

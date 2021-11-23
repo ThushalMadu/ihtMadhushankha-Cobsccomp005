@@ -16,34 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
                                 <rect key="frame" x="207" y="876" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nibmLogo" translatesAutoresizingMaskIntoConstraints="NO" id="tKF-KT-c6Z">
-                                <rect key="frame" x="74" y="402" width="267" height="92"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NIBM Parking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbX-gh-WrM">
-                                <rect key="frame" x="151" y="519" width="113.5" height="25"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NIBM Parking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Re-lz-FKW">
+                                <rect key="frame" x="150.5" y="538" width="113" height="16"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nibmLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aEE-yU-KTP">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tKF-KT-c6Z" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="74" id="FOr-LN-diY"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="mbX-gh-WrM" secondAttribute="bottom" constant="318" id="JrO-UX-CZd"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="mbX-gh-WrM" secondAttribute="trailing" constant="149.5" id="SXR-05-9n0"/>
-                            <constraint firstItem="mbX-gh-WrM" firstAttribute="top" secondItem="tKF-KT-c6Z" secondAttribute="bottom" constant="25" id="UPc-KX-wjI"/>
-                            <constraint firstItem="mbX-gh-WrM" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="151" id="a8d-lL-Ocr"/>
-                            <constraint firstItem="tKF-KT-c6Z" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="358" id="iZJ-tS-klT"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="tKF-KT-c6Z" secondAttribute="trailing" constant="73" id="lrS-a4-ogB"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="tKF-KT-c6Z" secondAttribute="bottom" constant="368" id="vHL-ml-QhI"/>
+                            <constraint firstItem="aEE-yU-KTP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9el-rH-VJW"/>
+                            <constraint firstItem="aEE-yU-KTP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="APy-DE-Hpp"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="-14" id="BSP-rQ-Zgv"/>
+                            <constraint firstItem="aEE-yU-KTP" firstAttribute="centerX" secondItem="6Re-lz-FKW" secondAttribute="centerX" id="Jd6-ld-ZEg"/>
+                            <constraint firstItem="aEE-yU-KTP" firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="awf-O9-ch5"/>
+                            <constraint firstItem="aEE-yU-KTP" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="340" id="jfy-zC-z0J"/>
+                            <constraint firstItem="6Re-lz-FKW" firstAttribute="top" secondItem="aEE-yU-KTP" secondAttribute="bottom" constant="26" id="qQe-eE-WZJ"/>
+                            <constraint firstItem="aEE-yU-KTP" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="87" id="qpO-dH-HFg"/>
                         </constraints>
                     </view>
                 </viewController>

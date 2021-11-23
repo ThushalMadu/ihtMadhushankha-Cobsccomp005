@@ -11,82 +11,52 @@ struct HomeView: View {
     
     @StateObject var viewModel = HomeViewModel()
     @State var reserverdName = ""
-    var type: String
+    @State var loader:Bool = true
+    @State private var isActiveLink = false
     
+    var type: String
+    var items: [GridItem] {
+        Array(repeating: .init(.adaptive(minimum: 300)), count: 2)
+    }
     var body: some View {
         VStack {
-            //            if #available(iOS 15.0, *) {
-            List(viewModel.parkModel, id: \.documentId) { item in
-                NavigationLink(destination: SingleParkView(singleItem: item)) {
-                    HStack{
-                        Text("Parking Name: \(item.parkName)")
-                        Spacer()
-                        if(item.parkCategory == "VIP"){
-                            VStack{
-                                Text("VIP")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.red)
-                            }
-                        }else{
-                            Text("Normal")
-                                .font(.headline)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.green)
+            if(viewModel.loadAvaliable){
+                Spacer()
+                ProgressView(HomeViewString.lbl_PleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.app_Blue)).scaleEffect(1, anchor: .center).accentColor(Color.app_Blue).accessibility(identifier: AcesbilityIdentifierString.test_Home_ProgressView)
+                Spacer()
+            } else{
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVGrid(columns: items, spacing: 10) {
+                        ForEach(viewModel.parkModel, id: \.documentId) { item in
+                            //                            NavigationLink(destination: SingleParkView(singleItem: item),isActive: $isActiveLink) {
+                            ParkSingleComp(parkName: item.parkName, parkCategory: item.parkCategory, vehicleNumber: item.uservehicle, reserved: item.reserved, booked: item.booked, remainTime:String("\(viewModel.getRemainTime(dateValue: item.bookTime))"), function: {
+                                isActiveLink = true
+                                print(isActiveLink)
+                            }).accessibility(identifier: AcesbilityIdentifierString.test_Home_ParkSingleComp)
+                            //                            }
                         }
-                        Spacer()
-                        if(item.reserved){
-                            VStack{
-                                Text("Reserved")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.red)
-                                
-                                Text(item.uservehicle)
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.red)
-                            }
-                        }else{
-                            VStack{
-                                Text("Avaliable")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.green)
-                            }
-                        }
-                        Spacer()
-                        if(item.booked){
-                            VStack{
-                                Text(String("\(viewModel.getRemainTime(dateValue: item.bookTime))"))
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.red)
-                            }
-                        }else{
-                          EmptyView()
-                        }
-                    }.frame(height: UIScreen.main.bounds.height/12, alignment: .center)
-                }
+                        .padding(.horizontal)
+                    }.padding(.top, 10.0)
+                        .accessibility(identifier: AcesbilityIdentifierString.test_Home_LazyVGrid)
+                }.accessibility(identifier: AcesbilityIdentifierString.test_Home_ScrollParkSlots)
             }
-            .onAppear() {
-//                viewModel.updatefetchAllData()
-//                viewModel.updateUsersBangData()
-                if (type == "Avaliable"){
-                    viewModel.fetchAllData()
-                    print("This Avaliable Tab Calling")
-//                    viewModel.updateUsersBangData()
-                } else if (type == "Book"){
-                    print("Booking Clicj TAB")
-                    viewModel.fetchBookData()
-//                    viewModel.updateUsersBangData()
-                }
-//                else if (type == "Reservation"){
-//                    viewModel.fetchBookReseveData()
-//                }
+        }
+        .onAppear() {
+            if (type == HomeViewString.tab_Avaliable){
+                print(viewModel.loadAvaliable)
+                viewModel.fetchAllData()
+                
+            } else if (type == HomeViewString.tab_Book){
+                viewModel.fetchBookData()
             }
-        }.navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+            else if (type == HomeViewString.tab_Reservation){
+                viewModel.fetchBookReseveData()
+            }
+        }
+        .navigationBarHidden(true)
+        .edgesIgnoringSafeArea(.top)
+        .navigationBarBackButtonHidden(true)
+        
     }
 }
 

@@ -9,13 +9,22 @@
 /* Begin PBXBuildFile section */
 		602063669C1D5972C5308E06 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */; };
 		653C537DCC2E895B0B61F05E /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DAB2BA04D79F9908283440 /* Pods_ihtMadhushankha_Cobsccomp005Tests.framework */; };
-		A333450C27345B2700E7C090 /* QRScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A333450B27345B2700E7C090 /* QRScanView.swift */; };
 		A333450E2734631D00E7C090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A333450D2734631D00E7C090 /* LaunchScreen.storyboard */; };
 		A3386EC82739092500F99562 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3386EC72739092500F99562 /* BookingViewModel.swift */; };
 		A341B0632736A7000047E40E /* LogOutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A341B0622736A7000047E40E /* LogOutButtonView.swift */; };
+		A34A683E274226D400F6FA76 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A683D274226D400F6FA76 /* ScannerView.swift */; };
+		A34A68402742271000F6FA76 /* QrCodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A683F2742271000F6FA76 /* QrCodeCameraDelegate.swift */; };
+		A34A68422742272F00F6FA76 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68412742272F00F6FA76 /* CameraPreview.swift */; };
+		A34A68442742275600F6FA76 /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68432742275600F6FA76 /* QrCodeScannerView.swift */; };
+		A34A68462742277B00F6FA76 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68452742277B00F6FA76 /* ScannerViewModel.swift */; };
+		A34A68482742E77500F6FA76 /* DoneReservationComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A68472742E77500F6FA76 /* DoneReservationComp.swift */; };
+		A34F4BED27482A150008AB04 /* uiTestLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F4BEC27482A150008AB04 /* uiTestLoginView.swift */; };
 		A35161F727289253005F031E /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F627289253005F031E /* SignUpValidation.swift */; };
 		A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35161F82728A9AB005F031E /* CollectionNames.swift */; };
 		A358B8F7273A756A00B2EB38 /* BookingSingleGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */; };
+		A35E13C4274B82E6003598E3 /* UserDefaultKeyStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35E13C3274B82E6003598E3 /* UserDefaultKeyStrings.swift */; };
+		A360BCC92743DD4300FDAB02 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360BCC82743DD4300FDAB02 /* UserAuth.swift */; };
+		A360BCCD27443C0B00FDAB02 /* ParkSingleComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360BCCC27443C0B00FDAB02 /* ParkSingleComp.swift */; };
 		A371AA292726B75A002EAC57 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA282726B75A002EAC57 /* SignUpViewModel.swift */; };
 		A371AA2B2726BB74002EAC57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371AA2A2726BB74002EAC57 /* HomeView.swift */; };
 		A381D0382725D57100D15288 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D0372725D57100D15288 /* LoginView.swift */; };
@@ -38,6 +47,10 @@
 		A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */; };
 		A381E5972740E5CD008ABF0F /* SettingViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381E5962740E5CD008ABF0F /* SettingViewString.swift */; };
 		A381E59927419412008ABF0F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381E59827419412008ABF0F /* LocationManager.swift */; };
+		A3960BC5274AB1D300CCF7A5 /* ScannerViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3960BC4274AB1D300CCF7A5 /* ScannerViewString.swift */; };
+		A3960BC7274ACD2200CCF7A5 /* FontCustomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3960BC6274ACD2200CCF7A5 /* FontCustomString.swift */; };
+		A3960BC9274AD19E00CCF7A5 /* ImageAssetsString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3960BC8274AD19E00CCF7A5 /* ImageAssetsString.swift */; };
+		A3960BCB274AD1ED00CCF7A5 /* AcesbilityIdentifierString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3960BCA274AD1ED00CCF7A5 /* AcesbilityIdentifierString.swift */; };
 		A39717642736BEDD00482989 /* TermsAndConditionLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39717632736BEDD00482989 /* TermsAndConditionLink.swift */; };
 		A3975FFC27304FD30092F81A /* TabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3975FFB27304FD30092F81A /* TabMainView.swift */; };
 		A3975FFE27304FED0092F81A /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3975FFD27304FED0092F81A /* BookView.swift */; };
@@ -46,7 +59,6 @@
 		A3A843AC272DC2700090D7A2 /* SingleParkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A843AB272DC2700090D7A2 /* SingleParkViewModel.swift */; };
 		A3AE2F82272D1C5800330608 /* SingleDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AE2F81272D1C5800330608 /* SingleDetailRow.swift */; };
 		A3C7788D2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7788C2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift */; };
-		A3C7788F2723DD37009D670A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7788E2723DD37009D670A /* ContentView.swift */; };
 		A3C778912723DD39009D670A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C778902723DD39009D670A /* Assets.xcassets */; };
 		A3C778942723DD39009D670A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C778932723DD39009D670A /* Preview Assets.xcassets */; };
 		A3C7789E2723DD39009D670A /* ihtMadhushankha_Cobsccomp005Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7789D2723DD39009D670A /* ihtMadhushankha_Cobsccomp005Tests.swift */; };
@@ -67,6 +79,8 @@
 		A3E2B0DF273C71890062A9A6 /* HomeViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B0DE273C71890062A9A6 /* HomeViewString.swift */; };
 		A3E2B0E1273C72780062A9A6 /* BookViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B0E0273C72780062A9A6 /* BookViewString.swift */; };
 		A3E2B0E3273C757B0062A9A6 /* TabMainViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B0E2273C757B0062A9A6 /* TabMainViewString.swift */; };
+		A3EEEFDC2746E46500A2A770 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EEEFDB2746E46500A2A770 /* LoginService.swift */; };
+		A3EEEFDE2746F42F00A2A770 /* MockLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EEEFDD2746F42F00A2A770 /* MockLoginService.swift */; };
 		A3FC8837272C813100E53914 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC8836272C813100E53914 /* Tab.swift */; };
 		A3FC8839272C814400E53914 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC8838272C814400E53914 /* Tabs.swift */; };
 		A3FC883B272C81AF00E53914 /* HomeTopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */; };
@@ -96,13 +110,22 @@
 		16B4C89255FB7F3B187E5848 /* Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests/Pods-ihtMadhushankha-Cobsccomp005-ihtMadhushankha-Cobsccomp005UITests.release.xcconfig"; sourceTree = "<group>"; };
 		547E8593A9EF3DDC010DC3EC /* Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig"; path = "Target Support Files/Pods-ihtMadhushankha-Cobsccomp005/Pods-ihtMadhushankha-Cobsccomp005.debug.xcconfig"; sourceTree = "<group>"; };
 		8C3E9F04A19AE66012EDD660 /* Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ihtMadhushankha_Cobsccomp005_ihtMadhushankha_Cobsccomp005UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A333450B27345B2700E7C090 /* QRScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanView.swift; sourceTree = "<group>"; };
 		A333450D2734631D00E7C090 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3386EC72739092500F99562 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 		A341B0622736A7000047E40E /* LogOutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButtonView.swift; sourceTree = "<group>"; };
+		A34A683D274226D400F6FA76 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		A34A683F2742271000F6FA76 /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
+		A34A68412742272F00F6FA76 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		A34A68432742275600F6FA76 /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
+		A34A68452742277B00F6FA76 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		A34A68472742E77500F6FA76 /* DoneReservationComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneReservationComp.swift; sourceTree = "<group>"; };
+		A34F4BEC27482A150008AB04 /* uiTestLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiTestLoginView.swift; sourceTree = "<group>"; };
 		A35161F627289253005F031E /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
 		A35161F82728A9AB005F031E /* CollectionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNames.swift; sourceTree = "<group>"; };
 		A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSingleGeneral.swift; sourceTree = "<group>"; };
+		A35E13C3274B82E6003598E3 /* UserDefaultKeyStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeyStrings.swift; sourceTree = "<group>"; };
+		A360BCC82743DD4300FDAB02 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		A360BCCC27443C0B00FDAB02 /* ParkSingleComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkSingleComp.swift; sourceTree = "<group>"; };
 		A371AA282726B75A002EAC57 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A371AA2A2726BB74002EAC57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A381D0372725D57100D15288 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -126,6 +149,10 @@
 		A381D05B2725F72A00D15288 /* ForgetPasswordViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewStrings.swift; sourceTree = "<group>"; };
 		A381E5962740E5CD008ABF0F /* SettingViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewString.swift; sourceTree = "<group>"; };
 		A381E59827419412008ABF0F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A3960BC4274AB1D300CCF7A5 /* ScannerViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewString.swift; sourceTree = "<group>"; };
+		A3960BC6274ACD2200CCF7A5 /* FontCustomString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCustomString.swift; sourceTree = "<group>"; };
+		A3960BC8274AD19E00CCF7A5 /* ImageAssetsString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssetsString.swift; sourceTree = "<group>"; };
+		A3960BCA274AD1ED00CCF7A5 /* AcesbilityIdentifierString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcesbilityIdentifierString.swift; sourceTree = "<group>"; };
 		A39717632736BEDD00482989 /* TermsAndConditionLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionLink.swift; sourceTree = "<group>"; };
 		A3975FFB27304FD30092F81A /* TabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainView.swift; sourceTree = "<group>"; };
 		A3975FFD27304FED0092F81A /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
@@ -135,7 +162,6 @@
 		A3AE2F81272D1C5800330608 /* SingleDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDetailRow.swift; sourceTree = "<group>"; };
 		A3C778892723DD37009D670A /* ihtMadhushankha-Cobsccomp005.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ihtMadhushankha-Cobsccomp005.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C7788C2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ihtMadhushankha_Cobsccomp005App.swift; sourceTree = "<group>"; };
-		A3C7788E2723DD37009D670A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A3C778902723DD39009D670A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3C778932723DD39009D670A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A3C778992723DD39009D670A /* ihtMadhushankha-Cobsccomp005Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ihtMadhushankha-Cobsccomp005Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +184,8 @@
 		A3E2B0DE273C71890062A9A6 /* HomeViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewString.swift; sourceTree = "<group>"; };
 		A3E2B0E0273C72780062A9A6 /* BookViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewString.swift; sourceTree = "<group>"; };
 		A3E2B0E2273C757B0062A9A6 /* TabMainViewString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainViewString.swift; sourceTree = "<group>"; };
+		A3EEEFDB2746E46500A2A770 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A3EEEFDD2746F42F00A2A770 /* MockLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginService.swift; sourceTree = "<group>"; };
 		A3FC8836272C813100E53914 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A3FC8838272C814400E53914 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopTabView.swift; sourceTree = "<group>"; };
@@ -286,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C7789D2723DD39009D670A /* ihtMadhushankha_Cobsccomp005Tests.swift */,
+				A3EEEFDD2746F42F00A2A770 /* MockLoginService.swift */,
 			);
 			path = "ihtMadhushankha-Cobsccomp005Tests";
 			sourceTree = "<group>";
@@ -294,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C778A72723DD39009D670A /* ihtMadhushankha_Cobsccomp005UITests.swift */,
+				A34F4BEC27482A150008AB04 /* uiTestLoginView.swift */,
 				A3C778A92723DD39009D670A /* ihtMadhushankha_Cobsccomp005UITestsLaunchTests.swift */,
 			);
 			path = "ihtMadhushankha-Cobsccomp005UITests";
@@ -302,18 +332,18 @@
 		A3C778B62723DD54009D670A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3C7788E2723DD37009D670A /* ContentView.swift */,
+				A3C84086272730DD0011161C /* ParkingView.swift */,
+				A34A683D274226D400F6FA76 /* ScannerView.swift */,
+				A34A68432742275600F6FA76 /* QrCodeScannerView.swift */,
+				A3FC883C272C855600E53914 /* SingleParkView.swift */,
+				A381D0472725DA0000D15288 /* ForgetPasswordView.swift */,
 				A381D0392725D57D00D15288 /* SignUpView.swift */,
 				A381D0372725D57100D15288 /* LoginView.swift */,
-				A3C84086272730DD0011161C /* ParkingView.swift */,
-				A3975FFB27304FD30092F81A /* TabMainView.swift */,
-				A371AA2A2726BB74002EAC57 /* HomeView.swift */,
 				A3975FFF27304FFF0092F81A /* SettingsView.swift */,
 				A3975FFD27304FED0092F81A /* BookView.swift */,
-				A333450B27345B2700E7C090 /* QRScanView.swift */,
-				A3FC883C272C855600E53914 /* SingleParkView.swift */,
+				A371AA2A2726BB74002EAC57 /* HomeView.swift */,
+				A3975FFB27304FD30092F81A /* TabMainView.swift */,
 				A3FC883A272C81AF00E53914 /* HomeTopTabView.swift */,
-				A381D0472725DA0000D15288 /* ForgetPasswordView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,12 +365,17 @@
 				A3C778BB2723DE02009D670A /* ContentViewModel.swift */,
 				A371AA282726B75A002EAC57 /* SignUpViewModel.swift */,
 				A3C840802726CEC00011161C /* LoginViewModel.swift */,
+				A3EEEFDB2746E46500A2A770 /* LoginService.swift */,
+				A360BCC82743DD4300FDAB02 /* UserAuth.swift */,
 				A3D7026E27311BA000834840 /* SettingsViewModel.swift */,
 				A3A843AB272DC2700090D7A2 /* SingleParkViewModel.swift */,
 				A3386EC72739092500F99562 /* BookingViewModel.swift */,
 				A381E59827419412008ABF0F /* LocationManager.swift */,
 				A3C8408427272D780011161C /* HomeViewModel.swift */,
 				A3C840822726D2EE0011161C /* ForgetPasswordViewModel.swift */,
+				A34A68452742277B00F6FA76 /* ScannerViewModel.swift */,
+				A34A683F2742271000F6FA76 /* QrCodeCameraDelegate.swift */,
+				A34A68412742272F00F6FA76 /* CameraPreview.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -355,8 +390,10 @@
 				A3AE2F81272D1C5800330608 /* SingleDetailRow.swift */,
 				A381D0572725EA1200D15288 /* LabelledDivider.swift */,
 				A341B0622736A7000047E40E /* LogOutButtonView.swift */,
+				A34A68472742E77500F6FA76 /* DoneReservationComp.swift */,
 				A381D04B2725DD4100D15288 /* TextFieldView.swift */,
 				A3976001273055340092F81A /* TopLeftTitle.swift */,
+				A360BCCC27443C0B00FDAB02 /* ParkSingleComp.swift */,
 				A3FC8838272C814400E53914 /* Tabs.swift */,
 				A39717632736BEDD00482989 /* TermsAndConditionLink.swift */,
 				A358B8F6273A756A00B2EB38 /* BookingSingleGeneral.swift */,
@@ -375,8 +412,13 @@
 				A3FC883E272C91A300E53914 /* SingleParkViewStrings.swift */,
 				A3E2B0E0273C72780062A9A6 /* BookViewString.swift */,
 				A381E5962740E5CD008ABF0F /* SettingViewString.swift */,
+				A35E13C3274B82E6003598E3 /* UserDefaultKeyStrings.swift */,
 				A381D0532725E17000D15288 /* LoginViewStrings.swift */,
 				A3E2B0DE273C71890062A9A6 /* HomeViewString.swift */,
+				A3960BC4274AB1D300CCF7A5 /* ScannerViewString.swift */,
+				A3960BC8274AD19E00CCF7A5 /* ImageAssetsString.swift */,
+				A3960BC6274ACD2200CCF7A5 /* FontCustomString.swift */,
+				A3960BCA274AD1ED00CCF7A5 /* AcesbilityIdentifierString.swift */,
 				A3E2B0E2273C757B0062A9A6 /* TabMainViewString.swift */,
 				A381D0592725ECE200D15288 /* SignUpViewStrings.swift */,
 			);
@@ -638,13 +680,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3C7788F2723DD37009D670A /* ContentView.swift in Sources */,
 				A39717642736BEDD00482989 /* TermsAndConditionLink.swift in Sources */,
 				A3C840832726D2EE0011161C /* ForgetPasswordViewModel.swift in Sources */,
+				A34A68422742272F00F6FA76 /* CameraPreview.swift in Sources */,
+				A3EEEFDC2746E46500A2A770 /* LoginService.swift in Sources */,
 				A381D0382725D57100D15288 /* LoginView.swift in Sources */,
+				A34A68402742271000F6FA76 /* QrCodeCameraDelegate.swift in Sources */,
 				A3C840812726CEC00011161C /* LoginViewModel.swift in Sources */,
+				A34A68462742277B00F6FA76 /* ScannerViewModel.swift in Sources */,
 				A3FC883F272C91A300E53914 /* SingleParkViewStrings.swift in Sources */,
 				A381E5972740E5CD008ABF0F /* SettingViewString.swift in Sources */,
+				A35E13C4274B82E6003598E3 /* UserDefaultKeyStrings.swift in Sources */,
 				A371AA292726B75A002EAC57 /* SignUpViewModel.swift in Sources */,
 				A3C7788D2723DD37009D670A /* ihtMadhushankha_Cobsccomp005App.swift in Sources */,
 				A381D04C2725DD4100D15288 /* TextFieldView.swift in Sources */,
@@ -655,16 +701,22 @@
 				A381D0542725E17000D15288 /* LoginViewStrings.swift in Sources */,
 				A381D05C2725F72A00D15288 /* ForgetPasswordViewStrings.swift in Sources */,
 				A381D0562725E24900D15288 /* SecureFieldView.swift in Sources */,
+				A3960BCB274AD1ED00CCF7A5 /* AcesbilityIdentifierString.swift in Sources */,
+				A34A683E274226D400F6FA76 /* ScannerView.swift in Sources */,
 				A3386EC82739092500F99562 /* BookingViewModel.swift in Sources */,
 				A3E2B0E3273C757B0062A9A6 /* TabMainViewString.swift in Sources */,
 				A3A843AC272DC2700090D7A2 /* SingleParkViewModel.swift in Sources */,
 				A3D7026F27311BA000834840 /* SettingsViewModel.swift in Sources */,
 				A381D0502725DDCF00D15288 /* ButtonViewStyle.swift in Sources */,
+				A3960BC7274ACD2200CCF7A5 /* FontCustomString.swift in Sources */,
 				A381D0522725DDE200D15288 /* ButtonView.swift in Sources */,
+				A34A68482742E77500F6FA76 /* DoneReservationComp.swift in Sources */,
+				A360BCCD27443C0B00FDAB02 /* ParkSingleComp.swift in Sources */,
 				A381D0482725DA0000D15288 /* ForgetPasswordView.swift in Sources */,
 				A3AE2F82272D1C5800330608 /* SingleDetailRow.swift in Sources */,
+				A360BCC92743DD4300FDAB02 /* UserAuth.swift in Sources */,
 				A3FC8837272C813100E53914 /* Tab.swift in Sources */,
-				A333450C27345B2700E7C090 /* QRScanView.swift in Sources */,
+				A34A68442742275600F6FA76 /* QrCodeScannerView.swift in Sources */,
 				A35161F92728A9AB005F031E /* CollectionNames.swift in Sources */,
 				A381D03A2725D57D00D15288 /* SignUpView.swift in Sources */,
 				A381D04E2725DD7600D15288 /* TextViewStyle.swift in Sources */,
@@ -672,11 +724,13 @@
 				A358B8F7273A756A00B2EB38 /* BookingSingleGeneral.swift in Sources */,
 				A371AA2B2726BB74002EAC57 /* HomeView.swift in Sources */,
 				A3976002273055340092F81A /* TopLeftTitle.swift in Sources */,
+				A3960BC5274AB1D300CCF7A5 /* ScannerViewString.swift in Sources */,
 				A3C778C02723DE6B009D670A /* User.swift in Sources */,
 				A3E2B0DF273C71890062A9A6 /* HomeViewString.swift in Sources */,
 				A3C8408527272D780011161C /* HomeViewModel.swift in Sources */,
 				A3FC8839272C814400E53914 /* Tabs.swift in Sources */,
 				A3975FFC27304FD30092F81A /* TabMainView.swift in Sources */,
+				A3960BC9274AD19E00CCF7A5 /* ImageAssetsString.swift in Sources */,
 				A3C778BE2723DE32009D670A /* ContentViewStrings.swift in Sources */,
 				A381D05A2725ECE200D15288 /* SignUpViewStrings.swift in Sources */,
 				A3975FFE27304FED0092F81A /* BookView.swift in Sources */,
@@ -697,6 +751,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C7789E2723DD39009D670A /* ihtMadhushankha_Cobsccomp005Tests.swift in Sources */,
+				A3EEEFDE2746F42F00A2A770 /* MockLoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +760,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C778A82723DD39009D670A /* ihtMadhushankha_Cobsccomp005UITests.swift in Sources */,
+				A34F4BED27482A150008AB04 /* uiTestLoginView.swift in Sources */,
 				A3C778AA2723DD39009D670A /* ihtMadhushankha_Cobsccomp005UITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,10 +907,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ihtMadhushankha-Cobsccomp005/Preview Content\"";
+				DEVELOPMENT_TEAM = DX7Z745K6B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ihtMadhushankha-Cobsccomp005/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "NIBM Parking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "QRScan needs camera access to read QRCode";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please Provide Location Acess To Continue";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please Provide Location Acess To Continue";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -887,10 +945,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ihtMadhushankha-Cobsccomp005/Preview Content\"";
+				DEVELOPMENT_TEAM = DX7Z745K6B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ihtMadhushankha-Cobsccomp005/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "NIBM Parking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "QRScan needs camera access to read QRCode";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please Provide Location Acess To Continue";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please Provide Location Acess To Continue";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

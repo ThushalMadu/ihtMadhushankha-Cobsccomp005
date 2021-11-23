@@ -14,16 +14,16 @@ struct ForgetPasswordView: View {
     @StateObject var forgetPasswordViewModel = ForgetPasswordViewModel()
     @State private var errorOccured = false
     @State var user = User()
-
+    
     var body: some View {
         ScrollView {
             VStack{
                 Spacer()
-                Image("forgetPassword")
+                Image(ImageAssetsString.image_ForgetPass_Image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.top)
-                    .frame(height:UIScreen.main.bounds.height/2.8)
+                    .frame(height:UIScreen.main.bounds.height/3.2)
                 
                 VStack(alignment: .leading, spacing: 30){
                     HStack{
@@ -35,6 +35,13 @@ struct ForgetPasswordView: View {
                         TextTitle(title: ForgetPasswordViewStrings.lbl_titleForgetPassword, fontSize: 14, fontTitleWeight: .regular)
                             .padding([.trailing], 20.0)
                         Spacer()
+                    }
+                    if(forgetPasswordViewModel.sucessDetail){
+                        HStack{
+                            TextTitle(title: ForgetPasswordViewStrings.lbl_sucessMsg, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.green)
+                                .padding([.trailing], 20.0)
+                            Spacer()
+                        }
                     }
                     TextFieldView(title: ForgetPasswordViewStrings.lbl_email, text: $user.email)
                 }
@@ -54,12 +61,14 @@ struct ForgetPasswordView: View {
                             try user.forgetValidate()
                             forgetPasswordViewModel.sendPasswordReset(withEmail: user.email)
                         } catch {
-                            errorMessageForget = error.localizedDescription
-                            errorOccured = true
+                            //                            errorMessageForget = error.localizedDescription
+                            //                            errorOccured = true
+                            forgetPasswordViewModel.errorMessageForget = error.localizedDescription
+                            forgetPasswordViewModel.errorAlertForget = true
                         }
                     },width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                        .alert(isPresented: $errorOccured) { () -> Alert in
-                            Alert(title: Text(errorMessageForget))
+                        .alert(isPresented: $forgetPasswordViewModel.errorAlertForget) { () -> Alert in
+                            Alert(title: Text(forgetPasswordViewModel.errorMessageForget))
                         }
                 }
             }

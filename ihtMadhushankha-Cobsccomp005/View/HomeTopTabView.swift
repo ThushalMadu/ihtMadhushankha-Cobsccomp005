@@ -11,13 +11,13 @@ struct HomeTopTabView: View {
     @State private var selectedTab: Int = 0
     
     let tabs: [Tab] = [
-        .init(icon: Image(systemName: "folder.badge.plus"), title: "Avaliable"),
-        .init(icon: Image(systemName: "film.fill"), title: "Book"),
-//        .init(icon: Image(systemName: "book.fill"), title: "Reservation")
+        .init(icon: Image(systemName: ImageAssetsString.image_Home_AvaliableTab), title: HomeViewString.tab_Avaliable),
+        .init(icon: Image(systemName: ImageAssetsString.image_Home_BookTab), title: HomeViewString.tab_Book),
+        .init(icon: Image(systemName: ImageAssetsString.image_Home_ReservationTab), title: HomeViewString.tab_Reservation)
     ]
     
     init() {
-        UINavigationBar.appearance().barTintColor = UIColor(#colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1))
+//        UINavigationBar.appearance().barTintColor = UIColor(#colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1))
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = true
     }
@@ -27,7 +27,7 @@ struct HomeTopTabView: View {
             GeometryReader { geo in
                 VStack(spacing: 0) {
                     // Tabs
-                    TopLeftTitle(title: HomeViewString.lbl_welcome).padding([.leading], 15.0)
+                    TopLeftTitle(title: HomeViewString.lbl_welcome).padding([.leading], 15.0).accessibility(identifier: AcesbilityIdentifierString.test_Home_TextTitle)
                         .padding(.top, 60.0)
                     Tabs(tabs: tabs, geoWidth: geo.size.width, selectedTab: $selectedTab).padding(.top, 20.0)
 
@@ -38,9 +38,9 @@ struct HomeTopTabView: View {
                             .tag(0)
                         HomeView(type: HomeViewString.tab_Book)
                             .tag(1)
-//                        HomeView(type: "Reservation")
-//                            .tag(2)
-                    })
+                        HomeView(type: HomeViewString.tab_Reservation)
+                            .tag(2)
+                    }).accessibility(identifier: "HomeView_TopTab_Avaliable")
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 }
                 .foregroundColor(Color(#colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1)))

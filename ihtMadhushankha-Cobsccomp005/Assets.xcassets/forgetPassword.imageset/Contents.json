@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "forgetPassword@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "forgetPassword.png",
+      "filename" : "forgetPassword@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "forgetPassword@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

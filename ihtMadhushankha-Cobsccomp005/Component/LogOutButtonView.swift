@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct LogOutButtonView: View {
+    var function: () -> Void
+
     var body: some View {
         Button(action: {
-            
+            self.function()
         }) {
             HStack{
-                Text("Log Out")
-                    .font(Font.custom("Poppins-Regular", size: 18))
+                Text(SettingViewString.btn_LogOut)
+                    .font(Font.custom(FontCustomString.font_Poppins_Regular, size: 18))
                     .fontWeight(.semibold)
                     .foregroundColor(Color.red)
-                Image(systemName: "rectangle.portrait.and.arrow.right")
+                Image(systemName: ImageAssetsString.image_Component_LogOut)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width:25, height:25)
@@ -31,7 +33,7 @@ struct LogOutButtonView: View {
 }
 struct LogOutButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        LogOutButtonView()
+        LogOutButtonView(function: {print("done")})
     }
 }
 

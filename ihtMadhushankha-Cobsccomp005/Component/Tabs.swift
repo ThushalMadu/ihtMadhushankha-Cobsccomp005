@@ -12,7 +12,7 @@ struct Tabs: View {
     var tabs: [Tab]
     var geoWidth: CGFloat
     @Binding var selectedTab: Int
-
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ScrollViewReader { proxy in
@@ -30,7 +30,7 @@ struct Tabs: View {
                                         AnyView(tabs[row].icon)
                                             .foregroundColor(.blue)
                                             .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
-
+                                        
                                         // Text
                                         Text(tabs[row].title)
                                             .font(Font.system(size: 15, weight: .semibold))
@@ -70,7 +70,9 @@ struct Tabs_Previews: PreviewProvider {
     static var previews: some View {
         Tabs(fixed: true,
              tabs: [.init(icon: Image(systemName: "star.fill"), title: "Tab 1"),
-                    .init(icon: Image(systemName: "star.fill"), title: "Tab 2")],
+                    .init(icon: Image(systemName: "star.fill"), title: "Tab 2"),
+                    .init(icon: Image(systemName: "star.fill"), title: "Tab 2"),
+                   ],
              geoWidth: 375,
              selectedTab: .constant(0))
     }
