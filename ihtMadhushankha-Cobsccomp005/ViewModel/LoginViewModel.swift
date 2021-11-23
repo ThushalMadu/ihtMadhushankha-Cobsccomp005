@@ -47,29 +47,4 @@ class LoginViewModel: ObservableObject {
         }
         
     }
-    
-    
-    
-    //    func login(email: String, password: String) {
-    //        self.loadHome = true
-    //        self.errorMessageLogin = ""
-    //        self.errorAlert = false
-    //        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-    //            if error != nil {
-    //                print(error?.localizedDescription ?? "")
-    //                self.loadHome = false
-    //                self.errorMessageLogin = error?.localizedDescription ?? ""
-    //                self.errorAlert = true
-    //            } else {
-    //                print(result!.user.uid)
-    //                UserDefaults.standard.set(result!.user.uid, forKey: "userId")
-    //                self.loadHome = false
-    //                self.errorAlert = false
-    //                self.isActiveLoginHome = true
-    //                self.errorMessageLogin = ""
-    //            }
-    //        }
-    //    }
-    
-    
 }

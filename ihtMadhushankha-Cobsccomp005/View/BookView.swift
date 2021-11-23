@@ -12,7 +12,7 @@ struct BookView: View {
     @StateObject var settingViewModel = SettingsViewModel()
     let userId = UserDefaults.standard.string(forKey: UserDefaultKeyStrings.key_UserId)
     @StateObject var viewModel = HomeViewModel()
-//    @State private var starRatingSelection: String = ""
+    //    @State private var starRatingSelection: String = ""
     @StateObject var bookingViewModel = BookingViewModel()
     @StateObject var locationManager = LocationManager()
     @State private var isActiveLinkQrScanner = false
@@ -137,11 +137,3 @@ struct BookView_Previews: PreviewProvider {
     }
 }
 
-
-
-//let coordinate₀ = CLLocation(latitude: 7.935893, longitude: 81.025787)
-//let coordinate₁ = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0)
-//
-//let distanceInMeters = coordinate₁.distance(from: coordinate₀)
-//
-//print("Distance is   ",distanceInMeters)

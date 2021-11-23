@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "nibmLogo-2.png",
+      "filename" : "nibmLogo@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "nibmLogo.png",
+      "filename" : "nibmLogo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "nibmLogo-1.png",
+      "filename" : "nibmLogo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

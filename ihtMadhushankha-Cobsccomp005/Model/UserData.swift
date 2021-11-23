@@ -7,15 +7,6 @@
 
 import Foundation
 
-//struct UserData: Codable {
-//    var userId: String
-//    var name: String
-//    var email: String
-//    var vehicleNumber: String
-//    var nic: String
-//    var status: String
-//    var statusTime: Date
-//}
 struct UserData: Codable {
     var email: String
     var name: String
@@ -23,5 +14,4 @@ struct UserData: Codable {
     var parkId:String
     var status: String
     var vehicleNumber:String
-//    var statusTime:Date
 }

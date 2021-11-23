@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "singleViewImage.png",
+      "filename" : "singleViewImage@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "singleViewImage@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "singleViewImage@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

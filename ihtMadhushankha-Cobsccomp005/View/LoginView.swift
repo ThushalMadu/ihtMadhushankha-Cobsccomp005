@@ -62,8 +62,6 @@ struct LoginView: View {
                                 try user.signInValidate()
                                 loginViewModel.signIn(email: user.email, password: user.password)
                             } catch {
-                                //                                    errorMessageLogin = error.localizedDescription
-                                //                                    errorOccured = true
                                 loginViewModel.errorMessageLogin = error.localizedDescription
                                 loginViewModel.errorAlert = true
                             }
@@ -71,9 +69,6 @@ struct LoginView: View {
                             .alert(isPresented: $loginViewModel.errorAlert) { () -> Alert in
                                 Alert(title: Text(loginViewModel.errorMessageLogin))
                             }
-                        //                                .alert(isPresented: $loginViewModel.errorAlert) { () -> Alert in
-                        //                                    Alert(title: Text(loginViewModel.errorMessageLogin))
-                        //                                }
                     }
                     
                 }
