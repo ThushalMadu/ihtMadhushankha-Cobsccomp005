@@ -81,13 +81,13 @@ struct BookView: View {
                             ButtonView(title: BookViewString.btn_reserveSlot,
                                        function: {
                                 print(locationManager.getLocationMetere())
-                                if(settingViewModel.userData.first?.status == "active" && locationManager.getLocationMetere() < 2000 && bookingViewModel.parkDataIDFirst != ""){
+                                if(settingViewModel.userData.first?.status == "active" && locationManager.getLocationMetere() < 1500 && bookingViewModel.parkDataIDFirst != ""){
                                     bookingViewModel.updateDocument(documentId: bookingViewModel.parkDataIDFirst, userId: userId!)
                                     settingViewModel.getJStoreUserFromDB(documentId: userId!)
                                 } else {
                                     print(BookViewString.err_cannotBook)
                                     isCheckBangAlert = true
-                                    alertErrorMessage = locationManager.getLocationMetere() > 2000 ? BookViewString.alert_EnterToArea  : bookingViewModel.parkDataIDFirst == "" ? BookViewString.alert_selectSlot : BookViewString.alert_UserBang
+                                    alertErrorMessage = locationManager.getLocationMetere() > 1500 ? BookViewString.alert_EnterToArea  : bookingViewModel.parkDataIDFirst == "" ? BookViewString.alert_selectSlot : BookViewString.alert_UserBang
                                 }
                             },width:UIScreen.main.bounds.width/2,height: UIScreen.main.bounds.height/48)
                                 .padding(.top, 10.0)

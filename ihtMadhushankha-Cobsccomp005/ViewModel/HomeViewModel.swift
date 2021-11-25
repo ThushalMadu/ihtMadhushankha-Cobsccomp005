@@ -168,7 +168,7 @@ class HomeViewModel: ObservableObject {
         
         let washingtonRef = Firestore.firestore().collection("users").document(documentId)
         
-        let normal: Date = bookTime.dateValue().withAddedMinutes(minutes: 3)
+        let normal: Date = bookTime.dateValue().withAddedMinutes(minutes: 15)
         washingtonRef.updateData([
             "status": "bang",
             "parkId": "",
@@ -181,6 +181,7 @@ class HomeViewModel: ObservableObject {
             }
         }
     }
+    
     func updateUserBangDocument(documentId: String,bookTime: Timestamp) {
         
         let washingtonRef = Firestore.firestore().collection("users").document(documentId)
@@ -231,7 +232,7 @@ class HomeViewModel: ObservableObject {
                     if let documentId = document.documentID as? String, let parkName = documentData["parkName"] as? String, let userId = documentData["userId"] as? String, let parkCategory = documentData["parkCategory"] as? String, let reserved = documentData["reserved"] as? Bool, let booked = documentData["booked"] as? Bool, let bookTime = documentData["bookTime"] as? Timestamp {
                         
                         let date: Date = bookTime.dateValue()
-                        if(booked && self.getRemainTime(dateValue: date) > 2){
+                        if(booked && self.getRemainTime(dateValue: date) > 10){
                             self.updateUserDocument(documentId: userId, bookTime: bookTime)
                             self.updateParkDocument(parkId: documentId)
                         }
@@ -255,7 +256,7 @@ class HomeViewModel: ObservableObject {
                     if let documentId = document.documentID as? String, let statusTime = documentData["statusTime"] as? Timestamp {
                         
                         let date: Date = statusTime.dateValue()
-                        if(self.getRemainTime(dateValue: date) > 2) {
+                        if(self.getRemainTime(dateValue: date) > 15) {
                             self.updateUserBangDocument(documentId: documentId, bookTime: statusTime)
                         }
                     }

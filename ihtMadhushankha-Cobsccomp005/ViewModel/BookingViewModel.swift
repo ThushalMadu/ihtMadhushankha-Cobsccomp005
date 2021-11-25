@@ -21,7 +21,6 @@ class BookingViewModel: ObservableObject {
         let parkUpdate = Firestore.firestore().collection("parkSlots").document(documentId)
         let userUpdate = Firestore.firestore().collection("users").document(userId)
 
-        // Set the "capital" field of the city 'DC'
         parkUpdate.updateData([
             "booked": true,
             "userId": userId,
@@ -50,7 +49,6 @@ class BookingViewModel: ObservableObject {
         let parkUpdate = Firestore.firestore().collection("parkSlots").document(documentId)
         let userUpdate = Firestore.firestore().collection("users").document(userId)
 
-        // Set the "capital" field of the city 'DC'
         parkUpdate.updateData([
             "booked": false,
 //            "userId": "",
